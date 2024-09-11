@@ -1,9 +1,13 @@
 import { useState } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
+import { generateColor } from "./utils/generateColor";
 
 function App() {
-  const [colors, setColors] = useState(3);
+  const color1 = generateColor();
+  const color2 = generateColor();
+  const color3 = generateColor();
+  const [colors, setColors] = useState([color1, color2, color3]);
 
   return (
     <>

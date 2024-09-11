@@ -1,6 +1,8 @@
+import { generateColor } from "../utils/generateColor";
+
 interface Props {
-  colors: number;
-  setColors: React.Dispatch<React.SetStateAction<number>>;
+  colors: string[];
+  setColors: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const SubHeader = ({ colors, setColors }: Props) => {
@@ -10,8 +12,10 @@ const SubHeader = ({ colors, setColors }: Props) => {
       <button
         className="mx-2 border border-green-500"
         onClick={() => {
-          const newCols = colors + 1 > 10 ? 10 : colors + 1;
-          setColors(newCols);
+          const isMaxLength = colors.length + 1 > 10 ? true : false;
+          if (isMaxLength) return;
+          const newColor = generateColor();
+          setColors([...colors, newColor]);
         }}
       >
         Add Column
@@ -19,8 +23,11 @@ const SubHeader = ({ colors, setColors }: Props) => {
       <button
         className="border border-red-500"
         onClick={() => {
-          const newCols = colors - 1 < 3 ? 3 : colors - 1;
-          setColors(newCols);
+          const isMinLength = colors.length - 1 < 3 ? true : false;
+          if (isMinLength) return;
+          const newColors = [...colors];
+          newColors.pop();
+          setColors(newColors);
         }}
       >
         Remove Column
