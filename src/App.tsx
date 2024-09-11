@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
-import { generateColor } from "./utils/generateColor";
+import { generateColors } from "./utils/generateColor";
 
 function App() {
-  const color1 = generateColor();
-  const color2 = generateColor();
-  const color3 = generateColor();
-  const [colors, setColors] = useState([color1, color2, color3]);
+  const [colors, setColors] = useState(generateColors(3));
+
+  useEffect(() => {
+    window.addEventListener("keydown", event => {
+      if (event.key === " ") {
+        const length = colors.length - 1;
+        setColors(generateColors(length));
+        console.log("randomize");
+      }
+    });
+  }, []);
 
   return (
     <>
