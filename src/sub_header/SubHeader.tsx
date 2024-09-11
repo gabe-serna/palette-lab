@@ -11,6 +11,7 @@ const SubHeader = ({ colors, setColors }: Props) => {
       <h1>Sub Header</h1>
       <button
         className="mx-2 border border-green-500"
+        tabIndex={-1}
         onClick={() => {
           const isMaxLength = colors.length + 1 > 10 ? true : false;
           if (isMaxLength) return;
@@ -22,6 +23,7 @@ const SubHeader = ({ colors, setColors }: Props) => {
       </button>
       <button
         className="border border-red-500"
+        tabIndex={-1}
         onClick={() => {
           const isMinLength = colors.length - 1 < 3 ? true : false;
           if (isMinLength) return;

@@ -7,13 +7,22 @@ function App() {
   const [colors, setColors] = useState(generateColors(3));
 
   useEffect(() => {
-    window.addEventListener("keydown", event => {
+    const randomizeColors = (event: KeyboardEvent) => {
       if (event.key === " ") {
-        const length = colors.length - 1;
-        setColors(generateColors(length));
-        console.log("randomize");
+        setColors(prevColors => {
+          console.log("prev colors", prevColors);
+          const length = prevColors.length;
+          const newColors = generateColors(length);
+          console.log("new colors", newColors);
+          return newColors;
+        });
       }
-    });
+    };
+
+    window.addEventListener("keydown", randomizeColors);
+    return () => {
+      window.removeEventListener("keydown", randomizeColors);
+    };
   }, []);
 
   return (
