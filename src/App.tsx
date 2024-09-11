@@ -10,10 +10,8 @@ function App() {
     const randomizeColors = (event: KeyboardEvent) => {
       if (event.key === " ") {
         setColors(prevColors => {
-          console.log("prev colors", prevColors);
           const length = prevColors.length;
           const newColors = generateColors(length);
-          console.log("new colors", newColors);
           return newColors;
         });
       }
