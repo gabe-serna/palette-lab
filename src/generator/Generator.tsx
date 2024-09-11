@@ -1,9 +1,22 @@
+import Color from "./Color";
+
 interface Props {
-  cols: number;
+  colors: number;
 }
 
-const Generator = ({ cols }: Props) => {
-  return <h1>{cols}</h1>;
+const Generator = ({ colors }: Props) => {
+  return (
+    <>
+      <div className="flex flex-col w-full h-full md:flex-row">
+        {Array.from({ length: colors }).map((_, index) => (
+          <Color
+            key={index}
+            color={Math.floor(Math.random() * 16777215).toString(16)}
+          />
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Generator;

@@ -3,7 +3,7 @@ import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
 
 function App() {
-  const [amountOfColumns, setAmountOfColumns] = useState(2);
+  const [colors, setColors] = useState(3);
 
   return (
     <>
@@ -12,10 +12,10 @@ function App() {
           <h1>App Name</h1>
         </div>
         <div className="flex items-center row-span-1 row-start-3 border border-white md:row-start-2">
-          <SubHeader cols={amountOfColumns} setCols={setAmountOfColumns} />
+          <SubHeader colors={colors} setColors={setColors} />
         </div>
         <div className="row-span-1 row-start-2 border border-white md:row-start-3">
-          <Generator cols={amountOfColumns} />
+          <Generator colors={colors} />
         </div>
       </div>
     </>
