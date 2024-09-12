@@ -35,7 +35,7 @@ const Color = ({ color }: Props) => {
   return (
     <div
       style={{ backgroundColor: `#${color}` }}
-      className={`flex justify-center items-end pb-28 w-full h-full`}
+      className={`flex justify-center items-center w-full h-full`}
     >
       {!isFetching && (
         <div className="flex flex-col items-center">
@@ -44,7 +44,7 @@ const Color = ({ color }: Props) => {
           </h1>
           <p
             style={{ color: textColor }}
-            className="text-sm italic font-light opacity-60"
+            className="text-sm italic font-light opacity-70"
           >
             {colorName}
           </p>

@@ -8,7 +8,7 @@ interface Props {
 const SubHeader = ({ colors, setColors }: Props) => {
   return (
     <>
-      <h1>Sub Header</h1>
+      <h1>Press the spacebar to generate color palettes!</h1>
       <button
         className="mx-2 border border-green-500"
         tabIndex={-1}
