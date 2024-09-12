@@ -7,7 +7,7 @@ interface Props {
 const Generator = ({ colors = [] }: Props) => {
   return (
     <>
-      <div className="flex flex-col w-full h-full md:flex-row">
+      <div className="flex flex-row w-full h-full md:flex-col">
         {colors.map((color, index) => (
           <Color key={index} color={color} />
         ))}
