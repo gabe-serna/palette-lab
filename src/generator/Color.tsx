@@ -1,6 +1,5 @@
 import { getTextColor } from "../utils/getTextColor";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import Lock from "./Lock";
 
 interface Props {
   color: string;
@@ -8,46 +7,17 @@ interface Props {
 
 const Color = ({ color }: Props) => {
   const textColor = getTextColor(color);
-  const [colorName, setColorName] = useState("");
-  const [isFetching, setIsFetching] = useState(false);
-
-  useEffect(() => {
-    setIsFetching(true);
-    const getColorName = (color: string) => {
-      axios
-        .get(`https://www.thecolorapi.com/id?hex=${color}`)
-        .then(res => {
-          const name = res.data.name.value as string;
-          setColorName(name);
-          setIsFetching(false);
-          return;
-        })
-        .catch(err => {
-          console.error(err);
-          setColorName("Color");
-          setIsFetching(false);
-          return;
-        });
-    };
-
-    getColorName(color);
-  }, [color]);
   return (
     <div
       style={{ backgroundColor: `#${color}` }}
-      className={`flex justify-center items-center w-full h-full`}
+      className={`flex group justify-start px-2 items-center w-4/5 h-10 rounded-lg`}
     >
-      {!isFetching && (
-        <div className="flex flex-col items-center">
-          <h1 style={{ color: textColor }} className="mb-2 text-3xl">
+      {textColor && (
+        <div className="flex justify-between w-full">
+          <h1 style={{ color: textColor }} className="text-xl">
             {color}
           </h1>
-          <p
-            style={{ color: textColor }}
-            className="text-sm italic font-light opacity-70"
-          >
-            {colorName}
-          </p>
+          <Lock />
         </div>
       )}
     </div>

@@ -13,7 +13,7 @@ const SubHeader = ({ colors, setColors }: Props) => {
         className="mx-2 border border-green-500"
         tabIndex={-1}
         onClick={() => {
-          const isMaxLength = colors.length + 1 > 10 ? true : false;
+          const isMaxLength = colors.length + 1 > 6 ? true : false;
           if (isMaxLength) return;
           const newColor = generateColor();
           setColors([...colors, newColor]);
