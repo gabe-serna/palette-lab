@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-const Lock = () => {
+interface Props {
+  color: string;
+}
+
+const Lock = ({ color }: Props) => {
   const [isLocked, setIsLocked] = useState(false);
   const classes = !isLocked ? "opacity-0 group-hover:opacity-50" : "opacity-100";
 
@@ -8,7 +12,10 @@ const Lock = () => {
     <button
       className={"transition-opacity size-7 " + classes}
       type="button"
-      onClick={() => setIsLocked(prevState => !prevState)}
+      onClick={() => {
+        setIsLocked(prevState => !prevState);
+        console.log(color);
+      }}
     >
       {!isLocked && (
         <svg

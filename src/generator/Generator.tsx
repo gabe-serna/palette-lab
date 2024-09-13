@@ -1,10 +1,10 @@
+import { useContext } from "react";
+import { ColorContext } from "../ColorProvider";
 import Color from "./Color";
 
-interface Props {
-  colors: string[];
-}
-
-const Generator = ({ colors = [] }: Props) => {
+const Generator = () => {
+  const context = useContext(ColorContext);
+  const { colors } = context!;
   return (
     <>
       <div className="flex flex-row items-center w-full h-full gap-2 pt-8 md:flex-col">

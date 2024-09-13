@@ -17,7 +17,7 @@ const Color = ({ color }: Props) => {
           <h1 style={{ color: textColor }} className="text-xl">
             {color}
           </h1>
-          <Lock />
+          <Lock color={color} />
         </div>
       )}
     </div>

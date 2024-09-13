@@ -1,18 +1,19 @@
+import { useContext } from "react";
 import { generateColor } from "../utils/generateColor";
+import { ColorContext } from "../ColorProvider";
 
-interface Props {
-  colors: string[];
-  setColors: React.Dispatch<React.SetStateAction<string[]>>;
-}
+const SubHeader = () => {
+  const context = useContext(ColorContext);
+  const { colors, setColors } = context!;
 
-const SubHeader = ({ colors, setColors }: Props) => {
   return (
     <>
       <h1>Press the spacebar to generate color palettes!</h1>
       <button
-        className="mx-2 border border-green-500"
+        className="z-10 mx-2 border border-green-500"
         tabIndex={-1}
         onClick={() => {
+          console.log("clicked add");
           const isMaxLength = colors.length + 1 > 6 ? true : false;
           if (isMaxLength) return;
           const newColor = generateColor();
@@ -22,9 +23,11 @@ const SubHeader = ({ colors, setColors }: Props) => {
         Add Column
       </button>
       <button
-        className="border border-red-500"
+        className="z-10 border border-red-500"
         tabIndex={-1}
         onClick={() => {
+          console.log("clicked remove");
+
           const isMinLength = colors.length - 1 < 3 ? true : false;
           if (isMinLength) return;
           const newColors = [...colors];

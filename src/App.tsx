@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
 import { generateColors } from "./utils/generateColor";
 import Main from "./main/Main";
+import { ColorContext } from "./ColorProvider";
 
 function App() {
-  const [colors, setColors] = useState(generateColors(3));
+  const context = useContext(ColorContext);
+  const { setColors } = context!;
 
   useEffect(() => {
     const randomizeColors = (event: KeyboardEvent) => {
@@ -31,13 +33,13 @@ function App() {
           <h1 className="text-xl">Palette Lab</h1>
         </div>
         <nav className="flex items-center justify-center row-span-1 row-start-1 px-4 py-2 border border-white md:col-span-1 md:col-start-2">
-          <SubHeader colors={colors} setColors={setColors} />
+          <SubHeader />
         </nav>
         <main className="row-start-2 md:col-start-2">
           <Main />
         </main>
         <aside className="row-span-1 row-start-3 border border-white md:col-span-1 md:col-start-1 md:row-start-2">
-          <Generator colors={colors} />
+          <Generator />
         </aside>
       </div>
     </>
