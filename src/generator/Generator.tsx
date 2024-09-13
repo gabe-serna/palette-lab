@@ -12,10 +12,10 @@ const Generator = () => {
   const labels = [
     "Background",
     "Foreground",
-    "Accent",
     "Primary",
-    "Secondary",
-    "Tertiary"
+    "Accent",
+    "Accent 2",
+    "Accent 3"
   ];
 
   return (
