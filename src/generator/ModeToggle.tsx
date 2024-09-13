@@ -30,7 +30,7 @@ const AddColor = () => {
             <Sun className="transition-all scale-0 rotate-0 size-6 dark:scale-100" />
           </Button>
         </TooltipTrigger>
-        <TooltipContent side="right">
+        <TooltipContent>
           {isDark && <p>Toggle Light Mode</p>}
           {!isDark && <p>Toggle Dark Mode</p>}
         </TooltipContent>
