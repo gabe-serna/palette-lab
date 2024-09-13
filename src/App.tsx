@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
-import { generateColors } from "./utils/generateColor";
+import { generateColor } from "./utils/generateColor";
 import Main from "./main/Main";
 import { ColorContext } from "./ColorProvider";
 import { ThemeProvider } from "./components/theme-provider";
@@ -14,8 +14,11 @@ function App() {
     const randomizeColors = (event: KeyboardEvent) => {
       if (event.key === " ") {
         setColors(prevColors => {
-          const length = prevColors.length;
-          const newColors = generateColors(length);
+          const newColors = prevColors.map(color => {
+            if (color.locked) return color;
+            const newColor = generateColor();
+            return { ...color, color: newColor.color };
+          });
           return newColors;
         });
       }

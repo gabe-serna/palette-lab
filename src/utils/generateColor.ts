@@ -1,21 +1,23 @@
+import { SelectedColorType } from "@/ColorProvider";
+
 export const generateColor = () => {
   const color = hslToHex(
     randomInt(0, 360),
     randomInt(42, 98),
     randomInt(40, 90)
   ).toUpperCase();
-  return color;
+  return { color: color, locked: false };
 };
 
 export const generateColors = (amount = 1) => {
-  const colors: string[] = [];
+  const colors: SelectedColorType[] = [];
   Array.from({ length: amount }).forEach(() => {
     const color = hslToHex(
       randomInt(0, 360),
       randomInt(42, 98),
       randomInt(40, 90)
     ).toUpperCase();
-    colors.push(color);
+    colors.push({ color: color, locked: false });
   });
   return colors;
 };

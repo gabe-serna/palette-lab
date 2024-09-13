@@ -1,9 +1,14 @@
 import { createContext, ReactNode, useState } from "react";
 import { generateColors } from "./utils/generateColor";
 
+export interface SelectedColorType {
+  color: string;
+  locked: boolean;
+}
+
 export interface ColorContextType {
-  colors: string[];
-  setColors: React.Dispatch<React.SetStateAction<string[]>>;
+  colors: SelectedColorType[];
+  setColors: React.Dispatch<React.SetStateAction<SelectedColorType[]>>;
 }
 export const ColorContext = createContext<ColorContextType | undefined>(undefined);
 
@@ -12,7 +17,7 @@ interface ColorProviderProps {
 }
 
 export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
-  const [colors, setColors] = useState<string[]>(generateColors(3));
+  const [colors, setColors] = useState<SelectedColorType[]>(generateColors(3));
 
   return (
     <ColorContext.Provider value={{ colors, setColors }}>

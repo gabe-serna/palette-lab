@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { ColorContext } from "@/ColorProvider";
+import { useContext, useState } from "react";
 
 interface Props {
   color: string;
 }
 
 const Lock = ({ color }: Props) => {
+  const context = useContext(ColorContext);
+  const { colors, setColors } = context!;
+
   const [isLocked, setIsLocked] = useState(false);
   const classes = !isLocked ? "opacity-0 group-hover:opacity-50" : "opacity-100";
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -18,6 +22,14 @@ const Lock = ({ color }: Props) => {
         const target = event.currentTarget as HTMLButtonElement;
         target.blur();
         setIsLocked(prevState => !prevState);
+
+        const newColors = colors.map(color => {
+          if (color.color === lockColor) {
+            return { ...color, locked: !color.locked };
+          }
+          return color;
+        });
+        setColors(newColors);
       }}
     >
       {!isLocked && (
