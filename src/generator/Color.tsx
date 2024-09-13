@@ -3,23 +3,27 @@ import Lock from "./Lock";
 
 interface Props {
   color: string;
+  label: string;
 }
 
-const Color = ({ color }: Props) => {
+const Color = ({ color, label }: Props) => {
   const textColor = getTextColor(color);
   return (
-    <div
-      style={{ backgroundColor: `#${color}` }}
-      className={`flex group justify-start px-2 items-center w-4/5 h-10 rounded-lg`}
-    >
-      {textColor && (
-        <div className="flex items-center justify-between w-full">
-          <h1 style={{ color: textColor }} className="text-xl">
-            {color}
-          </h1>
-          <Lock color={color} />
-        </div>
-      )}
+    <div className="flex flex-col w-full mb-2">
+      <div
+        style={{ backgroundColor: `#${color}` }}
+        className={`flex w-full group justify-start px-2 items-center w-4/5 h-10 rounded-lg`}
+      >
+        {textColor && (
+          <div className="flex items-center justify-between w-full">
+            <h1 style={{ color: textColor }} className="text-xl">
+              {color}
+            </h1>
+            <Lock color={color} />
+          </div>
+        )}
+      </div>
+      <h1 className="pl-1 text-sm italic">{label}</h1>
     </div>
   );
 };
