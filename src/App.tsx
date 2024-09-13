@@ -4,6 +4,7 @@ import SubHeader from "./sub_header/SubHeader";
 import { generateColors } from "./utils/generateColor";
 import Main from "./main/Main";
 import { ColorContext } from "./ColorProvider";
+import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
   const context = useContext(ColorContext);
@@ -27,8 +28,8 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div className="grid md:grid-rows-[3.75rem_calc(100vh-3.75rem)] md:grid-cols-[15rem_calc(100vw-15rem)] grid-rows-[3.75rem_calc(100vh-3.75rem-3.5rem)_3.5rem]">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="grid bg-background md:grid-rows-[3.75rem_calc(100vh-3.75rem)] md:grid-cols-[15rem_calc(100vw-15rem)] grid-rows-[3.75rem_calc(100vh-3.75rem-3.5rem)_3.5rem]">
         <div className="items-center justify-center hidden border border-white md:col-span-1 md:col-start-1 md:row-span-1 md:row-start-1 md:flex">
           <h1 className="text-xl">Palette Lab</h1>
         </div>
@@ -42,7 +43,7 @@ function App() {
           <Generator />
         </aside>
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
