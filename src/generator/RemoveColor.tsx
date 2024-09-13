@@ -1,35 +1,35 @@
-import { PlusCircle } from "lucide-react";
+import { MinusCircle } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
 } from "@/components/ui/tooltip";
-import { generateColor } from "@/utils/generateColor";
 import { useContext } from "react";
 import { ColorContext } from "@/ColorProvider";
 
 const AddColor = () => {
   const context = useContext(ColorContext);
   const { colors, setColors } = context!;
+  const hideIfMinLength = colors.length === 3 ? "invisible" : "visible";
 
-  const hideIfMaxLength = colors.length === 6 ? "invisible" : "visible";
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger
-          className={hideIfMaxLength}
+          className={hideIfMinLength}
           onClick={event => {
             const target = event.currentTarget as HTMLButtonElement;
             target.blur();
-            const newColor = generateColor();
-            setColors([...colors, newColor]);
+            const newColors = [...colors];
+            newColors.pop();
+            setColors(newColors);
           }}
         >
-          <PlusCircle />
+          <MinusCircle />
         </TooltipTrigger>
-        <TooltipContent side="right">
-          <p>Add a Color</p>
+        <TooltipContent side="left">
+          <p>Remove a Color</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

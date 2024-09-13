@@ -7,14 +7,17 @@ interface Props {
 const Lock = ({ color }: Props) => {
   const [isLocked, setIsLocked] = useState(false);
   const classes = !isLocked ? "opacity-0 group-hover:opacity-50" : "opacity-100";
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const lockColor = color;
 
   return (
     <button
-      className={"transition-opacity size-7 " + classes}
+      className={"transition-opacity size-6 " + classes}
       type="button"
-      onClick={() => {
+      onClick={event => {
+        const target = event.currentTarget as HTMLButtonElement;
+        target.blur();
         setIsLocked(prevState => !prevState);
-        console.log(color);
       }}
     >
       {!isLocked && (

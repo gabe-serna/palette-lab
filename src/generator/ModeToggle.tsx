@@ -16,18 +16,21 @@ const AddColor = () => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button
+            className="border-0 hover:bg-transparent"
             variant="outline"
             size="icon"
-            onClick={() => {
+            onClick={event => {
+              const target = event.currentTarget as HTMLButtonElement;
+              target.blur();
               if (isDark) setTheme("light");
               else setTheme("dark");
             }}
           >
-            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-0 transition-all dark:scale-100" />
+            <Moon className="absolute transition-all scale-100 rotate-0 size-6 dark:-rotate-90 dark:scale-0" />
+            <Sun className="transition-all scale-0 rotate-0 size-6 dark:scale-100" />
           </Button>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent side="right">
           {isDark && <p>Toggle Light Mode</p>}
           {!isDark && <p>Toggle Dark Mode</p>}
         </TooltipContent>
