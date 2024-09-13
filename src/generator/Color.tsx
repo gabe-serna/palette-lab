@@ -12,7 +12,7 @@ const Color = ({ color, label }: Props) => {
     <div className="flex flex-col w-full mb-2">
       <div
         style={{ backgroundColor: `#${color}` }}
-        className={`flex w-full group justify-start px-2 items-center w-4/5 h-10 rounded-lg`}
+        className={`flex w-full group justify-start px-2 items-center h-10 rounded-lg`}
       >
         {textColor && (
           <div className="flex items-center justify-between w-full">

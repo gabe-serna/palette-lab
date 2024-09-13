@@ -1,4 +1,8 @@
-const Main = () => {
+interface Props {
+  setState: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Main = ({ setState }: Props) => {
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full h-full">
@@ -9,6 +13,7 @@ const Main = () => {
         <button
           type="button"
           className=" text-lg mt-16 bg-gradient-to-b from-[#4595D3] to-[hsla(from_#4595D3_h_s_calc(l_*_0.75)_/_0.3)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
+          onClick={() => setState(prev => prev + 1)}
         >
           Press Space
         </button>

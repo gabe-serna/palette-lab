@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
 import { generateColor } from "./utils/generateColor";
@@ -7,28 +7,37 @@ import { ColorContext } from "./ColorProvider";
 import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
+  const [spacebar, setSpacebar] = useState(0);
   const context = useContext(ColorContext);
   const { setColors } = context!;
 
-  useEffect(() => {
-    const randomizeColors = (event: KeyboardEvent) => {
-      if (event.key === " ") {
-        setColors(prevColors => {
-          const newColors = prevColors.map(color => {
-            if (color.locked) return color;
-            const newColor = generateColor();
-            return { ...color, color: newColor.color };
-          });
-          return newColors;
-        });
-      }
-    };
+  const randomizeColors = () => {
+    setColors(prevColors => {
+      const newColors = prevColors.map(color => {
+        if (color.locked) return color;
+        const newColor = generateColor();
+        return { ...color, color: newColor.color };
+      });
+      return newColors;
+    });
+  };
 
-    window.addEventListener("keydown", randomizeColors);
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === " ") randomizeColors();
+    };
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener("keydown", randomizeColors);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  useEffect(() => {
+    randomizeColors();
+    return () => {
+      randomizeColors();
+    };
+  }, [spacebar]);
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -40,7 +49,7 @@ function App() {
           <SubHeader />
         </nav>
         <main className="row-start-2 md:col-start-2">
-          <Main />
+          <Main setState={setSpacebar} />
         </main>
         <aside className="row-span-1 row-start-3 border border-white md:col-span-1 md:col-start-1 md:row-start-2">
           <Generator />
