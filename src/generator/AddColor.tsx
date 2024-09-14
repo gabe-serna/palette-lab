@@ -28,8 +28,8 @@ const AddColor = () => {
         >
           <PlusCircle />
         </TooltipTrigger>
-        <TooltipContent side="right">
-          <p>Add a Color</p>
+        <TooltipContent side="bottom">
+          <p>Add Color</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

@@ -28,8 +28,8 @@ const AddColor = () => {
         >
           <MinusCircle />
         </TooltipTrigger>
-        <TooltipContent side="left">
-          <p>Remove a Color</p>
+        <TooltipContent side="bottom">
+          <p>Remove Color</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
