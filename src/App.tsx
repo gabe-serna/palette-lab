@@ -9,9 +9,10 @@ import { ThemeProvider } from "./components/theme-provider";
 function App() {
   const [spacebar, setSpacebar] = useState(0);
   const context = useContext(ColorContext);
-  const { setColors } = context!;
+  const { setColors, setRedoTree } = context!;
 
   const randomizeColors = () => {
+    setRedoTree([]);
     setColors(prevColors => {
       const newColors = prevColors.map(color => {
         if (color.locked) return color;
@@ -34,9 +35,6 @@ function App() {
 
   useEffect(() => {
     randomizeColors();
-    return () => {
-      randomizeColors();
-    };
   }, [spacebar]);
 
   return (
