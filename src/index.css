@@ -2,41 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  overflow-x: hidden;
-
-  color-scheme: light dark;
-  color: hsl(0, 0%, 90%);
-  background-color: hsl(0, 0%, 14%);
-
-  font-family: "rubik", sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
-  width: 100vw;
-  height: 100vh;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: hsl(208, 37%, 20%);
-    background-color: hsl(240, 100%, 97%);
-  }
-}
-
 @layer base {
   :root {
     --background: 240 100% 91%;
@@ -100,4 +65,45 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  overflow-x: hidden;
+
+  color-scheme: light dark;
+
+  font-family: "rubik", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 10px;
 }
