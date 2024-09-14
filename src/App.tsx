@@ -5,16 +5,27 @@ import { generateNewColors } from "./utils/generateColor";
 import Main from "./main/Main";
 import { ColorContext } from "./ColorProvider";
 import { ThemeProvider } from "./components/theme-provider";
+import { useSearchParams } from "react-router-dom";
 
 function App() {
+  const [, setSearchParams] = useSearchParams();
+
   const context = useContext(ColorContext);
   const { setColors, setRedoTree } = context!;
 
   const randomizeColors = () => {
-    console.log("randomizing colors");
     setRedoTree([]);
     setColors(prevColors => {
-      return generateNewColors(prevColors);
+      const newColors = generateNewColors(prevColors);
+      let colorParams = "";
+      newColors.forEach((color, index) => {
+        colorParams += color.color;
+        if (index !== newColors.length - 1) {
+          colorParams += "-";
+        }
+      });
+      setSearchParams({ colors: colorParams });
+      return newColors;
     });
   };
 

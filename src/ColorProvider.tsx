@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useEffect, useRef, useState } from "react";
-import { defaultColors } from "./utils/generateColor";
+import { defaultColors, generateColor } from "./utils/generateColor";
 import { useLocation } from "react-router-dom";
 
 interface SelectedColorTypeArray {
@@ -28,7 +28,6 @@ interface ColorProviderProps {
 
 export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
   const [colors, setColors] = useState<SelectedColorType[]>(defaultColors);
-  console.log("colors", colors);
   const [undoTree, setUndoTree] = useState<SelectedColorTypeArray[]>([]);
   const [redoTree, setRedoTree] = useState<SelectedColorTypeArray[]>([]);
   const isMounted = useRef(false);
@@ -39,7 +38,16 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const colorParams = queryParams.get("colors");
-    if (colorParams) console.log(colorParams);
+    if (colorParams) {
+      const colorArray = colorParams.split("-");
+      const newArray = colorArray.map(color => {
+        return { color, locked: false };
+      });
+      while (newArray.length < 3) {
+        newArray.push(generateColor());
+      }
+      setColors(newArray);
+    }
   }, [location.search]);
 
   //Undo Logic
