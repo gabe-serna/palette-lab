@@ -1,13 +1,13 @@
 const SubHeader = () => {
   return (
     <div className="relative flex items-center justify-center gap-8 px-4 py-2 size-full">
-      <h1 className="z-30">
+      <h1 className="z-30 font-thin">
         <a href="#">Docs</a>
       </h1>
-      <h1 className="z-30">
+      <h1 className="z-30 font-thin">
         <a href="#">Themes</a>
       </h1>
-      <h1 className="z-30">
+      <h1 className="z-30 font-thin">
         <a href="#">Contact</a>
       </h1>
       <div

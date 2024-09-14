@@ -5,7 +5,7 @@ interface Props {
 const Main = ({ setState }: Props) => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center size-full">
+      <div className="flex flex-col items-center justify-center size-full bg-gradient-to-b from-[hsl(from_#4595D3_h_calc(s_*_0.75)_calc(l_*_.4))] to-[hsl(var(--background))] to-5%">
         <h1 className="text-8xl bg-gradient-to-l from-[#4595D3] from-10% to-[#7D52B3] to-80% bg-clip-text text-transparent z-10">
           Inspiration
         </h1>
