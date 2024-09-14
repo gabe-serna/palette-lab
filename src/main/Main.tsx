@@ -9,7 +9,7 @@ const Main = ({ setState }: Props) => {
         <div className="relative flex justify-center w-full h-32">
           <h1
             style={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
-            className="absolute text-9xl bg-gradient-to-l from-[#4595D3] from-10% to-[#7D52B3] to-80% bg-clip-text text-transparent z-10"
+            className="absolute z-10 text-transparent text-9xl"
           >
             Inspiration
           </h1>
