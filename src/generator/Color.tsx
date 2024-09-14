@@ -19,7 +19,7 @@ const Color = ({ color, label }: Props) => {
             <h1 style={{ color: textColor }} className="text-xl">
               {color}
             </h1>
-            <Lock color={color} />
+            <Lock color={color} bg={textColor} />
           </div>
         )}
       </div>

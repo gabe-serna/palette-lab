@@ -3,15 +3,15 @@ import { useContext, useState } from "react";
 
 interface Props {
   color: string;
+  bg: string;
 }
 
-const Lock = ({ color }: Props) => {
+const Lock = ({ color, bg }: Props) => {
   const context = useContext(ColorContext);
   const { colors, setColors } = context!;
 
   const [isLocked, setIsLocked] = useState(false);
-  const classes = !isLocked ? "opacity-0 group-hover:opacity-50" : "opacity-100";
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const classes = !isLocked ? "opacity-0 group-hover:opacity-40" : "opacity-80";
   const lockColor = color;
 
   return (
@@ -36,6 +36,7 @@ const Lock = ({ color }: Props) => {
         <svg
           id="Layer_2"
           data-name="Layer 2"
+          style={{ stroke: bg }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -49,6 +50,7 @@ const Lock = ({ color }: Props) => {
         <svg
           id="Layer_2"
           data-name="Layer 2"
+          style={{ stroke: bg }}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
