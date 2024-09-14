@@ -1,5 +1,11 @@
 import { SelectedColorType } from "@/ColorProvider";
 
+export const defaultColors: SelectedColorType[] = [
+  { color: "242424", locked: false },
+  { color: "d0d0d0", locked: false },
+  { color: "4595D3", locked: false }
+];
+
 export const generateNewColors = (colors: SelectedColorType[]) => {
   const newColors = colors.map((color, index) => {
     if (color.locked) return color;

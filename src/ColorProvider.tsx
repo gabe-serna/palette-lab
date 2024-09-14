@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useEffect, useRef, useState } from "react";
-import { generateColors } from "./utils/generateColor";
+import { defaultColors } from "./utils/generateColor";
+import { useLocation } from "react-router-dom";
 
 interface SelectedColorTypeArray {
   history: SelectedColorType[];
@@ -26,11 +27,22 @@ interface ColorProviderProps {
 }
 
 export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
-  const [colors, setColors] = useState<SelectedColorType[]>(generateColors(3));
+  const [colors, setColors] = useState<SelectedColorType[]>(defaultColors);
+  console.log("colors", colors);
   const [undoTree, setUndoTree] = useState<SelectedColorTypeArray[]>([]);
   const [redoTree, setRedoTree] = useState<SelectedColorTypeArray[]>([]);
   const isMounted = useRef(false);
 
+  const location = useLocation();
+
+  // Query Params Logic
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const colorParams = queryParams.get("colors");
+    if (colorParams) console.log(colorParams);
+  }, [location.search]);
+
+  //Undo Logic
   useEffect(() => {
     if (!isMounted.current) return;
     setUndoTree(prevUndoTree => {
@@ -46,6 +58,7 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
     });
   }, [colors]);
 
+  //Determine if the page is loaded
   useEffect(() => {
     const handleLoad = () => {
       isMounted.current = true;

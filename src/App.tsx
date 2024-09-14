@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
 import { generateNewColors } from "./utils/generateColor";
@@ -7,11 +7,11 @@ import { ColorContext } from "./ColorProvider";
 import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
-  const [spacebar, setSpacebar] = useState(0);
   const context = useContext(ColorContext);
   const { setColors, setRedoTree } = context!;
 
   const randomizeColors = () => {
+    console.log("randomizing colors");
     setRedoTree([]);
     setColors(prevColors => {
       return generateNewColors(prevColors);
@@ -25,15 +25,21 @@ function App() {
         randomizeColors();
       }
     };
+
+    const handleClick = (event: MouseEvent) => {
+      if (event.target instanceof HTMLElement) {
+        if (event.target.id === "space") {
+          randomizeColors();
+        }
+      }
+    };
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("click", handleClick);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("click", handleClick);
     };
   }, []);
-
-  useEffect(() => {
-    randomizeColors();
-  }, [spacebar]);
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -45,7 +51,7 @@ function App() {
           <SubHeader />
         </nav>
         <main className="row-span-2 row-start-1 md:col-start-2">
-          <Main setState={setSpacebar} />
+          <Main />
         </main>
         <aside className="fixed w-[15rem] h-screen bottom-0 row-span-1 row-start-3 md:col-span-1 md:col-start-1 md:row-start-1 md:row-span-2">
           <Generator />

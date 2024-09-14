@@ -1,8 +1,4 @@
-interface Props {
-  setState: React.Dispatch<React.SetStateAction<number>>;
-}
-
-const Main = ({ setState }: Props) => {
+const Main = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center size-full bg-gradient-to-b from-[hsl(from_#4595D3_h_calc(s_*_0.75)_calc(l_*_.4))] to-[hsl(var(--background))] to-5%">
@@ -20,8 +16,8 @@ const Main = ({ setState }: Props) => {
         <h2 className="z-10 mt-4 text-4xl">at the press of a button</h2>
         <button
           type="button"
+          id="space"
           className=" text-lg mt-16 bg-gradient-to-b from-[#4595D3] to-[hsla(from_#4595D3_h_s_calc(l_*_0.75)_/_0.3)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
-          onClick={() => setState(prev => prev + 1)}
         >
           Press Space
         </button>
