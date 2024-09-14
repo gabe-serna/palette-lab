@@ -1,5 +1,55 @@
 import { SelectedColorType } from "@/ColorProvider";
 
+export const generateNewColors = (colors: SelectedColorType[]) => {
+  const newColors = colors.map((color, index) => {
+    if (color.locked) return color;
+    switch (index) {
+      case 0:
+        return generateColorByType("Background");
+
+      case 1:
+        return generateColorByType("Foreground");
+
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      default:
+        return generateColorByType("Accent");
+    }
+  });
+  return newColors;
+};
+
+function generateColorByType(type: "Background" | "Foreground" | "Accent") {
+  switch (type) {
+    case "Background": {
+      const color = hslToHex(
+        randomInt(0, 360),
+        randomInt(42, 98),
+        randomInt(5, 10)
+      ).toUpperCase();
+      return { color: color, locked: false };
+    }
+    case "Foreground": {
+      const color = hslToHex(
+        randomInt(0, 360),
+        randomInt(5, 15),
+        randomInt(70, 82)
+      ).toUpperCase();
+      return { color: color, locked: false };
+    }
+    case "Accent": {
+      const color = hslToHex(
+        randomInt(0, 360),
+        randomInt(42, 98),
+        randomInt(40, 60)
+      ).toUpperCase();
+      return { color: color, locked: false };
+    }
+  }
+}
+
 export const generateColor = () => {
   const color = hslToHex(
     randomInt(0, 360),

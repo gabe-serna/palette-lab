@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
-import { generateColor } from "./utils/generateColor";
+import { generateNewColors } from "./utils/generateColor";
 import Main from "./main/Main";
 import { ColorContext } from "./ColorProvider";
 import { ThemeProvider } from "./components/theme-provider";
@@ -14,12 +14,7 @@ function App() {
   const randomizeColors = () => {
     setRedoTree([]);
     setColors(prevColors => {
-      const newColors = prevColors.map(color => {
-        if (color.locked) return color;
-        const newColor = generateColor();
-        return { ...color, color: newColor.color };
-      });
-      return newColors;
+      return generateNewColors(prevColors);
     });
   };
 
