@@ -8,7 +8,7 @@ const Main = ({ setState }: Props) => {
       <div className="flex flex-col items-center justify-center size-full bg-gradient-to-b from-[hsl(from_#4595D3_h_calc(s_*_0.75)_calc(l_*_.4))] to-[hsl(var(--background))] to-5%">
         <div className="relative flex justify-center w-full h-32">
           <h1
-            style={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+            style={{ textShadow: "3px 3px 10px rgba(0, 0, 0, 0.5)" }}
             className="absolute z-10 text-transparent text-9xl"
           >
             Inspiration
