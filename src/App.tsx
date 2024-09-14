@@ -25,7 +25,10 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === " ") randomizeColors();
+      if (event.key === " ") {
+        event.preventDefault();
+        randomizeColors();
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => {
