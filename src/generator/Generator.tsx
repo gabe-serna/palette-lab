@@ -24,7 +24,8 @@ const Generator = () => {
     <div
       id="aside-container"
       style={{
-        boxShadow: "10px 0 40px -5px hsl(from #4595D3 h calc(s * 0.75) calc(l * .4))"
+        boxShadow:
+          "10px 0 40px -5px hsl(from hsl(var(--primary)) h calc(s * 0.75) calc(l * .4))"
       }}
       className="flex flex-col justify-between w-full h-full pt-[3.75rem]"
     >
