@@ -12,7 +12,7 @@ const BasicInfo = ({ className }: Props) => {
           </span>{" "}
           <div className="relative z-10 inline">
             Color
-            <div className="absolute -top-16 -left-10 size-[250%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--secondary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rotate-12 -z-10" />
+            <div className="absolute -top-20 -left-16 size-[300%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--secondary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rotate-12 -z-10" />
           </div>{" "}
           Creation.
         </h1>
