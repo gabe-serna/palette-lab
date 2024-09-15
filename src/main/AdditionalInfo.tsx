@@ -24,8 +24,11 @@ const Hero = ({ className }: Props) => {
         </h1>
         <div id="additional-info" className="z-10 flex gap-6 mt-16">
           <figure
-            style={{ boxShadow: "0px 0px 10px hsl(var(--primary))" }}
-            className="overflow-hidden w-72 h-96 bg-background rounded-2xl grid grid-rows-[6fr_4fr]"
+            style={{
+              boxShadow:
+                "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))"
+            }}
+            className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
             <div className="flex flex-col items-center my-auto">
               <PaintBucket
@@ -44,8 +47,11 @@ const Hero = ({ className }: Props) => {
           </figure>
           {/*  */}
           <figure
-            style={{ boxShadow: "0px 0px 10px hsl(var(--primary))" }}
-            className="overflow-hidden w-72 h-96 bg-background rounded-2xl grid grid-rows-[6fr_4fr]"
+            style={{
+              boxShadow:
+                "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))"
+            }}
+            className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
             <div className="flex flex-col items-center my-auto">
               <ArrowLeftRight
@@ -64,8 +70,11 @@ const Hero = ({ className }: Props) => {
           </figure>
           {/*  */}
           <figure
-            style={{ boxShadow: "0px 0px 10px hsl(var(--primary))" }}
-            className="overflow-hidden w-72 h-96 bg-background rounded-2xl grid grid-rows-[6fr_4fr]"
+            style={{
+              boxShadow:
+                "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))"
+            }}
+            className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
             <div className="flex flex-col items-center my-auto">
               <Download
