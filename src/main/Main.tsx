@@ -17,7 +17,7 @@ const Main = () => {
         <button
           type="button"
           id="space"
-          className=" text-lg mt-16 bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.3)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
+          className=" text-lg mt-16 bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.5)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
         >
           Press Space
         </button>

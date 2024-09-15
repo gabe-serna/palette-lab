@@ -34,7 +34,7 @@ function generateColorByType(type: "Background" | "Foreground" | "Accent") {
       const color = hslToHex(
         randomInt(0, 360),
         randomInt(42, 98),
-        randomInt(5, 10)
+        randomInt(2, 7)
       ).toUpperCase();
       return { color: color, locked: false };
     }

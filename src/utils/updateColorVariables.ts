@@ -13,6 +13,11 @@ const updateColorVariables = (colors: SelectedColorType[]) => {
   const root = document.documentElement;
   colors.forEach((color, index) => {
     const HSL = hexToHSL(color.color);
+    if (index === colors.length - 1 || index === 2) {
+      root.style.setProperty(`--${labels[index]}`, HSL);
+      root.style.setProperty(`--${labels[index + 1]}`, HSL);
+      return;
+    }
     root.style.setProperty(`--${labels[index]}`, HSL);
   });
 };
