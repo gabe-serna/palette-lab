@@ -73,7 +73,25 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
   //Update Color State when Query Params Change
   useEffect(() => {
     if (!isMounted.current) return;
-    setColors(updateColorStateViaParams(location));
+    //Check if the colors in the query params are different from the current colors
+    const queryParams = new URLSearchParams(location.search);
+    const colorParams = queryParams.get("colors")!;
+    const colorArray = colorParams.split("-");
+    const isMatching = colors.some((color, index) => {
+      if (color.color !== colorArray[index]) return false;
+      else return true;
+    });
+    if (isMatching) return;
+    setColors(prevColors => {
+      const newColors: SelectedColorType[] = [];
+      for (let i = 0; i < colorArray.length; i++) {
+        newColors.push({
+          color: colorArray[i],
+          locked: prevColors[i]?.locked ?? false
+        });
+      }
+      return newColors;
+    });
   }, [location]);
 
   //Determine if the page is loaded

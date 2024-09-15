@@ -12,7 +12,6 @@ const ThemeDisplay = ({ className }: Props) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const ratio = window.scrollY / (window.outerWidth * 1.5);
-          console.log(ratio);
 
           // Themes Top
           let target1 = document.getElementById("themes-top")!;
@@ -59,6 +58,10 @@ const ThemeDisplay = ({ className }: Props) => {
         <ScrollArea id="themes-top" className="rounded-md h-28 whitespace-nowrap">
           <div className="flex p-4 space-x-8 w-max">
             <ThemeCard theme={"08081C-BFBAB5-3A999C-3457CB-CD7860"} name="Icicle" />
+            <ThemeCard
+              theme={"09041B-CECBD7-E24B85-2C65D8-52983E"}
+              name="Starburst"
+            />
             <ThemeCard theme={"120703-D2CBD2-993848-CC995C"} name="Sienna" />
             <ThemeCard
               theme={"0D0902-C9D4C4-5ECAD4-28D258-9EBB11"}
@@ -85,12 +88,9 @@ const ThemeDisplay = ({ className }: Props) => {
               theme={"160916-C2CBCC-E1CF2D-F89130-50DC7F"}
               name="Sweet Tea"
             />
-            <ThemeCard
-              theme={"0D0902-C9D4C4-5ECAD4-28D258-9EBB11"}
-              name="Midnight"
-            />
-            <ThemeCard theme={"170311-C2B3BA-AF3323-E10543-1EBEA0"} name="Scorch" />
-            <ThemeCard theme={"120703-D2CBD2-993848-CC995C"} name="Sienna" />
+            <ThemeCard theme={"1E0C06-BFC5C5-D4AF40-D3805A"} name="Desert" />
+            <ThemeCard theme={"080222-AABBAE-E14323-4667C8-A3D175"} name="Primary" />
+            <ThemeCard theme={"130321-B6BDBE-43E581-751ED2-C7A843"} name="Cyber" />
             <ThemeCard theme={"08081C-BFBAB5-3A999C-3457CB-CD7860"} name="Icicle" />
           </div>
         </ScrollArea>
