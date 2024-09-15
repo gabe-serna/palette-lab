@@ -6,6 +6,7 @@ import {
   TooltipTrigger
 } from "@/components/ui/tooltip";
 import getColorParams from "@/utils/getColorParams";
+import updateColorVariables from "@/utils/updateColorVariables";
 import { Redo } from "lucide-react";
 import { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -23,6 +24,7 @@ const RedoButton = () => {
             if (redoAvailable) {
               const newColors = redoTree[redoTree.length - 1].history;
               setColors(newColors);
+              updateColorVariables(newColors);
               setRedoTree(redoTree.slice(0, redoTree.length - 1));
 
               const colorParams = getColorParams(newColors);

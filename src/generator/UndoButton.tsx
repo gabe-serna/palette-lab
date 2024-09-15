@@ -6,6 +6,7 @@ import {
   TooltipTrigger
 } from "@/components/ui/tooltip";
 import getColorParams from "@/utils/getColorParams";
+import updateColorVariables from "@/utils/updateColorVariables";
 import { Undo } from "lucide-react";
 import { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -24,6 +25,7 @@ const UndoButton = () => {
             if (undoAvailable) {
               const newColors = undoTree[undoTree.length - 2].history;
               setColors(newColors);
+              updateColorVariables(newColors);
               setRedoTree([...redoTree, { history: colors }]);
 
               const colorParams = getColorParams(newColors);

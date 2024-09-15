@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { ColorContext } from "@/ColorProvider";
 import { useSearchParams } from "react-router-dom";
 import getColorParams from "@/utils/getColorParams";
+import updateColorVariables from "@/utils/updateColorVariables";
 
 const AddColor = () => {
   const [, setSearchParams] = useSearchParams();
@@ -30,6 +31,7 @@ const AddColor = () => {
 
             const newColors = [...colors, generateColor()];
             setColors(newColors);
+            updateColorVariables(newColors);
 
             const colorParams = getColorParams(newColors);
             setSearchParams({ colors: colorParams });

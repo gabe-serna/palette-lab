@@ -7,6 +7,7 @@ import { ColorContext } from "./ColorProvider";
 import { ThemeProvider } from "./components/theme-provider";
 import { useSearchParams } from "react-router-dom";
 import getColorParams from "./utils/getColorParams";
+import updateColorVariables from "./utils/updateColorVariables";
 
 function App() {
   const [, setSearchParams] = useSearchParams();
@@ -18,6 +19,7 @@ function App() {
     setRedoTree([]);
     setColors(prevColors => {
       const newColors = generateNewColors(prevColors);
+      updateColorVariables(newColors);
       return newColors;
     });
   };
