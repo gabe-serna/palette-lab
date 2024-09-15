@@ -54,7 +54,11 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
   useEffect(() => {
     if (!isMounted.current) return;
     setUndoTree(prevUndoTree => {
-      if (prevUndoTree[prevUndoTree.length - 2]?.history === colors) {
+      console.log("Adding to Undo Tree");
+      if (
+        prevUndoTree[prevUndoTree.length - 2]?.history === colors ||
+        prevUndoTree[prevUndoTree.length - 1]?.history === colors
+      ) {
         const cleanedUndoTree = [...prevUndoTree.slice(0, prevUndoTree.length - 1)];
         return cleanedUndoTree;
       }

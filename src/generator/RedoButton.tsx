@@ -5,21 +5,28 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from "@/components/ui/tooltip";
+import getColorParams from "@/utils/getColorParams";
 import { Redo } from "lucide-react";
 import { useContext } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const RedoButton = () => {
+  const [, setSearchParams] = useSearchParams();
   const { setColors, redoTree, setRedoTree } = useContext(ColorContext)!;
   const redoAvailable = redoTree.length > 0;
+
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger
           onClick={() => {
             if (redoAvailable) {
-              // setUndoTree([...undoTree, { history: colors }]);
-              setColors(redoTree[redoTree.length - 1].history);
+              const newColors = redoTree[redoTree.length - 1].history;
+              setColors(newColors);
               setRedoTree(redoTree.slice(0, redoTree.length - 1));
+
+              const colorParams = getColorParams(newColors);
+              setSearchParams({ colors: colorParams });
             }
           }}
         >
