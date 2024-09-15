@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useEffect, useRef, useState } from "react";
 import { defaultColors, generateColor } from "./utils/generateColor";
 import { useLocation } from "react-router-dom";
+import updateColorVariables from "./utils/updateColorVariables";
 
 interface SelectedColorTypeArray {
   history: SelectedColorType[];
@@ -39,6 +40,7 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
     while (queryColors.length < 3) {
       queryColors.push(generateColor());
     }
+    updateColorVariables(queryColors);
   }
   const startingColors = queryColors.length > 0 ? queryColors : defaultColors;
   const [colors, setColors] = useState<SelectedColorType[]>(startingColors);
