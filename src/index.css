@@ -41,6 +41,7 @@
     --primary-foreground: 0 0% 9%;
     --secondary: 267 39% 51%;
     --secondary-foreground: 206 62% 55%;
+    --tertiary: 267 39% 51%;
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 63.9%;
     --accent: 267 39% 51%;
@@ -106,4 +107,23 @@ body {
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--muted));
   border-radius: 10px;
+}
+
+.protrusion-div {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.protrusion-div::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Half the size of the circle */
+  /* left: 50%; */
+  transform: translateX(-50%) translateY(-200%);
+  width: 18rem; /* Size of the circle */
+  height: 60px;
+  background-color: hsl(var(--card));
+  border-radius: 50%;
+  z-index: 0;
 }

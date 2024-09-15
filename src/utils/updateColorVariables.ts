@@ -7,7 +7,7 @@ const updateColorVariables = (colors: SelectedColorType[]) => {
     "primary",
     "accent",
     "secondary",
-    "card"
+    "tertiary"
   ];
 
   const root = document.documentElement;
@@ -20,6 +20,28 @@ const updateColorVariables = (colors: SelectedColorType[]) => {
     }
     root.style.setProperty(`--${labels[index]}`, HSL);
   });
+  //Set Darkened Foreground Text Color
+  const textColor = hexToHSL(colors[1].color);
+  const textColors = textColor.split(" ");
+  const l = textColors[2].replace("%", "");
+  const textL = parseInt(l) * 0.75;
+
+  root.style.setProperty(
+    "--primary-foreground",
+    `${textColors[0]} ${textColors[1]} ${textL}%`
+  );
+
+  //Set Card Color
+  const cardColor = hexToHSL(colors[0].color);
+  const cardColors = cardColor.split(" ");
+
+  const s = cardColors[1].replace("%", "");
+  const finalS = parseInt(s) * 0.4;
+
+  const l2 = cardColors[2].replace("%", "");
+  const finalL = parseInt(l2) * 2.5;
+
+  root.style.setProperty("--card", `${cardColors[0]} ${finalS}% ${finalL}%`);
 };
 
 export default updateColorVariables;

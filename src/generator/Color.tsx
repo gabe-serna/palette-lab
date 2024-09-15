@@ -15,7 +15,7 @@ const Color = ({ color, label }: Props) => {
           backgroundColor: `#${color}`,
           border: `1px solid hsl(from ${textColor} h s calc(l * 0.6))`
         }}
-        className={`flex w-full group justify-start px-2 items-center h-10 rounded-lg`}
+        className={`flex w-full group justify-start px-2 items-center h-10 rounded-xl`}
       >
         {textColor && (
           <div className="flex items-center justify-between w-full">

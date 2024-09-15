@@ -85,12 +85,15 @@ const ThemeDisplay = ({ className }: Props) => {
               name="Honeydew"
             />
             <ThemeCard
-              theme={"160916-C2CBCC-E1CF2D-F89130-50DC7F"}
-              name="Sweet Tea"
+              theme={"130321-B6BDBE-43E581-751ED2-C7A843-96C9E8"}
+              name="Cyber"
             />
             <ThemeCard theme={"1E0C06-BFC5C5-D4AF40-D3805A"} name="Desert" />
             <ThemeCard theme={"080222-AABBAE-E14323-4667C8-A3D175"} name="Primary" />
-            <ThemeCard theme={"130321-B6BDBE-43E581-751ED2-C7A843"} name="Cyber" />
+            <ThemeCard
+              theme={"160916-C2CBCC-E1CF2D-F89130-50DC7F"}
+              name="Sweet Tea"
+            />
             <ThemeCard theme={"08081C-BFBAB5-3A999C-3457CB-CD7860"} name="Icicle" />
           </div>
         </ScrollArea>
