@@ -1,8 +1,15 @@
+import { ColorContext } from "@/ColorProvider";
+import { getTextColor } from "@/utils/getTextColor";
+import { useContext } from "react";
+
 interface Props {
   className?: string;
 }
 
 const Hero = ({ className }: Props) => {
+  const context = useContext(ColorContext);
+  const { colors } = context!;
+  const buttonTextColor = getTextColor(colors[2].color);
   return (
     <section className={className}>
       <div className="relative flex justify-center w-full h-32">
@@ -20,6 +27,7 @@ const Hero = ({ className }: Props) => {
       <button
         type="button"
         id="space"
+        style={{ color: buttonTextColor }}
         className=" text-lg mt-16 bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.5)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
       >
         Press Space

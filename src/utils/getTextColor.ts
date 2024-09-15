@@ -10,12 +10,13 @@ export function getTextColor(hexColor: string) {
 
   // Calculate contrast ratio
   const contrast = contrastRatio(whiteLuminance, colorLuminance);
-  const textColor = contrast >= 3.5 ? "#ffffff" : "#242424";
+  const textColor =
+    contrast >= 3.5 ? "hsl(var(--foreground))" : "hsl(var(--background))";
   return textColor;
 }
 
 function hexToRgb(hex: string) {
-  // Remove the leading #
+  // Remove the leading # (if present)
   hex = hex.replace(/^#/, "");
 
   // Parse hex values
