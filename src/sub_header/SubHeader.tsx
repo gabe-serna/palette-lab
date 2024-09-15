@@ -1,8 +1,8 @@
 const SubHeader = () => {
   return (
-    <div className="relative flex items-center justify-center gap-8 px-4 py-2 size-full">
+    <section className="relative flex items-center justify-center gap-8 px-4 py-2 size-full">
       <h1 className="z-30 font-thin">
-        <a href="#">Docs</a>
+        <a href="#">Gallery</a>
       </h1>
       <h1 className="z-30 font-thin">
         <a href="#">Themes</a>
@@ -19,7 +19,7 @@ const SubHeader = () => {
       >
         <div className="absolute size-full backdrop-blur-lg" />
       </div>
-    </div>
+    </section>
   );
 };
 

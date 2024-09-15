@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useRef, useState } from "react";
 import { defaultColors, generateColor } from "./utils/generateColor";
-import { useLocation } from "react-router-dom";
+import { useLocation, Location } from "react-router-dom";
 import updateColorVariables from "./utils/updateColorVariables";
 
 interface SelectedColorTypeArray {
@@ -28,11 +28,12 @@ interface ColorProviderProps {
 }
 
 export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const colorParams = queryParams.get("colors");
-  let queryColors: SelectedColorType[] = [];
-  if (colorParams) {
+  function updateColorStateViaParams(location: Location) {
+    const queryParams = new URLSearchParams(location.search);
+    const colorParams = queryParams.get("colors");
+    let queryColors: SelectedColorType[] = [];
+    if (!colorParams) return queryColors;
+
     const colorArray = colorParams.split("-");
     queryColors = colorArray.map(color => {
       return { color, locked: false };
@@ -41,7 +42,12 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
       queryColors.push(generateColor());
     }
     updateColorVariables(queryColors);
+    return queryColors;
   }
+
+  const location = useLocation();
+  const queryColors = updateColorStateViaParams(location);
+
   const startingColors = queryColors.length > 0 ? queryColors : defaultColors;
   const [colors, setColors] = useState<SelectedColorType[]>(startingColors);
   const [undoTree, setUndoTree] = useState<SelectedColorTypeArray[]>([]);
@@ -63,6 +69,12 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
       return [...prevUndoTree, { history: [...colors] }];
     });
   }, [colors]);
+
+  //Update Color State when Query Params Change
+  useEffect(() => {
+    if (!isMounted.current) return;
+    setColors(updateColorStateViaParams(location));
+  }, [location]);
 
   //Determine if the page is loaded
   useEffect(() => {
