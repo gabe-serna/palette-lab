@@ -81,7 +81,7 @@ const ThemeDisplay = ({ className }: Props) => {
         <ScrollArea id="themes-bottom" className="h-32 rounded-md whitespace-nowrap">
           <div className="flex p-4 space-x-8 w-max">
             <ThemeCard
-              theme={"05191A-B8BEB6-FC782C-AAB71F-FB32A4"}
+              theme={"05191A-BCC0B4-FC782C-AAB71F-FB32A4"}
               name="Honeydew"
             />
             <ThemeCard
