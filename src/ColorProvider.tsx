@@ -27,44 +27,36 @@ interface ColorProviderProps {
 }
 
 export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
-  const [colors, setColors] = useState<SelectedColorType[]>(defaultColors);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const colorParams = queryParams.get("colors");
+  let queryColors: SelectedColorType[] = [];
+  if (colorParams) {
+    const colorArray = colorParams.split("-");
+    queryColors = colorArray.map(color => {
+      return { color, locked: false };
+    });
+    while (queryColors.length < 3) {
+      queryColors.push(generateColor());
+    }
+  }
+  const startingColors = queryColors.length > 0 ? queryColors : defaultColors;
+  const [colors, setColors] = useState<SelectedColorType[]>(startingColors);
   const [undoTree, setUndoTree] = useState<SelectedColorTypeArray[]>([]);
   const [redoTree, setRedoTree] = useState<SelectedColorTypeArray[]>([]);
   const isMounted = useRef(false);
-
-  const location = useLocation();
-
-  // Query Params Logic
-  useEffect(() => {
-    const queryParams = new URLSearchParams(location.search);
-    const colorParams = queryParams.get("colors");
-    if (colorParams) {
-      const colorArray = colorParams.split("-");
-      const newArray = colorArray.map(color => {
-        return { color, locked: false };
-      });
-      while (newArray.length < 3) {
-        newArray.push(generateColor());
-      }
-      setColors(newArray);
-    }
-  }, [location.search]);
 
   //Undo Logic
   useEffect(() => {
     if (!isMounted.current) return;
     setUndoTree(prevUndoTree => {
-      console.log("Adding to Undo Tree");
-      if (
-        prevUndoTree[prevUndoTree.length - 2]?.history === colors ||
-        prevUndoTree[prevUndoTree.length - 1]?.history === colors
-      ) {
+      //If the undo tree is at max capacity, remove the oldest entry
+      if (prevUndoTree.length >= 25) {
+        return [...prevUndoTree.slice(1), { history: [...colors] }];
+      }
+      if (prevUndoTree[prevUndoTree.length - 2]?.history === colors) {
         const cleanedUndoTree = [...prevUndoTree.slice(0, prevUndoTree.length - 1)];
         return cleanedUndoTree;
-      }
-      if (prevUndoTree.length >= 25) {
-        const cleanedUndoTree = [...prevUndoTree.slice(1)];
-        return [...cleanedUndoTree, { history: [...colors] }];
       }
       return [...prevUndoTree, { history: [...colors] }];
     });

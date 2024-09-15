@@ -6,28 +6,26 @@ import Main from "./main/Main";
 import { ColorContext } from "./ColorProvider";
 import { ThemeProvider } from "./components/theme-provider";
 import { useSearchParams } from "react-router-dom";
+import getColorParams from "./utils/getColorParams";
 
 function App() {
   const [, setSearchParams] = useSearchParams();
 
   const context = useContext(ColorContext);
-  const { setColors, setRedoTree } = context!;
+  const { colors, setColors, setRedoTree } = context!;
 
   const randomizeColors = () => {
     setRedoTree([]);
     setColors(prevColors => {
       const newColors = generateNewColors(prevColors);
-      let colorParams = "";
-      newColors.forEach((color, index) => {
-        colorParams += color.color;
-        if (index !== newColors.length - 1) {
-          colorParams += "-";
-        }
-      });
-      setSearchParams({ colors: colorParams });
       return newColors;
     });
   };
+
+  useEffect(() => {
+    const colorParams = getColorParams(colors);
+    setSearchParams({ colors: colorParams });
+  }, [colors]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
