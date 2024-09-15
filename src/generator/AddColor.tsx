@@ -14,7 +14,7 @@ import getColorParams from "@/utils/getColorParams";
 const AddColor = () => {
   const [, setSearchParams] = useSearchParams();
   const context = useContext(ColorContext);
-  const { colors, setColors } = context!;
+  const { colors, setColors, setRedoTree } = context!;
 
   const hideIfMaxLength = colors.length === 6 ? "invisible" : "visible";
 
@@ -26,6 +26,8 @@ const AddColor = () => {
           onClick={event => {
             const target = event.currentTarget as HTMLButtonElement;
             target.blur();
+            setRedoTree([]);
+
             const newColors = [...colors, generateColor()];
             setColors(newColors);
 
