@@ -4,7 +4,7 @@ interface Props {
   className?: string;
 }
 
-const BasicInfo = ({ className }: Props) => {
+const GalleryInfo = ({ className }: Props) => {
   return (
     <div className={className}>
       <GalleryCarousel />
@@ -39,4 +39,4 @@ const BasicInfo = ({ className }: Props) => {
   );
 };
 
-export default BasicInfo;
+export default GalleryInfo;

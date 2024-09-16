@@ -1,12 +1,43 @@
 import { PaintBucket } from "lucide-react";
 import { ArrowLeftRight } from "lucide-react";
 import { Download } from "lucide-react";
+import { useEffect } from "react";
 
 interface Props {
   className?: string;
 }
 
-const Hero = ({ className }: Props) => {
+const AdditionalInfo = ({ className }: Props) => {
+  useEffect(() => {
+    const choose = document.getElementById("outer-choose")!;
+    const adjust = document.getElementById("adjust")!;
+    const exportEl = document.getElementById("export")!;
+
+    choose.classList.add("float-passive");
+    adjust.style.animationDelay = "0.5s";
+    adjust.classList.add("float-passive");
+    exportEl.style.animationDelay = "1s";
+    exportEl.classList.add("float-passive");
+
+    const handleHover = () => {
+      console.log("hovering");
+
+      const child = document.getElementById("choose")!;
+      choose.style.animationIterationCount = "1";
+      child.classList.add("float-up");
+    };
+
+    choose.addEventListener("mousedown", handleHover);
+    adjust.addEventListener("hover", handleHover);
+    exportEl.addEventListener("hover", handleHover);
+
+    return () => {
+      choose.removeEventListener("hover", handleHover);
+      adjust.removeEventListener("hover", handleHover);
+      exportEl.removeEventListener("hover", handleHover);
+    };
+  }, []);
+
   return (
     <section className={className}>
       <div className="relative flex flex-col text-center">
@@ -23,30 +54,34 @@ const Hero = ({ className }: Props) => {
           touch.
         </h1>
         <div id="additional-info" className="z-10 flex gap-6 mt-16">
-          <figure
-            style={{
-              boxShadow:
-                "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))"
-            }}
-            className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
-          >
-            <div className="flex flex-col items-center gap-2 my-auto">
-              <PaintBucket
-                size={48}
-                className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
-              />
-              <figcaption className="text-2xl">Choose Your Colors</figcaption>
-            </div>
-            <div className="w-full px-5 bg-card">
-              <p className="relative z-50 mt-4 text-primary-foreground">
-                Use the perfect amount of colors for your needs. You may select
-                between 3-6 colors.
-              </p>
-              <div className="protrusion-div" />
-            </div>
-          </figure>
+          <div id="outer-choose">
+            <figure
+              id="choose"
+              style={{
+                boxShadow:
+                  "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))"
+              }}
+              className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
+            >
+              <div className="flex flex-col items-center gap-2 my-auto">
+                <PaintBucket
+                  size={48}
+                  className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
+                />
+                <figcaption className="text-2xl">Choose Your Colors</figcaption>
+              </div>
+              <div className="w-full px-5 bg-card">
+                <p className="relative z-50 mt-4 text-primary-foreground">
+                  Use the perfect amount of colors for your needs. You may select
+                  between 3-6 colors.
+                </p>
+                <div className="protrusion-div" />
+              </div>
+            </figure>
+          </div>
           {/*  */}
           <figure
+            id="adjust"
             style={{
               boxShadow:
                 "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))"
@@ -70,6 +105,7 @@ const Hero = ({ className }: Props) => {
           </figure>
           {/*  */}
           <figure
+            id="export"
             style={{
               boxShadow:
                 "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))"
@@ -97,4 +133,4 @@ const Hero = ({ className }: Props) => {
   );
 };
 
-export default Hero;
+export default AdditionalInfo;

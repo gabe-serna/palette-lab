@@ -127,3 +127,45 @@ body {
   border-radius: 50%;
   z-index: 0;
 }
+
+.float-passive {
+  animation: floatUpDown 5s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(7px);
+  }
+  25% {
+    transform: translateY(-7px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+  75% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(7px);
+  }
+}
+
+.float-up {
+  animation: floatUp 1s ease-in-out forwards;
+}
+
+@keyframes floatUp {
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-down {
+  animation: floatDown 2s ease-in-out forwards;
+}
+
+@keyframes floatDown {
+  100% {
+    transform: translateY(-7px);
+  }
+}
