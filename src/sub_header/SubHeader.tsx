@@ -1,6 +1,6 @@
 const SubHeader = () => {
   return (
-    <section className="relative flex items-center justify-center gap-8 px-4 py-2 size-full">
+    <section className="relative z-20 flex items-center justify-center gap-8 px-4 py-2 size-full">
       <h1 className="z-30 font-thin">
         <a href="#">Gallery</a>
       </h1>
@@ -12,8 +12,8 @@ const SubHeader = () => {
       </h1>
       <div
         style={{
-          WebkitMaskImage: "linear-gradient(black 65%, transparent 100%)",
-          maskImage: "linear-gradient(black 65%, transparent 100%)"
+          WebkitMaskImage: "linear-gradient(black 60%, transparent 100%)",
+          maskImage: "linear-gradient(black 60%, transparent 100%)"
         }}
         className="absolute backdrop-blur-lg size-full"
       >
