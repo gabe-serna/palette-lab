@@ -27,13 +27,16 @@ const Hero = ({ className }: Props) => {
       <button
         type="button"
         id="space"
-        style={{ color: buttonTextColor }}
+        style={{
+          boxShadow: "0px -2px 30px -15px hsl(var(--foreground))",
+          color: buttonTextColor
+        }}
         className=" text-lg mt-16 bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.5)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
       >
         Press Space
       </button>
       <div className="absolute top-10 left-60 size-[60%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--accent))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] -rotate-[25deg] z-0" />
-      <div className="absolute top-40 -right-10 size-1/2 bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_60%)] rotate-6 z-0" />
+      <div className="absolute top-36 -right-10 size-1/2 bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_60%)] rotate-6 z-0" />
     </section>
   );
 };

@@ -2,6 +2,7 @@ import AdditionalInfo from "./AdditionalInfo";
 import BasicInfo from "./BasicInfo";
 import GalleryInfo from "./GalleryInfo";
 import Hero from "./Hero";
+import SideNoteDivider from "./SideNoteDivider";
 import ThemeDisplay from "./ThemeDisplay";
 
 const Main = () => {
@@ -11,6 +12,7 @@ const Main = () => {
       <BasicInfo className="flex items-center justify-around px-24 size-full" />
       <ThemeDisplay className="flex flex-col items-center justify-center gap-12 px-24 size-full" />
       <AdditionalInfo className="flex flex-col items-center justify-center gap-12 px-24 size-full bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.1))]" />
+      <SideNoteDivider className="w-full px-24 h-1/2 bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.1))] z-10" />
       <GalleryInfo className="flex items-center justify-around px-24 size-full bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.1))]" />
     </>
   );

@@ -63,12 +63,12 @@ const AdditionalInfo = ({ className }: Props) => {
       const handleHoverMovement = (hoveredElement: HTMLElement) => {
         elements.forEach(el => {
           if (el.element === hoveredElement) return;
-          let differenceX = (event.screenX - el.x) / 45;
+          let differenceX = (event.screenX - el.x) / 40;
           differenceX =
             differenceX > 15 ? 15 : differenceX < -15 ? -15 : differenceX;
-          let differenceY = (event.screenY - el.y) / 45;
+          let differenceY = (event.screenY - el.y) / 40;
           differenceY =
-            differenceY > 20 ? 20 : differenceY < -20 ? -20 : differenceY;
+            differenceY > 15 ? 15 : differenceY < -15 ? -15 : differenceY;
           const keyframes = {
             transform: `translateX(${differenceX}px) translateY(${differenceY}px)`
           };
@@ -136,7 +136,7 @@ const AdditionalInfo = ({ className }: Props) => {
   return (
     <section className={className}>
       <div className="relative flex flex-col text-center">
-        <h1 className="z-10 mt-20 text-7xl">
+        <h1 className="z-10 text-7xl">
           <span className="bg-clip-text text-transparent bg-gradient-to-l from-primary from-10% to-accent to-80%">
             Stunning themes
           </span>
@@ -148,7 +148,7 @@ const AdditionalInfo = ({ className }: Props) => {
           </div>
           touch.
         </h1>
-        <div id="additional-info" className="z-10 flex gap-12 mt-16">
+        <div id="additional-info" className="z-10 flex gap-12 mt-20">
           <figure
             id="choose"
             style={{
