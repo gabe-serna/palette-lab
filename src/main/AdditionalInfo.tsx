@@ -5,9 +5,10 @@ import { useEffect, useRef } from "react";
 
 interface Props {
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const AdditionalInfo = ({ className }: Props) => {
+const AdditionalInfo = ({ className, style }: Props) => {
   const isHovering = useRef(false);
   const baseBoxShadow =
     "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))";
@@ -134,7 +135,7 @@ const AdditionalInfo = ({ className }: Props) => {
   }, []);
 
   return (
-    <section className={className}>
+    <section style={style} className={className}>
       <div className="relative flex flex-col text-center">
         <h1 className="z-10 text-7xl">
           <span className="bg-clip-text text-transparent bg-gradient-to-l from-primary from-10% to-accent to-80%">

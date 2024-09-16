@@ -8,8 +8,6 @@ const SideNoteDivider = ({ className }: Props) => {
       <section className={className}>
         <div
           style={{
-            // boxShadow:
-            //   "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))",
             WebkitMaskImage:
               "linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)",
             maskImage:
@@ -21,7 +19,7 @@ const SideNoteDivider = ({ className }: Props) => {
             style={{
               boxShadow: "0px 0px 30px -10px hsl(var(--tertiary))"
             }}
-            className="flex flex-col items-center justify-center z-10 w-full h-28 bg-background border-y-[1px] border-[hsl(from_hsl(var(--tertiary))_h_calc(l_*_0.8)_calc(l_*_0.8))]"
+            className="flex flex-col items-center justify-center z-10 w-full h-36 bg-background border-y-[1px] border-[hsl(from_hsl(var(--tertiary))_h_calc(l_*_0.8)_calc(l_*_0.8))]"
           >
             <p className="text-xl italic">
               And 100% Free. <div className="inline text-accent">Forever</div>.
