@@ -13,7 +13,7 @@ const GalleryInfo = ({ className }: Props) => {
           Bring Your{" "}
           <div className="relative z-10 inline">
             Colors{" "}
-            <div className="absolute -top-16 -left-32 size-[300%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--secondary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rotate-12 -z-10" />
+            <div className="absolute -top-8 -left-12 size-[200%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--secondary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rotate-12 -z-10" />
           </div>
           into
           <br />

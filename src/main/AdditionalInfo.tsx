@@ -33,7 +33,10 @@ const AdditionalInfo = ({ className }: Props) => {
     const handleMouse = (event: MouseEvent) => {
       const handleHover = (element: HTMLElement) => {
         if (isHovering.current) return;
+
         isHovering.current = true;
+        element.style.boxShadow = hoverBoxShadow;
+
         const hoverKeyframes = {
           transform: "translateX(0px) translateY(-20px) scale(1.01)"
         };
@@ -41,9 +44,11 @@ const AdditionalInfo = ({ className }: Props) => {
           duration: 200,
           fill: "forwards"
         });
-        element.style.boxShadow = hoverBoxShadow;
+
         elements.forEach(el => {
           if (el.element !== element) {
+            el.element.style.opacity = "0.6";
+
             const keyframes = {
               transform: "translateX(0px) translateY(0px)"
             };
@@ -58,10 +63,10 @@ const AdditionalInfo = ({ className }: Props) => {
       const handleHoverMovement = (hoveredElement: HTMLElement) => {
         elements.forEach(el => {
           if (el.element === hoveredElement) return;
-          let differenceX = (event.screenX - el.x) / 40;
+          let differenceX = (event.screenX - el.x) / 45;
           differenceX =
             differenceX > 15 ? 15 : differenceX < -15 ? -15 : differenceX;
-          let differenceY = (event.screenY - el.y) / 40;
+          let differenceY = (event.screenY - el.y) / 45;
           differenceY =
             differenceY > 20 ? 20 : differenceY < -20 ? -20 : differenceY;
           const keyframes = {
@@ -81,6 +86,7 @@ const AdditionalInfo = ({ className }: Props) => {
         cardY: number
       ) => {
         element.style.boxShadow = baseBoxShadow;
+        element.style.opacity = "1";
 
         let differenceX = (event.screenX - cardX) / 30;
         differenceX = differenceX > 15 ? 15 : differenceX < -15 ? -15 : differenceX;
@@ -130,7 +136,7 @@ const AdditionalInfo = ({ className }: Props) => {
   return (
     <section className={className}>
       <div className="relative flex flex-col text-center">
-        <h1 className="z-10 mt-10 text-7xl">
+        <h1 className="z-10 mt-20 text-7xl">
           <span className="bg-clip-text text-transparent bg-gradient-to-l from-primary from-10% to-accent to-80%">
             Stunning themes
           </span>
@@ -147,7 +153,7 @@ const AdditionalInfo = ({ className }: Props) => {
             id="choose"
             style={{
               boxShadow: baseBoxShadow,
-              transition: "box-shadow ease 0.5s"
+              transition: "box-shadow ease 0.5s, opacity ease 0.5s"
             }}
             className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
@@ -173,7 +179,7 @@ const AdditionalInfo = ({ className }: Props) => {
             id="adjust"
             style={{
               boxShadow: baseBoxShadow,
-              transition: "box-shadow ease 0.5s"
+              transition: "box-shadow ease 0.5s, opacity ease 0.5s"
             }}
             className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
@@ -199,7 +205,7 @@ const AdditionalInfo = ({ className }: Props) => {
             id="export"
             style={{
               boxShadow: baseBoxShadow,
-              transition: "box-shadow ease 0.5s"
+              transition: "box-shadow ease 0.5s, opacity ease 0.5s"
             }}
             className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
