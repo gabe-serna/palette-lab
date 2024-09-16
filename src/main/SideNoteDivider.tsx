@@ -13,7 +13,7 @@ const SideNoteDivider = ({ className }: Props) => {
             maskImage:
               "linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)"
           }}
-          className="flex items-center size-full"
+          className="relative z-20 flex items-center size-full"
         >
           <div
             style={{

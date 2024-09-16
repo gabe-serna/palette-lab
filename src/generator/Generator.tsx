@@ -27,7 +27,7 @@ const Generator = () => {
         boxShadow:
           "10px 0 40px -5px hsl(from hsl(var(--primary)) h calc(s * 0.75) calc(l * .4))"
       }}
-      className="flex flex-col justify-between w-full h-full pt-[3.75rem]"
+      className="flex flex-col justify-between w-full h-full pt-[3.75rem] bg-background"
     >
       <div className="flex flex-row items-center w-full gap-2 px-4 pt-8 h-min md:flex-col">
         {colors.map((color, index) => (

@@ -11,7 +11,7 @@ import {
 const GalleryCarousel = () => {
   return (
     <Carousel
-      className="w-full max-w-xs"
+      className="z-20 w-full max-w-xs"
       opts={{
         align: "start",
         loop: true

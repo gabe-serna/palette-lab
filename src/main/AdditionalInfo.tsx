@@ -149,7 +149,7 @@ const AdditionalInfo = ({ className, style }: Props) => {
           </div>
           touch.
         </h1>
-        <div id="additional-info" className="z-10 flex gap-12 mt-20">
+        <div id="additional-info" className="z-20 flex gap-12 mt-20">
           <figure
             id="choose"
             style={{

@@ -55,8 +55,11 @@ const ThemeDisplay = ({ className }: Props) => {
         }}
         className="flex flex-col w-full gap-4"
       >
-        <ScrollArea id="themes-top" className="rounded-md h-28 whitespace-nowrap">
-          <div className="flex p-4 space-x-8 w-max">
+        <ScrollArea
+          id="themes-top"
+          className="relative z-20 rounded-md h-28 whitespace-nowrap"
+        >
+          <div className="z-20 flex p-4 space-x-8 w-max">
             <ThemeCard theme={"08081C-BFBAB5-3A999C-3457CB-CD7860"} name="Icicle" />
             <ThemeCard
               theme={"09041B-CECBD7-E24B85-2C65D8-52983E"}
@@ -79,7 +82,7 @@ const ThemeDisplay = ({ className }: Props) => {
           </div>
         </ScrollArea>
         <ScrollArea id="themes-bottom" className="h-32 rounded-md whitespace-nowrap">
-          <div className="flex p-4 space-x-8 w-max">
+          <div className="z-20 flex p-4 space-x-8 w-max">
             <ThemeCard
               theme={"05191A-BCC0B4-FC782C-AAB71F-FB32A4"}
               name="Honeydew"
