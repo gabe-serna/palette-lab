@@ -1,41 +1,122 @@
 import { PaintBucket } from "lucide-react";
 import { ArrowLeftRight } from "lucide-react";
 import { Download } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface Props {
   className?: string;
 }
 
 const AdditionalInfo = ({ className }: Props) => {
+  const isHovering = useRef(false);
   useEffect(() => {
-    const choose = document.getElementById("outer-choose")!;
+    const choose = document.getElementById("choose")!;
     const adjust = document.getElementById("adjust")!;
     const exportEl = document.getElementById("export")!;
+    const chooseX = choose.getBoundingClientRect().x;
+    const chooseY = choose.getBoundingClientRect().y;
+    const adjustX = adjust.getBoundingClientRect().x;
+    const adjustY = adjust.getBoundingClientRect().y;
+    const exportX = exportEl.getBoundingClientRect().x;
+    const exportY = exportEl.getBoundingClientRect().y;
+    const elements = [
+      { element: choose, x: chooseX, y: chooseY },
+      { element: adjust, x: adjustX, y: adjustY },
+      { element: exportEl, x: exportX, y: exportY }
+    ];
 
-    choose.classList.add("float-passive");
-    adjust.style.animationDelay = "0.5s";
-    adjust.classList.add("float-passive");
-    exportEl.style.animationDelay = "1s";
-    exportEl.classList.add("float-passive");
+    const handleMouse = (event: MouseEvent) => {
+      const handleHover = (element: HTMLElement) => {
+        if (isHovering.current) return;
+        isHovering.current = true;
+        const hoverKeyframes = {
+          transform: "translateX(0px) translateY(-20px) scale(1.01)"
+        };
+        element.animate(hoverKeyframes, {
+          duration: 200,
+          fill: "forwards"
+        });
+        elements.forEach(el => {
+          if (el.element !== element) {
+            const keyframes = {
+              transform: "translateX(0px) translateY(0px)"
+            };
+            el.element.animate(keyframes, {
+              duration: 800,
+              fill: "forwards"
+            });
+          }
+        });
+      };
 
-    const handleHover = () => {
-      console.log("hovering");
+      const handleHoverMovement = (hoveredElement: HTMLElement) => {
+        elements.forEach(el => {
+          if (el.element === hoveredElement) return;
+          let differenceX = (event.screenX - el.x) / 40;
+          differenceX =
+            differenceX > 15 ? 15 : differenceX < -15 ? -15 : differenceX;
+          let differenceY = (event.screenY - el.y) / 40;
+          differenceY =
+            differenceY > 20 ? 20 : differenceY < -20 ? -20 : differenceY;
+          const keyframes = {
+            transform: `translateX(${differenceX}px) translateY(${differenceY}px)`
+          };
 
-      const child = document.getElementById("choose")!;
-      choose.style.animationIterationCount = "1";
-      child.classList.add("float-up");
+          el.element.animate(keyframes, {
+            duration: 800,
+            fill: "forwards"
+          });
+        });
+      };
+
+      const handleMovement = (
+        element: HTMLElement,
+        cardX: number,
+        cardY: number
+      ) => {
+        let differenceX = (event.screenX - cardX) / 30;
+        differenceX = differenceX > 20 ? 20 : differenceX < -20 ? -20 : differenceX;
+        let differenceY = (event.screenY - cardY) / 30;
+        differenceY = differenceY > 20 ? 20 : differenceY < -20 ? -20 : differenceY;
+        const keyframes = {
+          transform: `translateX(${differenceX}px) translateY(${differenceY}px)`
+        };
+
+        element.animate(keyframes, {
+          duration: 800,
+          fill: "forwards"
+        });
+      };
+
+      // Actual Logic
+      const target = event.target as HTMLElement;
+      if (choose.contains(target)) {
+        handleHover(choose);
+        handleHoverMovement(choose);
+        return;
+      }
+
+      if (adjust.contains(target)) {
+        handleHover(adjust);
+        handleHoverMovement(adjust);
+        return;
+      }
+
+      if (exportEl.contains(target)) {
+        handleHover(exportEl);
+        handleHoverMovement(exportEl);
+        return;
+      }
+
+      isHovering.current = false;
+      handleMovement(choose, chooseX, chooseY);
+      handleMovement(adjust, adjustX, adjustY);
+      handleMovement(exportEl, exportX, exportY);
     };
 
-    choose.addEventListener("mousedown", handleHover);
-    adjust.addEventListener("hover", handleHover);
-    exportEl.addEventListener("hover", handleHover);
+    document.addEventListener("mousemove", handleMouse);
 
-    return () => {
-      choose.removeEventListener("hover", handleHover);
-      adjust.removeEventListener("hover", handleHover);
-      exportEl.removeEventListener("hover", handleHover);
-    };
+    return () => {};
   }, []);
 
   return (
