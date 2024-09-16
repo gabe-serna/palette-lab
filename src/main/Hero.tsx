@@ -14,7 +14,7 @@ const Hero = ({ className }: Props) => {
     <section className={className}>
       <div className="relative flex justify-center w-full h-32">
         <h1
-          style={{ textShadow: "3px 3px 10px rgba(0, 0, 0, 0.5)" }}
+          style={{ textShadow: "3px 3px 20px rgba(0, 0, 0, 0.5)" }}
           className="absolute z-10 text-transparent text-9xl"
         >
           Inspiration
@@ -35,8 +35,8 @@ const Hero = ({ className }: Props) => {
       >
         Press Space
       </button>
-      <div className="absolute top-10 left-60 size-[60%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--accent))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] -rotate-[25deg] z-0" />
-      <div className="absolute top-36 -right-10 size-1/2 bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_60%)] rotate-6 z-0" />
+      <div className="absolute top-10 left-24 size-[60%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--accent))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] -rotate-[25deg] z-0" />
+      <div className="absolute top-36 -right-0 size-1/2 bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_60%)] rotate-6 z-0" />
     </section>
   );
 };
