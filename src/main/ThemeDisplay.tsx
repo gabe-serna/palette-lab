@@ -98,9 +98,9 @@ const ThemeDisplay = ({ className }: Props) => {
           </div>
         </ScrollArea>
       </div>
-      <h2 className="text-primary">
-        <a href="#">Discover Themes {">"}</a>
-      </h2>
+      <a href="#" className="text-md text-primary">
+        Discover Themes {">"}
+      </a>
     </section>
   );
 };

@@ -33,7 +33,7 @@ const Hero = ({ className }: Props) => {
             <div className="flex flex-col items-center my-auto">
               <PaintBucket
                 size={48}
-                className="stroke-[hsl(from_hsl(var(--tertiary))_h_s_calc(l_*_0.7))]"
+                className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
               />
               <figcaption className="text-2xl">Choose Your Colors</figcaption>
             </div>
@@ -56,7 +56,7 @@ const Hero = ({ className }: Props) => {
             <div className="flex flex-col items-center my-auto">
               <ArrowLeftRight
                 size={48}
-                className="stroke-[hsl(from_hsl(var(--tertiary))_h_s_calc(l_*_0.7))]"
+                className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
               />
               <figcaption className="text-2xl">Adjust Manually</figcaption>
             </div>
@@ -79,7 +79,7 @@ const Hero = ({ className }: Props) => {
             <div className="flex flex-col items-center my-auto">
               <Download
                 size={48}
-                className="stroke-[hsl(from_hsl(var(--tertiary))_h_s_calc(l_*_0.7))]"
+                className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
               />
               <figcaption className="text-2xl">Export When Finished</figcaption>
             </div>
