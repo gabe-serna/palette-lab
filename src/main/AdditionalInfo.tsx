@@ -19,7 +19,7 @@ const Hero = ({ className }: Props) => {
           <div className="relative z-10 inline">
             your{" "}
             <div className="absolute -top-16 -left-32 size-[300%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--tertiary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rotate-12 -z-10" />
-          </div>{" "}
+          </div>
           touch.
         </h1>
         <div id="additional-info" className="z-10 flex gap-6 mt-16">
@@ -30,7 +30,7 @@ const Hero = ({ className }: Props) => {
             }}
             className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
-            <div className="flex flex-col items-center my-auto">
+            <div className="flex flex-col items-center gap-2 my-auto">
               <PaintBucket
                 size={48}
                 className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
@@ -53,7 +53,7 @@ const Hero = ({ className }: Props) => {
             }}
             className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
-            <div className="flex flex-col items-center my-auto">
+            <div className="flex flex-col items-center gap-2 my-auto">
               <ArrowLeftRight
                 size={48}
                 className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
@@ -76,7 +76,7 @@ const Hero = ({ className }: Props) => {
             }}
             className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
-            <div className="flex flex-col items-center my-auto">
+            <div className="flex flex-col items-center gap-2 my-auto">
               <Download
                 size={48}
                 className="stroke-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.7))]"
