@@ -83,7 +83,7 @@ function App() {
         <div className="z-40 fixed items-center h-[3.75rem] w-[15rem] justify-center hidden md:col-span-1 md:col-start-1 md:row-span-1 md:row-start-1 md:flex">
           <h1 className="text-xl">Palette Lab</h1>
         </div>
-        <nav className="fixed z-30 h-[3.75rem] w-[calc(100vw-15rem-10px)] right-0 row-span-1 row-start-1 md:col-span-1 md:col-start-2">
+        <nav className="fixed z-50 h-[3.75rem] w-[calc(100vw-15rem-10px)] right-0 row-span-1 row-start-1 md:col-span-1 md:col-start-2">
           <SubHeader />
         </nav>
         <main className="relative row-span-2 row-start-1 md:col-start-2">
@@ -94,7 +94,7 @@ function App() {
               maskImage:
                 "linear-gradient(to bottom, black 0%, transparent 20%, transparent 80%, black 100%)"
             }}
-            className="fixed z-10 pointer-events-none bg-background size-full top:0"
+            className="fixed z-40 pointer-events-none bg-background size-full top:0"
           />
           <Main />
         </main>
