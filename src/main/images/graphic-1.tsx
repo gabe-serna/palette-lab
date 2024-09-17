@@ -4,8 +4,9 @@ const Graphic1 = () => {
       version="1.2"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 2500 1667"
-      width="625"
-      height="416"
+      // width="625"
+      // height="416"
+      // style={{ filter: "grayscale(100)" }}
     >
       <defs>
         <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
@@ -18,7 +19,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(182.132,-66.291,66.301,182.16,610.993,868.626)"
         >
-          <stop offset="0.25" stopColor="#888888" />
+          <stop offset="0.25" stopColor="#707070" />
           <stop offset="1" stopColor="hsl(var(--secondary))" stopOpacity="0.2" />
         </linearGradient>
         <linearGradient
@@ -26,12 +27,14 @@ const Graphic1 = () => {
           id="g3"
           x2="1"
           gradientUnits="userSpaceOnUse"
-          gradientTransform="matrix(669.438,-669.438,913.511,913.511,62.831,1355.664)"
+          gradientTransform="matrix(669.438,-669.438,913.511,913.511,62.831,1300.664)"
         >
-          <stop offset="0" stopColor="hsl(var(--background))" stopOpacity="1" />
-          <stop offset=".25" stopColor="#2e2e2e" stopOpacity="1" />
-          <stop offset=".5" stopColor="#606060" stopOpacity="1" />
-          <stop offset=".7" stopColor="#999999" stopOpacity="1" />
+          <stop offset="0" stopColor="#000000" stopOpacity="0" />
+          <stop offset=".2" stopColor="#2e2e2e" stopOpacity="0.2" />
+          <stop offset=".3" stopColor="#2e2e2e" stopOpacity="0.75" />
+          <stop offset=".4" stopColor="#333333" stopOpacity="1" />
+          <stop offset=".55" stopColor="#606060" stopOpacity="1" />
+          <stop offset=".6" stopColor="#999999" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--primary))" stopOpacity="0" />
         </linearGradient>
         <linearGradient
@@ -55,7 +58,7 @@ const Graphic1 = () => {
           <stop offset="1" stopColor="hsl(var(--tertiary))" stopOpacity="1" />
         </linearGradient>
         <linearGradient
-          //Other BG Outline
+          //Main Loop
           id="g6"
           x2="1"
           gradientUnits="userSpaceOnUse"
@@ -64,8 +67,8 @@ const Graphic1 = () => {
           <stop offset="0.3" stopColor="hsl(var(--secondary))" stopOpacity="0" />
           <stop offset=".6" stopColor="hsl(var(--primary))" />
           <stop offset=".7" stopColor="#fafafa" />
-          <stop offset=".8" stopColor="#2e2e2e" />
-          <stop offset=".85" stopColor="hsl(var(--background))" />
+          <stop offset=".8" stopColor="#2e2e2e" stopOpacity="0.4" />
+          <stop offset=".85" stopColor="#000" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           //Inner Loop
@@ -115,39 +118,6 @@ const Graphic1 = () => {
             stopColor="hsl(from hsl(var(--accent)) h s calc(l * 0.8))"
           />
         </linearGradient>
-        <linearGradient
-          //???
-          id="g11"
-          x2="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="matrix(497.869,287.445,-117.895,204.2,446.319,1208.198)"
-        >
-          <stop offset="0" stopColor="hsl(var(--secondary))" />
-          <stop offset=".5" stopColor="#841bad" />
-          <stop offset="1" stopColor="hsl(var(--background))" />
-        </linearGradient>
-        <linearGradient
-          //???
-          id="g12"
-          x2="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="matrix(497.869,287.445,-117.895,204.2,521.902,858.128)"
-        >
-          <stop offset="0" stopColor="hsl(var(--background))" stopOpacity="0" />
-          <stop offset=".5" stopColor="hsl(var(--primary))" stopOpacity="1" />
-          <stop offset="1" stopColor="hsl(var(--accent))" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient
-          //???
-          id="g13"
-          x2="1"
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="matrix(724.438,418.255,-135.64,234.936,1059.308,-298.826)"
-        >
-          <stop offset="0" stopColor="hsl(var(--background))" stopOpacity="0" />
-          <stop offset=".5" stopColor="hsl(var(--primary))" stopOpacity="1" />
-          <stop offset="1" stopColor="hsl(var(--accent))" stopOpacity="1" />
-        </linearGradient>
       </defs>
       <style>
         {`
@@ -170,23 +140,10 @@ const Graphic1 = () => {
       </style>
       <g id="Layer 1">
         <g id="&lt;Clip Group&gt;" clipPath="url(#cp1)">
-          <g id="Background">
-            <path
-              id="&lt;Path&gt;"
-              className="s0"
-              d="m2500 1667h-2500v-1667h2500z"
-            />
-          </g>
           <path
             id="&lt;Path&gt;"
             className="s1"
             d="m-593.7 183.4c0 385.5 312.4 698 697.9 698 385.4 0 697.9-312.5 697.9-698 0-385.6-312.5-698.1-697.9-698.1-385.5 0-697.9 312.5-697.9 698.1z"
-          />
-          <g id="&lt;Group&gt;"></g>
-          <path
-            id="&lt;Path&gt;"
-            className="s2"
-            d="m1879.8 2026.4l-467.7-467.8-502.2-502.2c-121.7-121.8-121.7-322.1 1.8-445.6 123.5-123.6 323.7-123.6 447.3 0l449.3 449.4c123.5 123.5 323.7 123.5 447.2 0 123.5-123.6 123.5-323.9 1.8-445.7l-787.7-787.8h1210v2199.7z"
           />
         </g>
         <path

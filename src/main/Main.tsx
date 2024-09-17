@@ -17,7 +17,7 @@ const Main = () => {
             WebkitMaskImage:
               "linear-gradient(to right, black 0%, transparent 45%, transparent 55%, black 100%)",
             maskImage:
-              "linear-gradient(to right, black 0%, transparent 50%, black 100%)"
+              "linear-gradient(to right, black 0%, transparent 45%, transparent 55%, black 100%)"
           }}
           className="w-full relative z-20 h-24 bg-gradient-to-b from-[hsl(from_hsl(var(--background))_h_calc(s_*_0.8)_calc(l_/_2.5))] to-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.045))]"
         />

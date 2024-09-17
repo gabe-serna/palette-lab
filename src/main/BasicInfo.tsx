@@ -7,7 +7,7 @@ interface Props {
 const BasicInfo = ({ className }: Props) => {
   return (
     <div className={className}>
-      <div className="relative flex flex-col w-1/2">
+      <div className="relative z-10 flex flex-col w-1/2">
         <h1 className="z-10 text-7xl">
           <span className="bg-clip-text text-transparent bg-gradient-to-l from-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.6))] from-10% to-accent to-80%">
             Effortless
@@ -27,7 +27,15 @@ const BasicInfo = ({ className }: Props) => {
           and keep it from randomizing.
         </p>
       </div>
-      <div className="">
+      <div
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)"
+        }}
+        className="w-1/2 -z-10"
+      >
         <Graphic1 />
       </div>
     </div>
