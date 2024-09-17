@@ -11,7 +11,7 @@ export function getTextColor(hexColor: string) {
   // Calculate contrast ratio
   const contrast = contrastRatio(whiteLuminance, colorLuminance);
   const textColor =
-    contrast >= 3.5 ? "hsl(var(--foreground))" : "hsl(var(--background))";
+    contrast >= 4.5 ? "hsl(var(--foreground))" : "hsl(var(--background))";
   return textColor;
 }
 

@@ -30,9 +30,18 @@ const Generator = () => {
       className="flex flex-col justify-between w-full h-full pt-[3.75rem] bg-background"
     >
       <div className="flex flex-row items-center w-full gap-2 px-4 pt-8 h-min md:flex-col">
-        {colors.map((color, index) => (
-          <Color key={index} color={color.color} label={labels[index]} />
-        ))}
+        {colors.map((color, index) => {
+          const isLast = index === colors.length - 1;
+          return (
+            <Color
+              key={index}
+              color={color.color}
+              label={labels[index]}
+              index={index}
+              isLast={isLast}
+            />
+          );
+        })}
         <div className="flex justify-between w-full px-6">
           <AddColor />
           <RemoveColor />
