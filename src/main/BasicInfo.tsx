@@ -1,3 +1,5 @@
+import Graphic1 from "./images/graphic-1";
+
 interface Props {
   className?: string;
 }
@@ -25,11 +27,8 @@ const BasicInfo = ({ className }: Props) => {
           and keep it from randomizing.
         </p>
       </div>
-      <div>
-        <img
-          src="https://png.pngtree.com/png-vector/20240309/ourmid/pngtree-vivid-colorful-powder-splash-png-image_11899648.png"
-          alt="color smoke"
-        />
+      <div className="">
+        <Graphic1 />
       </div>
     </div>
   );
