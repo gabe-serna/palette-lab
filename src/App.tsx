@@ -57,18 +57,23 @@ function App() {
     const cursorGradient = document.getElementById("cursor-gradient")!;
 
     const handleMouseMove = (event: MouseEvent) => {
-      const left = event.screenX - 240;
-      const top = event.screenY - 350 + window.scrollY;
-      const opacity = event.pageY < 2175 || event.pageY > 2500 ? "1" : "0";
+      const size = 40; //in rem
+      const left = event.screenX - (size * 16) / 2;
+      const top = event.screenY - size * 16 * 0.7 + window.scrollY;
+      const color =
+        event.pageY < 2337
+          ? "radial-gradient(hsla(from hsl(var(--secondary)) h s calc(l * 0.5) / 0.3) 0%, rgba(36, 36, 36, 0) 50%)"
+          : "radial-gradient(hsla(from hsl(var(--accent)) h s calc(l * 0.5) / 0.4) 0%, rgba(36, 36, 36, 0) 50%)";
+      const opacity = event.pageY < 2150 || event.pageY > 2500 ? "1" : "0";
 
       const hoverKeyframes = {
         left: `${left}px`,
         top: `${top}px`,
         opacity: opacity
       };
-      // cursorGradient.style.opacity = opacity;
+      cursorGradient.style.backgroundImage = color;
       cursorGradient.animate(hoverKeyframes, {
-        duration: 800,
+        duration: 1250,
         fill: "forwards"
       });
     };
@@ -104,7 +109,7 @@ function App() {
         </aside>
         <div
           id="cursor-gradient"
-          className="absolute z-10 bg-[radial-gradient(hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.5)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rounded-full pointer-events-none size-[30rem] transition-opacity"
+          className="absolute z-10 bg-[radial-gradient(hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.5)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rounded-full pointer-events-none size-[40rem] transition-opacity"
         />
       </div>
     </ThemeProvider>

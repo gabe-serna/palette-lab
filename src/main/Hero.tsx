@@ -19,7 +19,7 @@ const Hero = ({ className }: Props) => {
         >
           Inspiration
         </h1>
-        <h1 className="absolute text-9xl bg-gradient-to-l from-primary from-10% to-accent to-80% bg-clip-text text-transparent z-10">
+        <h1 className="absolute select-none text-9xl bg-gradient-to-l from-primary from-10% to-accent to-80% bg-clip-text text-transparent z-10">
           Inspiration
         </h1>
       </div>
