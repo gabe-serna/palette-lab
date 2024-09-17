@@ -1,26 +1,21 @@
 import { ColorContext } from "@/ColorProvider";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ArrowDownUp } from "lucide-react";
 import { useContext } from "react";
 
 interface Props {
   index: number;
-  className?: string;
+  switchColor: string;
 }
 
-const SwitchColors = ({ index, className = "" }: Props) => {
+const SwitchColors = ({ index, switchColor }: Props) => {
   const context = useContext(ColorContext);
   const { colors, setColors } = context!;
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger
-          className={className}
+          data-color={switchColor}
           onClick={() => {
             const newColors = [...colors];
             const color1 = newColors[index];
@@ -32,9 +27,6 @@ const SwitchColors = ({ index, className = "" }: Props) => {
         >
           <ArrowDownUp />
         </TooltipTrigger>
-        <TooltipContent side="right">
-          <p>Switch Colors</p>
-        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

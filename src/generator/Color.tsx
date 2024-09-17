@@ -3,16 +3,17 @@ import Lock from "./Lock";
 import SwitchColors from "./SwitchColors";
 
 interface Props {
+  id: string;
   color: string;
   label: string;
   index: number;
   isLast?: boolean;
 }
 
-const Color = ({ color, label, index, isLast = false }: Props) => {
+const Color = ({ id, color, label, index, isLast = false }: Props) => {
   const textColor = getTextColor(color);
   return (
-    <div className="relative flex flex-col w-full mb-2">
+    <div id={id} className="relative flex flex-col w-full mb-2">
       <div
         style={{
           backgroundColor: `#${color}`,
@@ -31,10 +32,9 @@ const Color = ({ color, label, index, isLast = false }: Props) => {
       </div>
       <h1 className="pl-1 text-sm italic">{label}</h1>
       {!isLast && (
-        <SwitchColors
-          index={index}
-          className="absolute -bottom-[.6rem] left-[45%] transition-opacity opacity-0 hover:opacity-100"
-        />
+        <div className="absolute flex justify-center items-center w-full h-8 -bottom-[.8rem] transition-opacity opacity-0 hover:opacity-100">
+          <SwitchColors index={index} switchColor={color} />
+        </div>
       )}
     </div>
   );

@@ -34,6 +34,7 @@ const Generator = () => {
           const isLast = index === colors.length - 1;
           return (
             <Color
+              id={color.color}
               key={index}
               color={color.color}
               label={labels[index]}
