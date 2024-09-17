@@ -12,7 +12,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(182.132,-66.291,66.301,182.16,610.993,868.626)"
         >
-          <stop offset="0.25" stopColor="#707070" />
+          <stop offset="0.25" stopColor="hsl(var(--secondary))" />
           <stop offset="1" stopColor="hsl(var(--secondary))" stopOpacity="0.2" />
         </linearGradient>
         <linearGradient
@@ -23,32 +23,29 @@ const Graphic1 = () => {
           gradientTransform="matrix(669.438,-669.438,913.511,913.511,62.831,1300.664)"
         >
           <stop offset="0" stopColor="#000000" stopOpacity="0" />
-          <stop offset=".2" stopColor="#2e2e2e" stopOpacity="0.2" />
-          <stop offset=".3" stopColor="#2e2e2e" stopOpacity="0.75" />
-          <stop offset=".4" stopColor="#333333" stopOpacity="1" />
-          <stop offset=".55" stopColor="#606060" stopOpacity="1" />
-          <stop offset=".6" stopColor="#999999" stopOpacity="1" />
+          <stop offset=".3" stopColor="hsl(var(--primary))" stopOpacity="1" />
+          <stop offset=".55" stopColor="hsl(var(--accent))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--primary))" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          //Middle Line Gradient under ball
+          //Middle Line Gradient under Large ball
           id="g4"
           x2="1"
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(920.091,920.091,-185.429,185.429,1222.756,736.53)"
         >
-          <stop offset="0" stopColor="hsl(var(--secondary))" stopOpacity="1" />
+          <stop offset="0" stopColor="hsl(var(--accent))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          //Upper Line Gradient above ball
+          //Upper Line Gradient above Small ball
           id="g5"
           x2="1"
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(566.21,566.21,-114.11,114.11,1519.928,204.141)"
         >
           <stop offset="0" stopColor="hsl(var(--background))" stopOpacity="0" />
-          <stop offset="1" stopColor="hsl(var(--tertiary))" stopOpacity="1" />
+          <stop offset="1" stopColor="hsl(var(--secondary))" stopOpacity="1" />
         </linearGradient>
         <linearGradient
           //Main Loop
@@ -57,11 +54,10 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0,2243.967,-3892.228,0,3234.067,-10.437) rotate(45)"
         >
-          <stop offset="0.3" stopColor="hsl(var(--secondary))" stopOpacity="0" />
+          <stop offset="0.3" stopColor="hsl(var(--accent))" stopOpacity="0" />
           <stop offset=".6" stopColor="hsl(var(--primary))" />
-          <stop offset=".7" stopColor="#fafafa" />
-          <stop offset=".8" stopColor="#2e2e2e" stopOpacity="0.4" />
-          <stop offset=".85" stopColor="#000" stopOpacity="0" />
+          <stop offset=".8" stopColor="hsl(var(--primary))" stopOpacity="1" />
+          <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           //Inner Loop
@@ -70,7 +66,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(826.169,826.169,-121.742,121.742,1483.051,708.235)"
         >
-          <stop offset="0" stopColor="hsl(var(--secondary))" stopOpacity="1" />
+          <stop offset="0" stopColor="hsl(var(--tertiary))" stopOpacity="1" />
           <stop offset=".609" stopColor="hsl(var(--primary))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
         </linearGradient>
@@ -81,7 +77,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(426.89,-426.89,619.129,619.129,1322.042,547.231)"
         >
-          <stop offset="0" stopColor="hsl(var(--secondary))" stopOpacity="1" />
+          <stop offset="0" stopColor="hsl(var(--tertiary))" stopOpacity="1" />
           <stop offset=".5" stopColor="hsl(var(--primary))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
         </linearGradient>
@@ -94,7 +90,7 @@ const Graphic1 = () => {
         >
           <stop
             offset="0"
-            stopColor="hsl(from hsl(var(--accent)) h s calc(l * 0.9))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l * 0.6))"
           />
           <stop offset="1" stopColor="hsl(var(--primary))" />
         </linearGradient>
@@ -105,10 +101,10 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0,228.107,-228.062,0,2143.102,713.375)"
         >
-          <stop offset="0" stopColor="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stopColor="hsl(from hsl(var(--accent)) h s calc(l * 0.8))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l * 0.5))"
           />
         </linearGradient>
       </defs>
