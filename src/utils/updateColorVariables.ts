@@ -11,15 +11,39 @@ const updateColorVariables = (colors: SelectedColorType[]) => {
   ];
 
   const root = document.documentElement;
-  colors.forEach((color, index) => {
+  const length = colors.length;
+  const HSLColors: string[] = [];
+  colors.forEach(color => {
     const HSL = hexToHSL(color.color);
-    if (index === colors.length - 1 || index === 2) {
-      root.style.setProperty(`--${labels[index]}`, HSL);
-      root.style.setProperty(`--${labels[index + 1]}`, HSL);
-      return;
-    }
-    root.style.setProperty(`--${labels[index]}`, HSL);
+    HSLColors.push(HSL);
   });
+
+  root.style.setProperty(`--${labels[0]}`, HSLColors[0]);
+  root.style.setProperty(`--${labels[1]}`, HSLColors[1]);
+  root.style.setProperty(`--${labels[2]}`, HSLColors[2]);
+  switch (length) {
+    case 3:
+    default:
+      for (let i = 3; i < 6; i++) {
+        root.style.setProperty(`--${labels[i]}`, HSLColors[2]);
+      }
+      break;
+    case 4:
+      root.style.setProperty(`--${labels[3]}`, HSLColors[3]);
+      root.style.setProperty(`--${labels[4]}`, HSLColors[3]);
+      root.style.setProperty(`--${labels[5]}`, HSLColors[2]);
+      break;
+    case 5:
+      root.style.setProperty(`--${labels[3]}`, HSLColors[3]);
+      root.style.setProperty(`--${labels[4]}`, HSLColors[4]);
+      root.style.setProperty(`--${labels[5]}`, HSLColors[3]);
+      break;
+    case 6:
+      for (let i = 3; i < 6; i++) {
+        root.style.setProperty(`--${labels[i]}`, HSLColors[i]);
+      }
+  }
+
   //Set Darkened Foreground Text Color
   const textColor = hexToHSL(colors[1].color);
   const textColors = textColor.split(" ");

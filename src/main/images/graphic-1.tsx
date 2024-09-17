@@ -1,13 +1,6 @@
 const Graphic1 = () => {
   return (
-    <svg
-      version="1.2"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 2500 1667"
-      // width="625"
-      // height="416"
-      // style={{ filter: "grayscale(100)" }}
-    >
+    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 1667">
       <defs>
         <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
           <path d="m2500 1667h-2500v-1667h2500z" />
