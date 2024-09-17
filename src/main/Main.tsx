@@ -24,20 +24,24 @@ const Main = () => {
       </div>
       <div className="bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.08))] z-10 size-full">
         <AdditionalInfo className="relative z-20 flex flex-col items-center justify-center gap-12 px-24 size-full bg-[radial-gradient(ellipse,_rgba(0,_0,_0,_0)_50%,_hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.04))_100%)]" />
-        <SideNoteDivider className="w-full px-24 h-2/3 bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.08))] bg-[radial-gradient(ellipse_65%_80%,_rgba(0,_0,_0,_0)_35%,_hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.04))_100%)]" />
-        <GalleryInfo className="flex items-center justify-around relative px-24 size-full bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.08))] bg-[radial-gradient(ellipse,_rgba(0,_0,_0,_0)_50%,_hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.04))_100%)]" />
-        <footer className="flex mr-auto flex-col items-center justify-center w-[calc(100vw-15rem-10px)] h-36 gap-2 py-6 text-foreground">
-          <div className="flex items-center justify-center gap-8">
-            <p>Created by Gabe Serna</p>
-            <a href="https://github.com/gabe-serna/palette-lab">Github</a>
-          </div>
-          <div>
-            <p className="text-xs italic text-foreground">
-              Copyright © 2024 All Rights Reserved. CC BY-NC-ND License.
-            </p>
-          </div>
-        </footer>
       </div>
+      <div className="bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.08))] z-10 w-full h-2/3">
+        <SideNoteDivider className="relative z-20 size-full px-24 bg-[radial-gradient(ellipse_65%_80%,_rgba(0,_0,_0,_0)_35%,_hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.04))_100%)]" />
+      </div>
+      <div className="bg-[hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.08))] z-10 size-full">
+        <GalleryInfo className="relative z-20 flex items-center justify-around px-24 size-full bg-[radial-gradient(ellipse,_rgba(0,_0,_0,_0)_50%,_hsl(from_hsl(var(--primary))_h_calc(s_*_2.5)_calc(l_*_.04))_100%)]" />
+      </div>
+      <footer className="relative z-30 flex mr-auto flex-col items-center justify-center w-[calc(100vw-15rem-10px)] h-36 gap-2 py-6 text-foreground bg-background">
+        <div className="flex items-center justify-center gap-8">
+          <p>Created by Gabe Serna</p>
+          <a href="https://github.com/gabe-serna/palette-lab">Github</a>
+        </div>
+        <div>
+          <p className="text-xs italic text-foreground">
+            Copyright © 2024 All Rights Reserved. CC BY-NC-ND License.
+          </p>
+        </div>
+      </footer>
     </>
   );
 };

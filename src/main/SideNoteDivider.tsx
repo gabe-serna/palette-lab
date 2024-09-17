@@ -22,7 +22,7 @@ const SideNoteDivider = ({ className }: Props) => {
             className="flex flex-col items-center justify-center z-10 w-full h-36 bg-background border-y-[1px] border-[hsl(from_hsl(var(--tertiary))_h_calc(l_*_0.8)_calc(l_*_0.8))]"
           >
             <p className="text-xl italic">
-              And 100% Free. <div className="inline text-accent">Forever</div>.
+              And 100% Free. <span className="inline text-accent">Forever</span>.
             </p>
           </div>
         </div>

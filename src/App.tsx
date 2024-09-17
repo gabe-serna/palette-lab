@@ -59,13 +59,14 @@ function App() {
     const handleMouseMove = (event: MouseEvent) => {
       const left = event.screenX - 240;
       const top = event.screenY - 350 + window.scrollY;
-      // cursorGradient.style.left = `${left}px`;
-      // cursorGradient.style.top = `${top}px`;
+      const opacity = event.pageY < 2175 || event.pageY > 2500 ? "1" : "0";
 
       const hoverKeyframes = {
         left: `${left}px`,
-        top: `${top}px`
+        top: `${top}px`,
+        opacity: opacity
       };
+      // cursorGradient.style.opacity = opacity;
       cursorGradient.animate(hoverKeyframes, {
         duration: 800,
         fill: "forwards"
@@ -103,7 +104,7 @@ function App() {
         </aside>
         <div
           id="cursor-gradient"
-          className="absolute z-10 bg-[radial-gradient(hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.5)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rounded-full pointer-events-none size-[30rem]"
+          className="absolute z-10 bg-[radial-gradient(hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.5)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rounded-full pointer-events-none size-[30rem] transition-opacity"
         />
       </div>
     </ThemeProvider>
