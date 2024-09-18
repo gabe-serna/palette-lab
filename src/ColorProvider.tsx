@@ -57,12 +57,14 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
   //Undo Logic
   useEffect(() => {
     if (!isMounted.current) return;
+    console.log("undo tree 0: ", undoTree[0].history);
     setUndoTree(prevUndoTree => {
       //If the undo tree is at max capacity, remove the oldest entry
       if (prevUndoTree.length >= 25) {
         return [...prevUndoTree.slice(1), { history: [...colors] }];
       }
       if (prevUndoTree[prevUndoTree.length - 2]?.history === colors) {
+        console.log("duplicate located");
         const cleanedUndoTree = [...prevUndoTree.slice(0, prevUndoTree.length - 1)];
         return cleanedUndoTree;
       }

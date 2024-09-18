@@ -1,17 +1,15 @@
-import { ColorContext } from "@/ColorProvider";
 import { getTextColor } from "@/utils/getTextColor";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { HexColorInput, HexColorPicker } from "react-colorful";
 
 interface Props {
   index: number;
+  parentColor: string;
   className?: string;
 }
 
-const ColorPicker = ({ index, className }: Props) => {
-  const context = useContext(ColorContext);
-  const { colors } = context!;
-  const [color, setColor] = useState(colors[index].color);
+const ColorPicker = ({ index, parentColor, className }: Props) => {
+  const [color, setColor] = useState(parentColor);
   const textColor = getTextColor(color);
   const bgColor = "#" + color.replace(/^#/, "");
 

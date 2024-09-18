@@ -15,7 +15,7 @@ interface Props {
 
 const Color = ({ id, label, index, isLast = false }: Props) => {
   const context = useContext(ColorContext);
-  const { colors } = context!;
+  const { colors, setColors, setRedoTree } = context!;
 
   const color = colors[index].color;
   const textColor = getTextColor(color);
@@ -55,10 +55,15 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
       });
       setIsPickerVisible(false);
 
+      const newColors = JSON.parse(JSON.stringify(colors));
       const pickerColor = input.value;
-      const newColors = [...colors];
-      newColors[index].color = pickerColor;
-      updateColorVariables(newColors);
+      if (newColors[index].color !== pickerColor) {
+        newColors[index].color = pickerColor;
+        updateColorVariables(newColors);
+        setRedoTree([]);
+        // setUndoTree(prev => [...prev, { history: newColors }]);
+        setColors(newColors);
+      }
     };
 
     const handleClick = (event: MouseEvent) => {
@@ -105,6 +110,7 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
         )}
         <ColorPicker
           index={index}
+          parentColor={color}
           className={pickerVisibility + "transition-opacity left-44 top-24"}
         />
       </div>
