@@ -110,7 +110,6 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
         )}
         <ColorPicker
           index={index}
-          parentColor={color}
           className={pickerVisibility + "transition-opacity left-44 top-24"}
         />
       </div>
