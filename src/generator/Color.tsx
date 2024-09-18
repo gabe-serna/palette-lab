@@ -20,6 +20,15 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
   const color = colors[index].color;
   const textColor = getTextColor(color);
 
+  let isLocked = false;
+  if (!isLast) {
+    if (colors[index].locked) {
+      isLocked = true;
+    } else if (colors[index + 1].locked) {
+      isLocked = true;
+    }
+  }
+
   const [isPickerVisible, setIsPickerVisible] = useState(false);
   const pickerVisibility = isPickerVisible
     ? "block opacity-100 "
@@ -61,7 +70,6 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
         newColors[index].color = pickerColor;
         updateColorVariables(newColors);
         setRedoTree([]);
-        // setUndoTree(prev => [...prev, { history: newColors }]);
         setColors(newColors);
       }
     };
@@ -88,9 +96,18 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
       } else return;
     };
 
+    // Close out of menu when pressing enter
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Enter" || event.key === "Escape") {
+        if (isPickerVisible) handlePicker("close", picker);
+      }
+    };
+
     window.addEventListener("click", handleClick);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("click", handleClick);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isPickerVisible, colors]);
 
@@ -118,7 +135,7 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
         />
       </div>
       <h1 className="pl-1 text-sm italic">{label}</h1>
-      {!isLast && (
+      {!isLocked && (
         <div className="absolute flex justify-center items-center w-full h-8 -bottom-[.8rem] transition-opacity opacity-0 hover:opacity-100">
           <SwitchColors index={index} switchColor={color} />
         </div>
