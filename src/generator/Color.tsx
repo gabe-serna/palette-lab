@@ -27,7 +27,7 @@ const Color = ({ id, color, label, index, isLast = false }: Props) => {
         {textColor && (
           <div className="flex items-center justify-between pointer-events-none w-44">
             <h1 style={{ color: textColor }} className="text-xl">
-              {color}
+              {color.toUpperCase()}
             </h1>
             <Lock color={color} bg={textColor} />
           </div>
