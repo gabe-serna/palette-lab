@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ColorContext } from "../ColorProvider";
 import Color from "./Color";
 import AddColor from "./AddColor";
@@ -19,6 +19,54 @@ const Generator = () => {
     "Accent 2",
     "Accent 3"
   ];
+
+  const [isPickerVisible, setIsPickerVisible] = useState(false);
+
+  useEffect(() => {
+    const handlePicker = (action: "open" | "close", picker: HTMLElement) => {
+      let keyframes;
+      if (action === "open") {
+        keyframes = [
+          { display: "none", opacity: "0" },
+          { display: "block", opacity: "1" }
+        ];
+      } else {
+        keyframes = [
+          { display: "block", opacity: "1" },
+          { display: "none", opacity: "0" }
+        ];
+        console.log("closing");
+      }
+      picker.animate(keyframes, {
+        duration: 100,
+        fill: "forwards"
+      });
+      setIsPickerVisible(action === "open" ? true : false);
+    };
+
+    const handleClick = (event: MouseEvent) => {
+      const picker = document.getElementById("picker-0")!;
+
+      if (!(event.target instanceof HTMLDivElement)) {
+        if (isPickerVisible) handlePicker("close", picker);
+        return;
+      }
+
+      if (event.target.id === "color-0") {
+        if (isPickerVisible) {
+          handlePicker("close", picker);
+          return;
+        } else handlePicker("open", picker);
+      } else if (isPickerVisible) {
+        handlePicker("close", picker);
+      } else return;
+    };
+
+    window.addEventListener("click", handleClick);
+    return () => {
+      window.removeEventListener("click", handleClick);
+    };
+  }, [isPickerVisible]);
 
   return (
     <div
