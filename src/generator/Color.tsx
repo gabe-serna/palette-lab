@@ -96,7 +96,7 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
         className={`flex w-full group justify-start px-2 items-center h-10 rounded-xl`}
       >
         {textColor && (
-          <div className="flex items-center justify-between pointer-events-none w-44">
+          <div className="flex items-center justify-between w-full pointer-events-none ">
             <h1 style={{ color: textColor }} className="text-xl">
               {color.toUpperCase()}
             </h1>
@@ -105,7 +105,7 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
         )}
         <ColorPicker
           index={index}
-          className={pickerVisibility + "absolute transition-opacity left-36 top-24"}
+          className={pickerVisibility + "transition-opacity left-44 top-24"}
         />
       </div>
       <h1 className="pl-1 text-sm italic">{label}</h1>

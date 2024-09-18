@@ -76,8 +76,8 @@ const ThemeDisplay = ({ className }: Props) => {
               name="Bumblebee"
             />
             <ThemeCard
-              theme={"160916-C2CBCC-E1CF2D-F89130-50DC7F"}
-              name="Sweet Tea"
+              theme={"130202-C48686-D47F46-57288F-098D68"}
+              name="Halloween"
             />
           </div>
         </ScrollArea>

@@ -1,5 +1,6 @@
 import { ColorContext } from "@/ColorProvider";
-import { useContext, useRef, useState } from "react";
+import { getTextColor } from "@/utils/getTextColor";
+import { useContext, useState } from "react";
 import { HexColorInput, HexColorPicker } from "react-colorful";
 
 interface Props {
@@ -8,34 +9,34 @@ interface Props {
 }
 
 const ColorPicker = ({ index, className }: Props) => {
-  const isMounted = useRef(false);
-  setTimeout(() => {
-    isMounted.current = true;
-  }, 2000);
-
   const context = useContext(ColorContext);
   const { colors } = context!;
   const [color, setColor] = useState(colors[index].color);
+  const textColor = getTextColor(color);
+  const bgColor = "#" + color.replace(/^#/, "");
 
   return (
     <div
       id={"picker-" + index}
       style={{
-        boxShadow: "0px 0px 20px 10px hsl(from hsl(var(--primary)) h s calc(l / 2))"
+        boxShadow: "0px 0px 20px 10px hsl(from hsl(var(--primary)) h s calc(l / 2))",
+        backgroundColor: bgColor
       }}
       className={
-        className +
-        " relative border-4 rounded-xl w-min h-min border-primary bg-background"
+        className + " relative border-4 rounded-xl w-min h-min border-primary"
       }
     >
       <div className="absolute -left-[1.5rem] z-0 w-0 h-0 border-y-[20px] border-y-transparent border-r-[1.5rem] border-r-primary" />
       <HexColorPicker color={color.toUpperCase()} onChange={setColor} />
-      <HexColorInput
-        id={"input-" + index}
-        color={color.toUpperCase()}
-        onChange={setColor}
-        className="w-[90%] bg-transparent rounded-xl my-1 pl-1 ml-1 focus:outline-none text-foreground"
-      />
+      {color && (
+        <HexColorInput
+          id={"input-" + index}
+          color={color.toUpperCase()}
+          style={{ color: textColor }}
+          onChange={setColor}
+          className="w-[90%] bg-transparent rounded-xl my-1 pl-1 ml-1 focus:outline-none transition-colors"
+        />
+      )}
     </div>
   );
 };

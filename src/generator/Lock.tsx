@@ -16,7 +16,9 @@ const Lock = ({ color, bg }: Props) => {
 
   return (
     <button
-      className={"transition-opacity size-6 " + classes}
+      className={
+        "absolute right-2 transition-opacity pointer-events-auto size-6 " + classes
+      }
       type="button"
       onClick={event => {
         const target = event.currentTarget as HTMLButtonElement;
