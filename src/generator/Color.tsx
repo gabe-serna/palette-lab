@@ -1,18 +1,89 @@
+import { useContext, useEffect, useState } from "react";
 import { getTextColor } from "../utils/getTextColor";
 import ColorPicker from "./ColorPicker";
 import Lock from "./Lock";
 import SwitchColors from "./SwitchColors";
+import { ColorContext } from "@/ColorProvider";
+import updateColorVariables from "@/utils/updateColorVariables";
 
 interface Props {
   id: string;
-  color: string;
   label: string;
   index: number;
   isLast?: boolean;
 }
 
-const Color = ({ id, color, label, index, isLast = false }: Props) => {
+const Color = ({ id, label, index, isLast = false }: Props) => {
+  const context = useContext(ColorContext);
+  const { colors } = context!;
+
+  const color = colors[index].color;
   const textColor = getTextColor(color);
+
+  const [isPickerVisible, setIsPickerVisible] = useState(false);
+  const pickerVisibility = isPickerVisible
+    ? "block opacity-100 "
+    : "hidden opacity-0 ";
+
+  useEffect(() => {
+    const colorDiv = document.getElementById("color-" + index)!;
+    const picker = document.getElementById("picker-" + index)!;
+    const input = document.getElementById("input-" + index)! as HTMLInputElement;
+
+    const handlePicker = (action: "open" | "close", picker: HTMLElement) => {
+      let keyframes;
+      if (action === "open") {
+        keyframes = [
+          { display: "none", opacity: "0" },
+          { display: "block", opacity: "1" }
+        ];
+        picker.animate(keyframes, {
+          duration: 100,
+          fill: "forwards"
+        });
+        setIsPickerVisible(true);
+        return;
+      }
+      // Close Picker
+      keyframes = [
+        { display: "block", opacity: "1" },
+        { display: "none", opacity: "0" }
+      ];
+      picker.animate(keyframes, {
+        duration: 100,
+        fill: "forwards"
+      });
+      setIsPickerVisible(false);
+
+      const pickerColor = input.value;
+      const newColors = [...colors];
+      newColors[index].color = pickerColor;
+      updateColorVariables(newColors);
+    };
+
+    const handleClick = (event: MouseEvent) => {
+      if (!(event.target instanceof HTMLDivElement)) {
+        if (event.target === input) return;
+        if (isPickerVisible) handlePicker("close", picker);
+        return;
+      }
+
+      if (event.target.id === colorDiv.id) {
+        if (isPickerVisible) {
+          handlePicker("close", picker);
+          return;
+        } else handlePicker("open", picker);
+      } else if (colorDiv.contains(event.target)) return;
+      else if (isPickerVisible) {
+        handlePicker("close", picker);
+      } else return;
+    };
+
+    window.addEventListener("click", handleClick);
+    return () => {
+      window.removeEventListener("click", handleClick);
+    };
+  }, [isPickerVisible]);
 
   return (
     <div id={id} className="relative flex flex-col w-full mb-2">
@@ -33,8 +104,8 @@ const Color = ({ id, color, label, index, isLast = false }: Props) => {
           </div>
         )}
         <ColorPicker
-          id={"picker-" + index}
-          className="absolute transition-opacity opacity-0 left-36 top-24"
+          index={index}
+          className={pickerVisibility + "absolute transition-opacity left-36 top-24"}
         />
       </div>
       <h1 className="pl-1 text-sm italic">{label}</h1>

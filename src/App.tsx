@@ -27,6 +27,7 @@ function App() {
   useEffect(() => {
     const colorParams = getColorParams(colors);
     setSearchParams({ colors: colorParams });
+    console.log("updating color params");
   }, [colors]);
 
   useEffect(() => {
