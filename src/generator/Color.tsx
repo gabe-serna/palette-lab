@@ -10,10 +10,9 @@ interface Props {
   id: string;
   label: string;
   index: number;
-  isLast?: boolean;
 }
 
-const Color = ({ id, label, index, isLast = false }: Props) => {
+const Color = ({ id, label, index }: Props) => {
   const context = useContext(ColorContext);
   const { colors, setColors, setRedoTree } = context!;
 
@@ -21,7 +20,9 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
   const textColor = getTextColor(color);
 
   let isLocked = false;
-  if (!isLast) {
+  if (index === colors.length - 1) {
+    isLocked = true;
+  } else {
     if (colors[index].locked) {
       isLocked = true;
     } else if (colors[index + 1].locked) {

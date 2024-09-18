@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { ColorContext } from "../ColorProvider";
 import Color from "./Color";
 import AddColor from "./AddColor";
-// import ModeToggle from "./ModeToggle";
 import RemoveColor from "./RemoveColor";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
+import Export from "./Export";
 
 const Generator = () => {
   const context = useContext(ColorContext);
@@ -31,14 +31,12 @@ const Generator = () => {
     >
       <div className="flex flex-row items-center w-full gap-2 px-4 pt-8 h-min md:flex-col">
         {colors.map((color, index) => {
-          const isLast = index === colors.length - 1;
           return (
             <Color
               id={color.color}
               key={index}
               label={labels[index]}
               index={index}
-              isLast={isLast}
             />
           );
         })}
@@ -51,6 +49,7 @@ const Generator = () => {
         {/* <ModeToggle /> */}
         <UndoButton />
         <RedoButton />
+        <Export />
       </div>
     </div>
   );
