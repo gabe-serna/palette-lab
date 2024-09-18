@@ -1,18 +1,26 @@
 import { ColorContext } from "@/ColorProvider";
-import { useContext, useState } from "react";
+import { useContext, useRef } from "react";
 
 interface Props {
-  color: string;
+  lockColor: string;
   bg: string;
 }
 
-const Lock = ({ color, bg }: Props) => {
+const Lock = ({ lockColor, bg }: Props) => {
+  const isLocked = useRef(false);
+
   const context = useContext(ColorContext);
   const { colors, setColors } = context!;
 
-  const [isLocked, setIsLocked] = useState(false);
-  const classes = !isLocked ? "opacity-0 group-hover:opacity-40" : "opacity-80";
-  const lockColor = color;
+  colors.forEach(color => {
+    if (color.color == lockColor) {
+      isLocked.current = color.locked;
+    }
+  });
+
+  const classes = !isLocked.current
+    ? "opacity-0 group-hover:opacity-40"
+    : "opacity-80";
 
   return (
     <button
@@ -23,7 +31,6 @@ const Lock = ({ color, bg }: Props) => {
       onClick={event => {
         const target = event.currentTarget as HTMLButtonElement;
         target.blur();
-        setIsLocked(prevState => !prevState);
 
         const newColors = colors.map(color => {
           if (color.color === lockColor) {

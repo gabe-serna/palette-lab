@@ -67,6 +67,10 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
     };
 
     const handleClick = (event: MouseEvent) => {
+      if (colors[index].locked) {
+        if (isPickerVisible) handlePicker("close", picker);
+        return;
+      }
       if (!(event.target instanceof HTMLDivElement)) {
         if (event.target === input) return;
         if (isPickerVisible) handlePicker("close", picker);
@@ -88,7 +92,7 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
     return () => {
       window.removeEventListener("click", handleClick);
     };
-  }, [isPickerVisible]);
+  }, [isPickerVisible, colors]);
 
   return (
     <div id={id} className="relative flex flex-col w-full mb-2">
@@ -105,7 +109,7 @@ const Color = ({ id, label, index, isLast = false }: Props) => {
             <h1 style={{ color: textColor }} className="text-xl">
               {color.toUpperCase()}
             </h1>
-            <Lock color={color} bg={textColor} />
+            <Lock lockColor={color} bg={textColor} />
           </div>
         )}
         <ColorPicker
