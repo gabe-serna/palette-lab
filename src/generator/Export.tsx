@@ -9,12 +9,14 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ExportContext } from "@/ExportProvider";
 import { getTextColor } from "@/utils/getTextColor";
 import VisuallyHidden from "@/utils/VisuallyHidden";
 import { Download } from "lucide-react";
 import { useContext } from "react";
 
 const Export = () => {
+  const { options, setOptions } = useContext(ExportContext)!;
   const context = useContext(ColorContext);
   const { colors } = context!;
 
@@ -22,6 +24,7 @@ const Export = () => {
   let baseText = "";
   if (textColor.includes("foreground")) baseText = "text-foreground ";
   else baseText = "text-background ";
+
   return (
     <Dialog modal={false}>
       <DialogTrigger>
@@ -59,7 +62,7 @@ const Export = () => {
           </TabsContent>
           <TabsContent value="options">
             <div className="flex flex-col items-start w-full px-20 pt-6 h-44">
-              <RadioGroup defaultValue="hex" className="w-full">
+              <RadioGroup defaultValue={options.format} className="w-full">
                 <div className="flex flex-row justify-between mb-4">
                   <div>
                     <div className="flex items-center space-x-2">
@@ -67,6 +70,9 @@ const Export = () => {
                         value="hex"
                         id="hex"
                         className="size-[1.125rem]"
+                        onClick={() => {
+                          setOptions({ ...options, format: "hex" });
+                        }}
                       />
                       <Label htmlFor="hex" className="text-md">
                         HEX
@@ -77,6 +83,9 @@ const Export = () => {
                         value="rgb"
                         id="rgb"
                         className="size-[1.125rem]"
+                        onClick={() => {
+                          setOptions({ ...options, format: "rgb" });
+                        }}
                       />
                       <Label htmlFor="rgb" className="text-md">
                         RGB
@@ -87,6 +96,9 @@ const Export = () => {
                         value="hsl"
                         id="hsl"
                         className="size-[1.125rem]"
+                        onClick={() => {
+                          setOptions({ ...options, format: "hsl" });
+                        }}
                       />
                       <Label htmlFor="hsl" className="text-md">
                         HSL
@@ -99,6 +111,9 @@ const Export = () => {
                         value="oklab"
                         id="oklab"
                         className="size-[1.125rem]"
+                        onClick={() => {
+                          setOptions({ ...options, format: "oklab" });
+                        }}
                       />
                       <Label htmlFor="oklab" className="text-md">
                         OKLAB
@@ -109,6 +124,9 @@ const Export = () => {
                         value="oklch"
                         id="oklch"
                         className="size-[1.125rem]"
+                        onClick={() => {
+                          setOptions({ ...options, format: "oklch" });
+                        }}
                       />
                       <Label htmlFor="oklch" className="text-md">
                         OKLCH
@@ -118,7 +136,12 @@ const Export = () => {
                 </div>
               </RadioGroup>
               <div className="flex items-center space-x-2">
-                <Switch id="shades" />
+                <Switch
+                  id="shades"
+                  onClick={() => {
+                    setOptions({ ...options, shades: !options.shades });
+                  }}
+                />
                 <Label htmlFor="shades" className="text-md">
                   Shades
                 </Label>

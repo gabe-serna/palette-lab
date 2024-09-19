@@ -6,6 +6,7 @@ import RemoveColor from "./RemoveColor";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
 import Export from "./Export";
+import ExportProvider from "@/ExportProvider";
 
 const Generator = () => {
   const context = useContext(ColorContext);
@@ -49,7 +50,9 @@ const Generator = () => {
         {/* <ModeToggle /> */}
         <UndoButton />
         <RedoButton />
-        <Export />
+        <ExportProvider>
+          <Export />
+        </ExportProvider>
       </div>
     </div>
   );
