@@ -8,6 +8,7 @@ import { ThemeProvider } from "./components/theme-provider";
 import { useSearchParams } from "react-router-dom";
 import getColorParams from "./utils/getColorParams";
 import updateColorVariables from "./utils/updateColorVariables";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
   const [, setSearchParams] = useSearchParams();
@@ -113,6 +114,7 @@ function App() {
           className="absolute z-10 bg-[radial-gradient(hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.5)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rounded-full pointer-events-none size-[40rem] transition-opacity"
         />
       </div>
+      <Toaster />
     </ThemeProvider>
   );
 }

@@ -12,6 +12,7 @@ import VisuallyHidden from "@/utils/VisuallyHidden";
 import { Download } from "lucide-react";
 import { useContext } from "react";
 import OptionsTab from "./OptionsTab";
+import { toast } from "sonner";
 
 const Export = () => {
   const { options, setOptions } = useContext(ExportContext)!;
@@ -114,18 +115,25 @@ const Export = () => {
                 <p>--primary: #2f27ce;</p>
                 <p>--secondary: #dedcff;</p>
                 <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
-                <p>--accent: #433bff;</p>
               </div>
               <button
                 className="absolute w-16 h-6 text-sm font-medium rounded-lg bg-secondary right-16 bottom-5 pointer-events-auto text-background transition-colors hover:bg-[hsl(from_hsl(var(--secondary))_h_calc(s_*_1)_calc(l_*_0.8))]"
                 value="copy"
+                onClick={() => {
+                  const output = document.getElementById("export-output")!;
+                  const sel = window.getSelection();
+                  if (!sel) return;
+                  if (sel.toString() == "") {
+                    window.setTimeout(() => {
+                      const range = document.createRange();
+                      range.selectNodeContents(output);
+                      sel.removeAllRanges();
+                      sel.addRange(range);
+                      navigator.clipboard.writeText(sel.toString());
+                      toast("Copied to clipboard");
+                    }, 1);
+                  }
+                }}
               >
                 Copy
               </button>
