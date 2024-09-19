@@ -114,6 +114,14 @@ const Export = () => {
                 <p>--primary: #2f27ce;</p>
                 <p>--secondary: #dedcff;</p>
                 <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
+                <p>--accent: #433bff;</p>
               </div>
               <button
                 className="absolute w-16 h-6 text-sm font-medium rounded-lg bg-secondary right-16 bottom-5 pointer-events-auto text-background transition-colors hover:bg-[hsl(from_hsl(var(--secondary))_h_calc(s_*_1)_calc(l_*_0.8))]"

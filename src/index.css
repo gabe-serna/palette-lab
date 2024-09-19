@@ -95,7 +95,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 /* Track */
@@ -105,7 +105,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
+  background: hsl(var(--card));
   border-radius: 10px;
 }
 
@@ -167,5 +167,27 @@ body {
 @keyframes floatDown {
   100% {
     transform: translateY(-7px);
+  }
+}
+
+#export-output {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: hsl(var(--card));
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: hsl(from hsl(var(--accent)) h calc(s * 0.5) calc(l * 0.5));
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-button {
+    background: transparent;
+    height: 10px;
   }
 }
