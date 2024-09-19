@@ -5,7 +5,7 @@ import AddColor from "./AddColor";
 import RemoveColor from "./RemoveColor";
 import UndoButton from "./UndoButton";
 import RedoButton from "./RedoButton";
-import Export from "./Export";
+import Export from "./export/Export";
 import ExportProvider from "@/ExportProvider";
 
 const Generator = () => {
