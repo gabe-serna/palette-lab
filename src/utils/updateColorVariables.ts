@@ -36,7 +36,7 @@ const updateColorVariables = (colors: SelectedColorType[]) => {
     case 5:
       root.style.setProperty(`--${labels[3]}`, HSLColors[3]);
       root.style.setProperty(`--${labels[4]}`, HSLColors[4]);
-      root.style.setProperty(`--${labels[5]}`, HSLColors[3]);
+      root.style.setProperty(`--${labels[5]}`, HSLColors[4]);
       break;
     case 6:
       for (let i = 3; i < 6; i++) {

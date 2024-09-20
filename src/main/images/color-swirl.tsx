@@ -858,7 +858,6 @@ const ColorSwirl = () => {
         </radialGradient>
       </defs>
       <style>
-        {" "}
         {`
 		.s0 { fill: url(#g1) } 
 		.s1 { fill: url(#g2) } 

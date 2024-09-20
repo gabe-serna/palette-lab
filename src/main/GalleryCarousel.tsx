@@ -7,8 +7,10 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
+import GalleryPreview1 from "./images/gallery-preview-1";
 
 const GalleryCarousel = () => {
+  const images = [<GalleryPreview1 />];
   return (
     <Carousel
       style={{ opacity: "0" }}
@@ -19,18 +21,18 @@ const GalleryCarousel = () => {
       }}
       plugins={[
         Autoplay({
-          delay: 4000,
+          delay: 3000,
           stopOnMouseEnter: true
         })
       ]}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {images.map((image, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
                 <CardContent className="flex items-center justify-center p-6 aspect-square">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                  {image}
                 </CardContent>
               </Card>
             </div>
