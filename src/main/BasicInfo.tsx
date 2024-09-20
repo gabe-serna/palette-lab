@@ -1,4 +1,4 @@
-import Graphic1 from "./images/graphic-1";
+import ColorSwirl from "./images/color-swirl";
 
 interface Props {
   className?: string;
@@ -37,7 +37,7 @@ const BasicInfo = ({ className }: Props) => {
         }}
         className="w-1/2 -z-10 animate"
       >
-        <Graphic1 />
+        <ColorSwirl />
       </div>
     </section>
   );
