@@ -23,26 +23,22 @@ export default function getExportText({ colors, options }: ExportTextProps) {
 
   switch (format) {
     case "hex":
-    default:
-      formattedColors = colors.map(
-        (color, index) => `<p>--${labels[index]}: #${color.color};</p>`
-      );
-      formattedText = formattedColors.join("");
+    default: {
+      const hexColors = colors.map(color => color.color);
+      formattedColors = formatColors(hexColors, output);
+      formattedText = formattedColors.join("\n");
       break;
+    }
     case "rgb": {
       const rbgColors = hexToRGB(colors);
-      formattedColors = rbgColors.map(
-        (color, index) => `<p>--${labels[index]}: ${color};</p>`
-      );
-      formattedText = formattedColors.join("");
+      formattedColors = formatColors(rbgColors, output);
+      formattedText = formattedColors.join("\n");
       break;
     }
     case "hsl": {
       const hslColors = hexToHSL(colors);
-      formattedColors = hslColors.map(
-        (color, index) => `<p>--${labels[index]}: ${color};</p>`
-      );
-      formattedText = formattedColors.join("");
+      formattedColors = formatColors(hslColors, output);
+      formattedText = formattedColors.join("\n");
       break;
     }
     // case "oklab":
@@ -59,10 +55,27 @@ export default function getExportText({ colors, options }: ExportTextProps) {
   }
 }
 
+function formatColors(colors: string[], output: string) {
+  const formattedColors = colors.map((color, index) => {
+    switch (output) {
+      case "css":
+      default:
+        return `--${labels[index]}: ${color};`;
+      case "tailwind-css":
+        return `\u0020\u0020'${labels[index]}': '${color}',`;
+      case "scss":
+        return `$${labels[index]}: ${color};`;
+    }
+  });
+  if (output !== "tailwind-css") return formattedColors;
+  formattedColors.unshift("colors: {");
+  formattedColors.push("},");
+  return formattedColors;
+}
+
 function hexToRGB(colors: SelectedColorType[]) {
   return colors.map(color => {
-    const result = /([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color.color);
-    if (!result) return null;
+    const result = /([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color.color)!;
     return `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(
       result[3],
       16
