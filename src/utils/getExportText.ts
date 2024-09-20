@@ -24,7 +24,7 @@ export default function getExportText({ colors, options }: ExportTextProps) {
   switch (format) {
     case "hex":
     default: {
-      const hexColors = colors.map(color => color.color);
+      const hexColors = colors.map(color => "#" + color.color);
       formattedColors = formatColors(hexColors, output);
       formattedText = formattedColors.join("\n");
       break;
