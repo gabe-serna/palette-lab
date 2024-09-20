@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import Generator from "./generator/Generator";
 import SubHeader from "./sub_header/SubHeader";
 import { generateNewColors } from "./utils/generateColor";
@@ -13,10 +13,12 @@ import { Toaster } from "./components/ui/sonner";
 function App() {
   const [, setSearchParams] = useSearchParams();
 
+  const areAllLocked = useRef(false);
   const context = useContext(ColorContext);
   const { colors, setColors, setRedoTree } = context!;
 
   const randomizeColors = () => {
+    if (areAllLocked.current) return;
     setRedoTree([]);
     setColors(prevColors => {
       const newColors = generateNewColors(prevColors);
@@ -28,7 +30,7 @@ function App() {
   useEffect(() => {
     const colorParams = getColorParams(colors);
     setSearchParams({ colors: colorParams });
-    console.log("updating color params");
+    areAllLocked.current = colors.every(color => color.locked);
   }, [colors]);
 
   useEffect(() => {

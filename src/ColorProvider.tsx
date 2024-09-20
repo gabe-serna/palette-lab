@@ -57,7 +57,6 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
   //Undo Logic
   useEffect(() => {
     if (!isMounted.current) return;
-    console.log("undo tree 0: ", undoTree[0].history);
     setUndoTree(prevUndoTree => {
       //If the undo tree is at max capacity, remove the oldest entry
       if (prevUndoTree.length >= 25) {

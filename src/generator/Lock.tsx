@@ -10,7 +10,7 @@ const Lock = ({ lockColor, bg }: Props) => {
   const isLocked = useRef(false);
 
   const context = useContext(ColorContext);
-  const { colors, setColors } = context!;
+  const { colors, setColors, setRedoTree } = context!;
 
   colors.forEach(color => {
     if (color.color == lockColor) {
@@ -38,6 +38,7 @@ const Lock = ({ lockColor, bg }: Props) => {
           }
           return color;
         });
+        setRedoTree([]);
         setColors(newColors);
       }}
     >

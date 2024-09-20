@@ -1,7 +1,6 @@
 import { SelectedColorType } from "@/ColorProvider";
 
 const updateColorVariables = (colors: SelectedColorType[]) => {
-  console.log("updating color variables");
   const labels = [
     "background",
     "foreground",
