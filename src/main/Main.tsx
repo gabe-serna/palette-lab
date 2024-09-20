@@ -1,11 +1,89 @@
+import { useEffect } from "react";
 import AdditionalInfo from "./AdditionalInfo";
 import BasicInfo from "./BasicInfo";
 import GalleryInfo from "./GalleryInfo";
 import Hero from "./Hero";
 import SideNoteDivider from "./SideNoteDivider";
 import ThemeDisplay from "./ThemeDisplay";
+import getPrefersReducedMotion from "@/utils/getMotionPreference";
 
 const Main = () => {
+  const prefersReducedMotion = getPrefersReducedMotion();
+  // Fade Hero in on Load
+  useEffect(() => {
+    const hero = document.getElementById("hero")!;
+    const elements = hero.getElementsByClassName("animate");
+    for (let i = 0; i < elements.length; i++) {
+      if (prefersReducedMotion) {
+        const element = elements[i] as HTMLElement;
+        element.style.opacity = "1";
+        element.style.visibility = "visible";
+        continue;
+      }
+      elements[i].animate(
+        [
+          { transform: "translateY(-15px)", visibility: "hidden", opacity: 0 },
+          { transform: "translateY(0)", visibility: "visible", opacity: 1 }
+        ],
+        {
+          duration: 1200,
+          delay: 500 + i * 500,
+          easing: "ease-out",
+          fill: "forwards"
+        }
+      );
+    }
+  }, []);
+
+  // Fade Pages in on Scroll
+  useEffect(() => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const elements = entry.target.getElementsByClassName("animate");
+          for (let i = 0; i < elements.length; i++) {
+            if (prefersReducedMotion) {
+              const element = elements[i] as HTMLElement;
+              element.style.opacity = "1";
+              element.style.visibility = "visible";
+              continue;
+            }
+            elements[i].animate(
+              [
+                { transform: "translateY(-15px)", visibility: "hidden", opacity: 0 },
+                { transform: "translateY(0)", visibility: "visible", opacity: 1 }
+              ],
+              {
+                duration: 600,
+                delay: i * 250,
+                easing: "ease-out",
+                fill: "forwards"
+              }
+            );
+            observer.unobserve(entry.target);
+          }
+        }
+      });
+    };
+
+    let options;
+    if (!prefersReducedMotion) {
+      options = { threshold: 0.5 };
+    } else {
+      options = { threshold: 0, rootMargin: "0px 0px -100px 0px" };
+    }
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(document.getElementById("basic-info")!);
+    observer.observe(document.getElementById("theme-display")!);
+    observer.observe(document.getElementById("additional-info")!);
+    observer.observe(document.getElementById("divider")!);
+    observer.observe(document.getElementById("gallery-info")!);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <Hero className="flex flex-col items-center relative z-20 justify-center size-full bg-[radial-gradient(ellipse,_rgba(0,_0,_0,_0)_50%,_hsl(from_hsl(var(--background))_h_s_calc(l_/_3))_100%)]" />

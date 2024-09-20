@@ -68,7 +68,7 @@ function App() {
         event.pageY < 2337
           ? "radial-gradient(hsla(from hsl(var(--accent)) h s calc(l * 0.5) / 0.3) 0%, rgba(36, 36, 36, 0) 50%)"
           : "radial-gradient(hsla(from hsl(var(--secondary)) h s calc(l * 0.5) / 0.4) 0%, rgba(36, 36, 36, 0) 50%)";
-      const opacity = event.pageY < 2150 || event.pageY > 2500 ? "1" : "0";
+      const opacity = event.pageY < 2150 || event.pageY > 2600 ? "1" : "0";
 
       const hoverKeyframes = {
         left: `${left}px`,

@@ -135,9 +135,9 @@ const AdditionalInfo = ({ className, style }: Props) => {
   }, []);
 
   return (
-    <section style={style} className={className}>
+    <section id="additional-info" style={style} className={className}>
       <div className="relative flex flex-col text-center">
-        <h1 className="z-10 text-7xl">
+        <h1 className="z-10 text-7xl animate" style={{ opacity: "0" }}>
           <span className="bg-clip-text text-transparent bg-gradient-to-l from-primary from-10% to-secondary to-80%">
             Stunning themes
           </span>
@@ -153,10 +153,12 @@ const AdditionalInfo = ({ className, style }: Props) => {
           <figure
             id="choose"
             style={{
+              opacity: "0",
+              visibility: "hidden",
               boxShadow: baseBoxShadow,
               transition: "box-shadow ease 0.5s, opacity ease 0.5s"
             }}
-            className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
+            className="animate overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
             <div className="flex flex-col items-center gap-2 my-auto">
               <PaintBucket
@@ -179,10 +181,12 @@ const AdditionalInfo = ({ className, style }: Props) => {
           <figure
             id="adjust"
             style={{
+              opacity: "0",
+              visibility: "hidden",
               boxShadow: baseBoxShadow,
               transition: "box-shadow ease 0.5s, opacity ease 0.5s"
             }}
-            className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
+            className="animate overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
             <div className="flex flex-col items-center gap-2 my-auto">
               <ArrowLeftRight
@@ -205,10 +209,12 @@ const AdditionalInfo = ({ className, style }: Props) => {
           <figure
             id="export"
             style={{
+              opacity: "0",
+              visibility: "hidden",
               boxShadow: baseBoxShadow,
               transition: "box-shadow ease 0.5s, opacity ease 0.5s"
             }}
-            className="overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
+            className="animate overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
           >
             <div className="flex flex-col items-center gap-2 my-auto">
               <Download

@@ -11,8 +11,11 @@ const Hero = ({ className }: Props) => {
   const { colors } = context!;
   const buttonTextColor = getTextColor(colors[2].color);
   return (
-    <section className={className}>
-      <div className="relative flex justify-center w-full h-32">
+    <section id="hero" className={className}>
+      <div
+        style={{ opacity: "0" }}
+        className="relative flex justify-center w-full h-32 animate"
+      >
         <h1
           style={{ textShadow: "3px 3px 20px rgba(0, 0, 0, 0.5)" }}
           className="absolute z-10 text-transparent text-9xl"
@@ -23,15 +26,18 @@ const Hero = ({ className }: Props) => {
           Inspiration
         </h1>
       </div>
-      <h2 className="z-10 mt-4 text-4xl">at the press of a button</h2>
+      <h2 style={{ opacity: "0" }} className="z-10 mt-4 text-4xl animate">
+        at the press of a button
+      </h2>
       <button
         type="button"
         id="space"
         style={{
           boxShadow: "0px -2px 30px -15px hsl(var(--foreground))",
-          color: buttonTextColor
+          color: buttonTextColor,
+          opacity: "0"
         }}
-        className=" text-lg mt-16 bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.5)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
+        className="animate text-lg mt-16 bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.5)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
       >
         Press Space
       </button>

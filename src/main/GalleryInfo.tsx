@@ -6,10 +6,10 @@ interface Props {
 
 const GalleryInfo = ({ className }: Props) => {
   return (
-    <div className={className}>
+    <section id="gallery-info" className={className}>
       <GalleryCarousel />
       <div className="relative flex flex-col w-1/2">
-        <h1 className="z-20 text-7xl">
+        <h1 style={{ opacity: "0" }} className="z-20 text-7xl animate">
           Bring Your{" "}
           <div className="relative z-10 inline">
             Colors{" "}
@@ -23,19 +23,23 @@ const GalleryInfo = ({ className }: Props) => {
           </span>
         </h1>
         <p
-          style={{ width: "clamp(45ch, 50%, 75ch)" }}
-          className="z-20 mt-4 text-lg text-[hsl(from_hsl(var(--foreground))_h_s_calc(l_*_0.75))]"
+          style={{ width: "clamp(45ch, 50%, 75ch)", opacity: "0" }}
+          className="animate z-20 mt-4 text-lg text-[hsl(from_hsl(var(--foreground))_h_s_calc(l_*_0.75))]"
         >
           Found a palette you love? See it in action with a wide variety of artwork
           demos. Watch your colors give life to art.
           <br />
           <br />
         </p>
-        <a href="#" className="z-20 text-md text-primary">
+        <a
+          href="#"
+          style={{ opacity: "0" }}
+          className="z-20 animate text-md text-primary"
+        >
           View Gallery {">"}
         </a>
       </div>
-    </div>
+    </section>
   );
 };
 

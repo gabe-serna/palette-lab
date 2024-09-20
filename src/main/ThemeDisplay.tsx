@@ -39,7 +39,7 @@ const ThemeDisplay = ({ className }: Props) => {
 
   return (
     <section id="theme-display" className={className}>
-      <h1 className="w-1/2 text-center text-7xl">
+      <h1 className="w-1/2 text-center text-7xl animate" style={{ opacity: "0" }}>
         Discover that{" "}
         <div className="inline bg-clip-text text-transparent bg-gradient-to-r from-primary from-10% to-accent to-80%">
           Magic{" "}
@@ -57,7 +57,8 @@ const ThemeDisplay = ({ className }: Props) => {
       >
         <ScrollArea
           id="themes-top"
-          className="relative z-20 rounded-md h-28 whitespace-nowrap"
+          style={{ opacity: "0" }}
+          className="relative z-20 rounded-md h-28 whitespace-nowrap animate"
         >
           <div className="z-20 flex p-4 space-x-8 w-max">
             <ThemeCard theme={"08081C-BFBAB5-3A999C-3457CB-CD7860"} name="Icicle" />
@@ -81,7 +82,11 @@ const ThemeDisplay = ({ className }: Props) => {
             />
           </div>
         </ScrollArea>
-        <ScrollArea id="themes-bottom" className="h-32 rounded-md whitespace-nowrap">
+        <ScrollArea
+          id="themes-bottom"
+          style={{ opacity: "0" }}
+          className="h-32 rounded-md whitespace-nowrap animate"
+        >
           <div className="z-20 flex p-4 space-x-8 w-max">
             <ThemeCard
               theme={"05191A-BCC0B4-FC782C-AAB71F-FB32A4"}
@@ -98,7 +103,7 @@ const ThemeDisplay = ({ className }: Props) => {
           </div>
         </ScrollArea>
       </div>
-      <a href="#" className="text-md text-primary">
+      <a href="#" style={{ opacity: "0" }} className="text-md text-primary animate">
         Discover Themes {">"}
       </a>
     </section>
