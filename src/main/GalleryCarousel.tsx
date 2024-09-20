@@ -8,9 +8,10 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 import GalleryPreview1 from "./images/gallery-preview-1";
+import GalleryPreview2 from "./images/gallery-preview-2";
 
 const GalleryCarousel = () => {
-  const images = [<GalleryPreview1 />];
+  const images = [<GalleryPreview1 />, <GalleryPreview2 />];
   return (
     <Carousel
       style={{ opacity: "0" }}
