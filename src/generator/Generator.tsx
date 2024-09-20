@@ -16,9 +16,9 @@ const Generator = () => {
     "Background",
     "Foreground",
     "Primary",
+    "Secondary",
     "Accent",
-    "Accent 2",
-    "Accent 3"
+    "Accent 2"
   ];
 
   return (

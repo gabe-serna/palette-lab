@@ -17,12 +17,12 @@ const SideNoteDivider = ({ className }: Props) => {
         >
           <div
             style={{
-              boxShadow: "0px 0px 30px -10px hsl(var(--tertiary))"
+              boxShadow: "0px 0px 30px -10px hsl(var(--accent-2))"
             }}
-            className="flex flex-col items-center justify-center z-10 w-full h-36 bg-background border-y-[1px] border-[hsl(from_hsl(var(--tertiary))_h_calc(l_*_0.8)_calc(l_*_0.8))]"
+            className="flex flex-col items-center justify-center z-10 w-full h-36 bg-background border-y-[1px] border-[hsl(from_hsl(var(--accent-2))_h_calc(l_*_0.8)_calc(l_*_0.8))]"
           >
             <p className="text-xl italic">
-              And 100% Free. <span className="inline text-accent">Forever</span>.
+              And 100% Free. <span className="inline text-secondary">Forever</span>.
             </p>
           </div>
         </div>

@@ -9,7 +9,7 @@ const BasicInfo = ({ className }: Props) => {
     <div className={className}>
       <div className="relative z-10 flex flex-col w-1/2">
         <h1 className="z-10 text-7xl">
-          <span className="bg-clip-text text-transparent bg-gradient-to-l from-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.6))] from-10% to-accent to-80%">
+          <span className="bg-clip-text text-transparent bg-gradient-to-l from-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.6))] from-10% to-secondary to-80%">
             Effortless
           </span>{" "}
           <div className="relative z-10 inline">

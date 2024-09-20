@@ -23,13 +23,13 @@ export const generateNewColors = (colors: SelectedColorType[]) => {
       case 4:
       case 5:
       default:
-        return generateColorByType("Accent");
+        return generateColorByType("secondary");
     }
   });
   return newColors;
 };
 
-function generateColorByType(type: "Background" | "Foreground" | "Accent") {
+function generateColorByType(type: "Background" | "Foreground" | "secondary") {
   switch (type) {
     case "Background": {
       const color = hslToHex(
@@ -47,7 +47,7 @@ function generateColorByType(type: "Background" | "Foreground" | "Accent") {
       ).toUpperCase();
       return { color: color, locked: false };
     }
-    case "Accent": {
+    case "secondary": {
       const color = hslToHex(
         randomInt(0, 360),
         randomInt(42, 98),

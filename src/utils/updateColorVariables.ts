@@ -6,9 +6,9 @@ const updateColorVariables = (colors: SelectedColorType[]) => {
     "background",
     "foreground",
     "primary",
-    "accent",
     "secondary",
-    "tertiary"
+    "accent",
+    "accent-2"
   ];
 
   const root = document.documentElement;

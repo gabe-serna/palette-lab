@@ -19,7 +19,7 @@ const Hero = ({ className }: Props) => {
         >
           Inspiration
         </h1>
-        <h1 className="absolute select-none text-9xl bg-gradient-to-l from-primary from-10% to-accent to-80% bg-clip-text text-transparent z-10">
+        <h1 className="absolute select-none text-9xl bg-gradient-to-l from-primary from-10% to-secondary to-80% bg-clip-text text-transparent z-10">
           Inspiration
         </h1>
       </div>
@@ -35,7 +35,7 @@ const Hero = ({ className }: Props) => {
       >
         Press Space
       </button>
-      <div className="absolute top-10 left-24 size-[60%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--accent))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] -rotate-[25deg] z-0" />
+      <div className="absolute top-10 left-24 size-[60%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--secondary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] -rotate-[25deg] z-0" />
       <div className="absolute top-36 -right-0 size-1/2 bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_60%)] rotate-6 z-0" />
     </section>
   );

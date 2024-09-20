@@ -10,9 +10,9 @@ const labels = [
   "background",
   "foreground",
   "primary",
+  "secondary",
   "accent",
-  "accent-2",
-  "accent-3"
+  "accent-2"
 ];
 
 export default function getExportText({ colors, options }: ExportTextProps) {

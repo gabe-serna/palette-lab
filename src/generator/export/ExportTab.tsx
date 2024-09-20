@@ -60,10 +60,10 @@ const ExportTab = ({ value, baseText }: Props) => {
         </div>
         <pre
           id="export-output"
-          className="relative w-full h-full row-start-2 px-4 py-2 mb-auto overflow-auto font-mono text-lg border pointer-events-auto bg-card rounded-xl border-accent text-foreground/80 "
+          className="relative w-full h-full row-start-2 px-4 py-2 mb-auto overflow-auto font-mono text-lg border pointer-events-auto bg-card rounded-xl border-secondary text-foreground/80 "
         ></pre>
         <button
-          className="absolute w-16 h-6 text-sm font-medium rounded-lg bg-secondary right-16 bottom-5 pointer-events-auto text-background transition-colors hover:bg-[hsl(from_hsl(var(--secondary))_h_calc(s_*_1)_calc(l_*_0.8))]"
+          className="absolute w-16 h-6 text-sm font-medium rounded-lg bg-accent right-16 bottom-5 pointer-events-auto text-background transition-colors hover:bg-[hsl(from_hsl(var(--accent))_h_calc(s_*_1)_calc(l_*_0.8))]"
           value="copy"
           onClick={() => {
             const output = document.getElementById("export-output")!;

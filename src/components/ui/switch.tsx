@@ -13,7 +13,7 @@ const Switch = React.forwardRef<
     <SwitchPrimitives.Root
       data-state={options.shades ? "checked" : "unchecked"}
       className={cn(
-        "peer inline-flex h-[1.325rem] w-10 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-secondary data-[state=unchecked]:bg-[hsl(from_hsl(var(--background))_h_calc(s_*_0.4)_calc(l_*_5))]",
+        "peer inline-flex h-[1.325rem] w-10 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent data-[state=unchecked]:bg-[hsl(from_hsl(var(--background))_h_calc(s_*_0.4)_calc(l_*_5))]",
         className
       )}
       {...props}

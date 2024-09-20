@@ -12,8 +12,8 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(182.132,-66.291,66.301,182.16,610.993,868.626)"
         >
-          <stop offset="0.25" stopColor="hsl(var(--secondary))" />
-          <stop offset="1" stopColor="hsl(var(--secondary))" stopOpacity="0.2" />
+          <stop offset="0.25" stopColor="hsl(var(--accent))" />
+          <stop offset="1" stopColor="hsl(var(--accent))" stopOpacity="0.2" />
         </linearGradient>
         <linearGradient
           //Lower Left Line
@@ -24,7 +24,7 @@ const Graphic1 = () => {
         >
           <stop offset="0" stopColor="#000000" stopOpacity="0" />
           <stop offset=".3" stopColor="hsl(var(--primary))" stopOpacity="1" />
-          <stop offset=".55" stopColor="hsl(var(--accent))" stopOpacity="1" />
+          <stop offset=".55" stopColor="hsl(var(--secondary))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--primary))" stopOpacity="0" />
         </linearGradient>
         <linearGradient
@@ -34,7 +34,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(920.091,920.091,-185.429,185.429,1222.756,736.53)"
         >
-          <stop offset="0" stopColor="hsl(var(--accent))" stopOpacity="1" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
         </linearGradient>
         <linearGradient
@@ -45,7 +45,7 @@ const Graphic1 = () => {
           gradientTransform="matrix(566.21,566.21,-114.11,114.11,1519.928,204.141)"
         >
           <stop offset="0" stopColor="hsl(var(--background))" stopOpacity="0" />
-          <stop offset="1" stopColor="hsl(var(--secondary))" stopOpacity="1" />
+          <stop offset="1" stopColor="hsl(var(--accent))" stopOpacity="1" />
         </linearGradient>
         <linearGradient
           //Main Loop
@@ -54,7 +54,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0,2243.967,-3892.228,0,3234.067,-10.437) rotate(45)"
         >
-          <stop offset="0.3" stopColor="hsl(var(--accent))" stopOpacity="0" />
+          <stop offset="0.3" stopColor="hsl(var(--secondary))" stopOpacity="0" />
           <stop offset=".6" stopColor="hsl(var(--primary))" />
           <stop offset=".8" stopColor="hsl(var(--primary))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
@@ -66,7 +66,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(826.169,826.169,-121.742,121.742,1483.051,708.235)"
         >
-          <stop offset="0" stopColor="hsl(var(--tertiary))" stopOpacity="1" />
+          <stop offset="0" stopColor="hsl(var(--accent-2))" stopOpacity="1" />
           <stop offset=".609" stopColor="hsl(var(--primary))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
         </linearGradient>
@@ -77,7 +77,7 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(426.89,-426.89,619.129,619.129,1322.042,547.231)"
         >
-          <stop offset="0" stopColor="hsl(var(--tertiary))" stopOpacity="1" />
+          <stop offset="0" stopColor="hsl(var(--accent-2))" stopOpacity="1" />
           <stop offset=".5" stopColor="hsl(var(--primary))" stopOpacity="1" />
           <stop offset="1" stopColor="hsl(var(--background))" stopOpacity="0" />
         </linearGradient>
@@ -101,10 +101,10 @@ const Graphic1 = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(0,228.107,-228.062,0,2143.102,713.375)"
         >
-          <stop offset="0" stopColor="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stopColor="hsl(from hsl(var(--accent)) h s calc(l * 0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l * 0.5))"
           />
         </linearGradient>
       </defs>

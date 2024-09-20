@@ -41,7 +41,7 @@ const ThemeDisplay = ({ className }: Props) => {
     <section id="theme-display" className={className}>
       <h1 className="w-1/2 text-center text-7xl">
         Discover that{" "}
-        <div className="inline bg-clip-text text-transparent bg-gradient-to-r from-primary from-10% to-secondary to-80%">
+        <div className="inline bg-clip-text text-transparent bg-gradient-to-r from-primary from-10% to-accent to-80%">
           Magic{" "}
         </div>{" "}
         blend.
