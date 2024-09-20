@@ -10,9 +10,10 @@ import { ExportContext } from "@/ExportProvider";
 import { getTextColor } from "@/utils/getTextColor";
 import VisuallyHidden from "@/utils/VisuallyHidden";
 import { Download } from "lucide-react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import OptionsTab from "./OptionsTab";
 import { toast } from "sonner";
+import getExportText from "@/utils/getExportText";
 
 const Export = () => {
   const { options, setOptions } = useContext(ExportContext)!;
@@ -24,11 +25,22 @@ const Export = () => {
   if (textColor.includes("foreground")) baseText = "text-foreground ";
   else baseText = "text-background ";
 
+  useEffect(() => {
+    getExportText({ colors, options });
+  }, [colors, options]);
+
   //Height of Dialog is 30rem, 1.5rem padding y, tab padding bottom 1rem, tablist height 3rem
   //Export Box total height should then be 30 - 1.5 - 1 - 3 = 24.5rem
   return (
     <Dialog modal={false}>
-      <DialogTrigger>
+      <DialogTrigger
+        className="focus:outline-0"
+        onClick={() => {
+          setTimeout(() => {
+            getExportText({ colors, options });
+          }, 50);
+        }}
+      >
         <Download />
       </DialogTrigger>
       <DialogContent tabIndex={-1} className="focus:outline-0">
@@ -38,6 +50,11 @@ const Export = () => {
         <Tabs
           defaultValue="export"
           className="grid grid-rows-[2.5rem_calc(100%-2.5rem)] w-full h-[calc(100%)] px-4 pb-4"
+          onClick={() => {
+            setTimeout(() => {
+              getExportText({ colors, options });
+            }, 1);
+          }}
         >
           <TabsList className="row-start-1">
             <TabsTrigger
@@ -109,13 +126,7 @@ const Export = () => {
               <div
                 id="export-output"
                 className="relative w-full h-full row-start-2 px-4 py-2 mb-auto overflow-auto font-mono text-lg border pointer-events-auto bg-card rounded-xl border-accent text-foreground/80 "
-              >
-                <p>--text: #050315; </p>
-                <p>--background: #fbfbfe;</p>
-                <p>--primary: #2f27ce;</p>
-                <p>--secondary: #dedcff;</p>
-                <p>--accent: #433bff;</p>
-              </div>
+              ></div>
               <button
                 className="absolute w-16 h-6 text-sm font-medium rounded-lg bg-secondary right-16 bottom-5 pointer-events-auto text-background transition-colors hover:bg-[hsl(from_hsl(var(--secondary))_h_calc(s_*_1)_calc(l_*_0.8))]"
                 value="copy"

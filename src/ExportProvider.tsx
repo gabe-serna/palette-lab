@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-interface ExportOptions {
+export interface ExportOptions {
   format: "hex" | "rgb" | "hsl" | "oklab" | "oklch";
   shades: boolean;
   output: "css" | "tailwind-css" | "scss";

@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Switch } from "@/components/ui/switch";
+// import { Switch } from "@/components/ui/switch";
 import { TabsContent } from "@/components/ui/tabs";
 import { ExportContext } from "@/ExportProvider";
 import { useContext } from "react";
@@ -13,9 +13,9 @@ const OptionsTab = ({ value }: Props) => {
   const { options, setOptions } = useContext(ExportContext)!;
   return (
     <TabsContent value={value}>
-      <div className="flex flex-col items-start w-full px-20 pt-6 h-44">
+      <div className="flex flex-col items-start w-full px-2 pt-6 h-44">
         <RadioGroup defaultValue={options.format} className="w-full">
-          <div className="flex flex-row justify-between mb-4">
+          <div className="flex flex-row justify-start gap-10 mb-4">
             <div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
@@ -57,7 +57,7 @@ const OptionsTab = ({ value }: Props) => {
                 </Label>
               </div>
             </div>
-            <div>
+            {/* <div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
                   value="oklab"
@@ -84,10 +84,10 @@ const OptionsTab = ({ value }: Props) => {
                   OKLCH
                 </Label>
               </div>
-            </div>
+            </div> */}
           </div>
         </RadioGroup>
-        <div className="flex items-center space-x-2">
+        {/* <div className="flex items-center space-x-2">
           <Switch
             id="shades"
             onClick={() => {
@@ -97,7 +97,7 @@ const OptionsTab = ({ value }: Props) => {
           <Label htmlFor="shades" className="text-md">
             Shades
           </Label>
-        </div>
+        </div> */}
       </div>
     </TabsContent>
   );
