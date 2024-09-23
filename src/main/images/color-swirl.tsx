@@ -119,7 +119,7 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(1.812,4.978,-4.978,1.812,38.174,333.785)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stop-color="hsl(var(--secondary))" />
           <stop
             offset="1"
             stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
@@ -133,7 +133,7 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.63,9.973,-9.973,3.63,452.969,336.164)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stop-color="hsl(var(--secondary))" />
           <stop
             offset="1"
             stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
@@ -161,7 +161,7 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(1.584,4.351,-4.351,1.584,505.863,266.169)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stop-color="hsl(var(--secondary))" />
           <stop
             offset="1"
             stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
@@ -175,7 +175,7 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(4.297,11.804,-11.804,4.297,180.737,352.407)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stop-color="hsl(var(--secondary))" />
           <stop
             offset="1"
             stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
@@ -189,7 +189,7 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.338,9.169,-9.169,3.338,98.088,432.898)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stop-color="hsl(var(--secondary))" />
           <stop
             offset="1"
             stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
@@ -378,7 +378,7 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(34.634,95.145,-95.145,34.634,322.511,370.448)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stop-color="hsl(var(--secondary))" />
           <stop
             offset="1"
             stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
@@ -836,7 +836,7 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(2.154,5.919,-5.919,2.154,477.999,547.639)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stop-color="hsl(var(--secondary))" />
           <stop
             offset="1"
             stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
