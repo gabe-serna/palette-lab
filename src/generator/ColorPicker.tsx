@@ -32,7 +32,11 @@ const ColorPicker = ({ index, className }: Props) => {
       }
     >
       <div className="absolute -left-[1.5rem] z-0 w-0 h-0 border-y-[20px] border-y-transparent border-r-[1.5rem] border-r-primary" />
-      <HexColorPicker color={color.toUpperCase()} onChange={setColor} />
+      <HexColorPicker
+        color={color.toUpperCase()}
+        onChange={setColor}
+        className="z-[100]"
+      />
       {color && (
         <HexColorInput
           id={"input-" + index}
