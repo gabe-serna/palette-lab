@@ -15,7 +15,7 @@ const galleryPreview1 = () => {
 	.a2{fill:#F6F3E4}
 	.a3{fill:hsl(from hsl(var(--primary-foreground)) h s calc(l * 0.6))}
 	.a4{fill:hsl(var(--primary-foreground))}
-	.a5{fill:hsl(var(--foreground))}
+	.a5{fill:hsl(var(--foreground))} 
 	.a6{fill:hsl(var(--background))}
 	.a7{fill:#FFCF4B}
 	.a8{fill:#FF9700}
@@ -81,10 +81,10 @@ const galleryPreview1 = () => {
 			L199.3,57.5z"
           />
           <path
-            className="a11"
+            className="a12"
             d="M55.7,229.7L7.5,190.5l-6,7.3c-3.9,4.6,0.2,14.3,9.1,21.5l16.1,13.1c8.9,7.2,19.2,9.3,23.1,4.7L55.7,229.7z"
           />
-          <polygon className="a11" points="199.2,57.5 206.7,0 151.1,18.4 		" />
+          <polygon className="a12" points="199.2,57.5 206.7,0 151.1,18.4 		" />
           <polygon className="a3" points="179.5,9 203,28.2 206.7,0 		" />
           <path
             className="a6"

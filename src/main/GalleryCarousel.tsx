@@ -11,13 +11,15 @@ import GalleryPreview1 from "./images/gallery-preview-1";
 import GalleryPreview2 from "./images/gallery-preview-2";
 import GalleryPreview3 from "./images/gallery-preview-3";
 import GalleryPreview4 from "./images/gallery-preview-4";
+import GalleryPreview5 from "./images/gallery-preview-5";
 
 const GalleryCarousel = () => {
   const images = [
     <GalleryPreview1 />,
     <GalleryPreview2 />,
     <GalleryPreview3 />,
-    <GalleryPreview4 />
+    <GalleryPreview4 />,
+    <GalleryPreview5 />
   ];
   return (
     <Carousel
