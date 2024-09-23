@@ -10,9 +10,15 @@ import {
 import GalleryPreview1 from "./images/gallery-preview-1";
 import GalleryPreview2 from "./images/gallery-preview-2";
 import GalleryPreview3 from "./images/gallery-preview-3";
+import GalleryPreview4 from "./images/gallery-preview-4";
 
 const GalleryCarousel = () => {
-  const images = [<GalleryPreview1 />, <GalleryPreview2 />, <GalleryPreview3 />];
+  const images = [
+    <GalleryPreview1 />,
+    <GalleryPreview2 />,
+    <GalleryPreview3 />,
+    <GalleryPreview4 />
+  ];
   return (
     <Carousel
       style={{ opacity: "0" }}
