@@ -59,14 +59,12 @@ export const CardBase = ({ id, children }: CardProps) => {
     <figure
       id={id}
       style={{
-        opacity: "0",
-        visibility: "hidden",
         boxShadow: "0px 0px 10px 5px hsl(from hsl(var(--primary)) h s calc(l / 3))",
         transition: "box-shadow ease 0.5s, opacity ease 0.5s"
       }}
       className={
         "3xl:w-[22.5rem] 3xl:h-[30rem] 2xl:w-[19.5rem] 2xl:h-[26rem] xl:w-60 xl:h-80 lg:w-[12.75rem] lg:h-[17rem] " +
-        "bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr] animate overflow-hidden"
+        "bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr] overflow-hidden"
       }
     >
       {children}

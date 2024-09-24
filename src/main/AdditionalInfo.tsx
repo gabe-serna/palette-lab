@@ -150,7 +150,11 @@ const AdditionalInfo = ({ className, style }: Props) => {
           </div>
           touch.
         </Heading>
-        <div id="additional-info" className="z-20 flex gap-12 mt-20">
+        <div
+          id="additional-info"
+          style={{ opacity: 0 }}
+          className="z-20 flex gap-12 mt-20 animate"
+        >
           <CardBase id="choose">
             <div className="flex flex-col items-center gap-2 my-auto">
               <PaintBucket
