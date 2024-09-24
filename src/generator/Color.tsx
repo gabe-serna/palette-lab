@@ -113,18 +113,28 @@ const Color = ({ id, label, index }: Props) => {
   }, [isPickerVisible, colors]);
 
   return (
-    <div id={id} className="relative flex flex-col w-full mb-2">
+    <div
+      id={id}
+      className="relative flex flex-col w-full 3xl:mb-4 2xl:mb-3 xl:mb-2 lg:mb-1"
+    >
       <div
         id={"color-" + index}
         style={{
           backgroundColor: `#${color}`,
-          border: `1px solid hsl(from ${textColor} h s calc(l * 0.6))`
+          borderColor: `hsl(from ${textColor} h s calc(l * 0.6))`
         }}
-        className={`flex w-full group justify-start px-2 items-center h-10 rounded-xl`}
+        className={
+          "3xl:px-4 3xl:py-7 2xl:px-3 2xl:py-[1.4rem] xl:px-2 xl:py-0 " +
+          "lg:px-2 lg:max-xl:h-9 " +
+          "flex w-full group justify-start items-center h-10 rounded-xl border 3xl:border-2"
+        }
       >
         {textColor && (
-          <div className="flex items-center justify-between w-full pointer-events-none ">
-            <h1 style={{ color: textColor }} className="text-xl">
+          <div className="flex items-center justify-between w-full pointer-events-none">
+            <h1
+              style={{ color: textColor }}
+              className="3xl:text-3xl 2xl:text-2xl xl:text-xl lg:text-lg"
+            >
               {color.toUpperCase()}
             </h1>
             <Lock lockColor={color} bg={textColor} />
@@ -132,10 +142,20 @@ const Color = ({ id, label, index }: Props) => {
         )}
         <ColorPicker
           index={index}
-          className={pickerVisibility + "transition-opacity left-44 top-24"}
+          className={
+            pickerVisibility +
+            "transition-opacity top-24 3xl:left-60 2xl:left-[12.5rem] xl:left-44 lg:left-[9.5rem]"
+          }
         />
       </div>
-      <h1 className="pl-1 text-sm italic">{label}</h1>
+      <p
+        className={
+          "3xl:text-xl 2xl:text-base xl:text-sm lg:text-xs " +
+          "pl-1 italic 2xl:mt-[1px] 3xl:mt-[3px]"
+        }
+      >
+        {label}
+      </p>
       {!isLocked && (
         <div className="absolute flex justify-center items-center w-full h-8 -bottom-[.8rem] transition-opacity opacity-0 hover:opacity-100">
           <SwitchColors index={index} switchColor={color} />

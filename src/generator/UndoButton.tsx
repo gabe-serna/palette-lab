@@ -17,6 +17,7 @@ const UndoButton = () => {
     useContext(ColorContext)!;
   const undoAvailable = undoTree.length > 1;
 
+  const opacity = undoAvailable ? "opacity-100 " : "opacity-40 ";
   return (
     <TooltipProvider>
       <Tooltip>
@@ -33,7 +34,7 @@ const UndoButton = () => {
             }
           }}
         >
-          <Undo className={undoAvailable ? "opacity-100" : "opacity-40"} />
+          <Undo className={opacity + "3xl:size-9 2xl:size-7 xl:size-6 lg:size-5"} />
         </TooltipTrigger>
         <TooltipContent>
           <p>Undo</p>

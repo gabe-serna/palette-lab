@@ -33,7 +33,12 @@ const Generator = () => {
         "flex flex-col justify-between w-full h-full bg-background"
       }
     >
-      <div className="flex flex-row items-center w-full gap-2 px-4 pt-8 h-min md:flex-col">
+      <div
+        className={
+          "3xl:px-6 2xl:px-5 xl:px-4 lg:px-[0.875rem] " +
+          "flex flex-row items-center w-full gap-2 pt-8 h-min lg:flex-col"
+        }
+      >
         {colors.map((color, index) => {
           return (
             <Color

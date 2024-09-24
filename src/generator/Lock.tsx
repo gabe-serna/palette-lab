@@ -25,7 +25,9 @@ const Lock = ({ lockColor, bg }: Props) => {
   return (
     <button
       className={
-        "absolute right-2 transition-opacity pointer-events-auto size-6 " + classes
+        "3xl:size-9 2xl:size-7 xl:size-6 lg:size-5 " +
+        "absolute 3xl:right-4 2xl:right-3 lg:right-2 transition-opacity pointer-events-auto " +
+        classes
       }
       type="button"
       onClick={event => {

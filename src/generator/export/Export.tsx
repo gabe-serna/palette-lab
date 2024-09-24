@@ -29,8 +29,6 @@ const Export = () => {
     getExportText({ colors, options });
   }, [colors, options]);
 
-  //Height of Dialog is 30rem, 1.5rem padding y, tab padding bottom 1rem, tablist height 3rem
-  //Export Box total height should then be 30 - 1.5 - 1 - 3 = 24.5rem
   return (
     <Dialog modal={false}>
       <DialogTrigger
@@ -41,7 +39,7 @@ const Export = () => {
           }, 50);
         }}
       >
-        <Download />
+        <Download className="3xl:size-9 2xl:size-7 xl:size-6 lg:size-5" />
       </DialogTrigger>
       <DialogContent tabIndex={-1} className="focus:outline-0">
         <VisuallyHidden>

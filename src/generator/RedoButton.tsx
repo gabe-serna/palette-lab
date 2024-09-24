@@ -16,6 +16,7 @@ const RedoButton = () => {
   const { setColors, redoTree, setRedoTree } = useContext(ColorContext)!;
   const redoAvailable = redoTree.length > 0;
 
+  const opacity = redoAvailable ? "opacity-100 " : "opacity-40 ";
   return (
     <TooltipProvider>
       <Tooltip>
@@ -32,7 +33,7 @@ const RedoButton = () => {
             }
           }}
         >
-          <Redo className={redoAvailable ? "opacity-100" : "opacity-40"} />
+          <Redo className={opacity + "3xl:size-9 2xl:size-7 xl:size-6 lg:size-5"} />
         </TooltipTrigger>
         <TooltipContent>
           <p>Redo</p>

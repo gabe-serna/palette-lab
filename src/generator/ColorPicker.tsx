@@ -27,9 +27,7 @@ const ColorPicker = ({ index, className }: Props) => {
         boxShadow: "0px 0px 20px 10px hsl(from hsl(var(--primary)) h s calc(l / 2))",
         backgroundColor: bgColor
       }}
-      className={
-        className + " relative border-4 rounded-xl w-min h-min border-primary"
-      }
+      className={className + " relative border-4 rounded-xl border-primary"}
     >
       <div className="absolute -left-[1.5rem] z-0 w-0 h-0 border-y-[20px] border-y-transparent border-r-[1.5rem] border-r-primary" />
       <HexColorPicker

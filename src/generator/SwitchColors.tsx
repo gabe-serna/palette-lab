@@ -25,7 +25,7 @@ const SwitchColors = ({ index, switchColor }: Props) => {
             setColors(newColors);
           }}
         >
-          <ArrowDownUp />
+          <ArrowDownUp className="3xl:size-9 2xl:size-7 xl:size-6 lg:size-5" />
         </TooltipTrigger>
       </Tooltip>
     </TooltipProvider>

@@ -37,7 +37,7 @@ const AddColor = () => {
             setSearchParams({ colors: colorParams });
           }}
         >
-          <PlusCircle />
+          <PlusCircle className="3xl:size-9 2xl:size-7 xl:size-6 lg:size-5" />
         </TooltipTrigger>
         <TooltipContent side="bottom">
           <p>Add Color</p>
