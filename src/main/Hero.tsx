@@ -10,6 +10,8 @@ const Hero = ({ className }: Props) => {
   const context = useContext(ColorContext);
   const { colors } = context!;
   const buttonTextColor = getTextColor(colors[2].color);
+  const mainTextSize =
+    "3xl:text-[11rem] 3xl: 2xl:text-[8.5rem] xl:text-[7.5rem] lg:text-8xl ";
   return (
     <section id="hero" className={className}>
       <div
@@ -18,15 +20,27 @@ const Hero = ({ className }: Props) => {
       >
         <h1
           style={{ textShadow: "3px 3px 20px rgba(0, 0, 0, 0.5)" }}
-          className="absolute z-10 text-transparent text-9xl"
+          className={mainTextSize + " absolute z-10 text-transparent"}
         >
           Inspiration
         </h1>
-        <h1 className="absolute select-none text-9xl bg-gradient-to-l from-primary from-10% to-secondary to-80% bg-clip-text text-transparent z-10">
+        <h1
+          className={
+            mainTextSize +
+            "absolute select-none bg-gradient-to-l from-primary from-10% to-secondary to-80% bg-clip-text text-transparent z-10"
+          }
+        >
           Inspiration
         </h1>
       </div>
-      <h2 style={{ opacity: "0" }} className="z-10 mt-4 text-4xl animate">
+      <h2
+        style={{ opacity: "0" }}
+        className={
+          "3xl:text-[3.25rem] 2xl:text-[2.5rem] xl:text-4xl lg:text-3xl " +
+          "3xl:mt-20 2xl:mt-6 xl:mt-2 lg:-mt-4 " +
+          "z-10 animate"
+        }
+      >
         at the press of a button
       </h2>
       <button
@@ -37,7 +51,13 @@ const Hero = ({ className }: Props) => {
           color: buttonTextColor,
           opacity: "0"
         }}
-        className="animate text-lg mt-16 bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.5)] px-[3.25rem] py-[0.675rem] rounded-2xl z-10"
+        className={
+          "3xl:text-[1.375rem] 2xl:text-lg xl:text-base lg:text-base " +
+          "3xl:mt-[5.5rem] 2xl:mt-16 xl:mt-12 lg:mt-11 " +
+          "3xl:px-[4.675rem] 3xl:py-[1.125rem] 2xl:px-[3.75rem] 2xl:py-[0.75rem] xl:px-[3.25rem] xl:py-[0.675rem] " +
+          "lg:px-[2.875rem] lg:py-[0.625rem] " +
+          "animate bg-gradient-to-b from-primary to-[hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.75)_/_0.5)] rounded-2xl z-10"
+        }
       >
         Press Space
       </button>

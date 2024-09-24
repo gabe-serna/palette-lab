@@ -1,3 +1,4 @@
+import { Heading, Link, Paragraph } from "@/Typography";
 import GalleryCarousel from "./GalleryCarousel";
 
 interface Props {
@@ -9,7 +10,7 @@ const GalleryInfo = ({ className }: Props) => {
     <section id="gallery-info" className={className}>
       <GalleryCarousel />
       <div className="relative flex flex-col w-1/2">
-        <h1 style={{ opacity: "0" }} className="z-20 text-7xl animate">
+        <Heading className="z-20 lg:max-xl:w-[120%]">
           Bring Your{" "}
           <div className="relative z-10 inline">
             Colors{" "}
@@ -21,23 +22,14 @@ const GalleryInfo = ({ className }: Props) => {
           <span className="bg-clip-text text-transparent bg-gradient-to-l from-[hsl(from_hsl(var(--secondary))_h_s_calc(l_*_0.6))] from-10% to-secondary to-80%">
             Gallery
           </span>
-        </h1>
-        <p
-          style={{ width: "clamp(45ch, 50%, 75ch)", opacity: "0" }}
-          className="animate z-20 mt-4 text-lg text-[hsl(from_hsl(var(--foreground))_h_s_calc(l_*_0.75))]"
-        >
+        </Heading>
+        <Paragraph className="z-20 mb-7">
           Found a palette you love? See it in action with a wide variety of artwork
           demos. Watch your colors give life to art.
-          <br />
-          <br />
-        </p>
-        <a
-          href="#"
-          style={{ opacity: "0" }}
-          className="z-20 animate text-md text-primary"
-        >
+        </Paragraph>
+        <Link href="#" className="z-20">
           View Gallery {">"}
-        </a>
+        </Link>
       </div>
     </section>
   );

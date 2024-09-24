@@ -1,3 +1,4 @@
+import { CardBase, CardHeading, CardParagraph, Heading } from "@/Typography";
 import { PaintBucket } from "lucide-react";
 import { ArrowLeftRight } from "lucide-react";
 import { Download } from "lucide-react";
@@ -137,7 +138,7 @@ const AdditionalInfo = ({ className, style }: Props) => {
   return (
     <section id="additional-info" style={style} className={className}>
       <div className="relative flex flex-col text-center">
-        <h1 className="z-10 text-7xl animate" style={{ opacity: "0" }}>
+        <Heading className="z-10">
           <span className="bg-clip-text text-transparent bg-gradient-to-l from-primary from-10% to-secondary to-80%">
             Stunning themes
           </span>
@@ -148,91 +149,64 @@ const AdditionalInfo = ({ className, style }: Props) => {
             <div className="absolute -top-16 -left-32 size-[300%] bg-[radial-gradient(closest-corner_at_40%_50%,_hsla(from_hsl(var(--accent-2))_h_s_calc(l_*_0.75)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rotate-12 -z-10" />
           </div>
           touch.
-        </h1>
+        </Heading>
         <div id="additional-info" className="z-20 flex gap-12 mt-20">
-          <figure
-            id="choose"
-            style={{
-              opacity: "0",
-              visibility: "hidden",
-              boxShadow: baseBoxShadow,
-              transition: "box-shadow ease 0.5s, opacity ease 0.5s"
-            }}
-            className="animate overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
-          >
+          <CardBase id="choose">
             <div className="flex flex-col items-center gap-2 my-auto">
               <PaintBucket
-                size={48}
-                className="stroke-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.7))]"
+                className={
+                  "3xl:size-[4.375rem] 2xl:size-14 xl:size-11 lg:size-8 " +
+                  "stroke-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.7))]"
+                }
               />
-              <figcaption className="text-2xl select-none">
-                Choose Your Colors
-              </figcaption>
+              <CardHeading>Choose Your Colors</CardHeading>
             </div>
             <div className="w-full px-5 bg-card">
-              <p className="relative z-50 mt-4 select-none text-primary-foreground">
+              <CardParagraph className="z-50">
                 Use the perfect amount of colors for your needs. You may select
                 between 3-6 colors.
-              </p>
+              </CardParagraph>
               <div className="protrusion-div" />
             </div>
-          </figure>
+          </CardBase>
           {/*  */}
-          <figure
-            id="adjust"
-            style={{
-              opacity: "0",
-              visibility: "hidden",
-              boxShadow: baseBoxShadow,
-              transition: "box-shadow ease 0.5s, opacity ease 0.5s"
-            }}
-            className="animate overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
-          >
+          <CardBase id="adjust">
             <div className="flex flex-col items-center gap-2 my-auto">
               <ArrowLeftRight
-                size={48}
-                className="stroke-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.7))]"
+                className={
+                  "3xl:size-[4.375rem] 2xl:size-14 xl:size-11 lg:size-8 " +
+                  "stroke-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.7))]"
+                }
               />
-              <figcaption className="text-2xl select-none">
-                Adjust Manually
-              </figcaption>
+              <CardHeading>Adjust Manually</CardHeading>
             </div>
             <div className="w-full px-5 bg-card">
-              <p className="relative z-50 mt-4 select-none text-primary-foreground">
+              <CardParagraph className="z-50">
                 Hover between two colors and click to swap their positions. Click on
                 a color to adjust it.
-              </p>
+              </CardParagraph>
               <div className="protrusion-div" />
             </div>
-          </figure>
+          </CardBase>
           {/*  */}
-          <figure
-            id="export"
-            style={{
-              opacity: "0",
-              visibility: "hidden",
-              boxShadow: baseBoxShadow,
-              transition: "box-shadow ease 0.5s, opacity ease 0.5s"
-            }}
-            className="animate overflow-hidden w-72 h-96 bg-gradient-to-b from-background to-[hsl(from_hsl(var(--background))_h_calc(s_*_0.75)_calc(l_*_.6))] rounded-2xl grid grid-rows-[6fr_4fr]"
-          >
+          <CardBase id="export">
             <div className="flex flex-col items-center gap-2 my-auto">
               <Download
-                size={48}
-                className="stroke-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.7))]"
+                className={
+                  "3xl:size-[4.375rem] 2xl:size-14 xl:size-11 lg:size-8 " +
+                  "stroke-[hsl(from_hsl(var(--accent))_h_s_calc(l_*_0.7))]"
+                }
               />
-              <figcaption className="text-2xl select-none">
-                Export When Finished
-              </figcaption>
+              <CardHeading>Export When Finished</CardHeading>
             </div>
             <div className="w-full px-5 bg-card">
-              <p className="relative z-50 mt-4 select-none text-primary-foreground">
+              <CardParagraph className="z-50">
                 Once you're satisfied with your creation, export it in a variety of
                 different formats.
-              </p>
+              </CardParagraph>
               <div className="protrusion-div" />
             </div>
-          </figure>
+          </CardBase>
         </div>
       </div>
     </section>

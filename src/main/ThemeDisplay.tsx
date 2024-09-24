@@ -1,6 +1,7 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ThemeCard from "./ThemeCard";
 import { useEffect } from "react";
+import { Heading, Link } from "@/Typography";
 
 interface Props {
   className?: string;
@@ -39,13 +40,14 @@ const ThemeDisplay = ({ className }: Props) => {
 
   return (
     <section id="theme-display" className={className}>
-      <h1 className="w-1/2 text-center text-7xl animate" style={{ opacity: "0" }}>
-        Discover that{" "}
+      <Heading className="w-3/4 text-center">
+        Discover that
+        <br />
         <div className="inline bg-clip-text text-transparent bg-gradient-to-r from-primary from-10% to-accent to-80%">
           Magic{" "}
         </div>{" "}
         blend.
-      </h1>
+      </Heading>
       <div
         style={{
           WebkitMaskImage:
@@ -106,9 +108,7 @@ const ThemeDisplay = ({ className }: Props) => {
           </div>
         </ScrollArea>
       </div>
-      <a href="#" style={{ opacity: "0" }} className="text-md text-primary animate">
-        Discover Themes {">"}
-      </a>
+      <Link href="#">Discover Themes {">"}</Link>
     </section>
   );
 };
