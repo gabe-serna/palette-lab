@@ -61,14 +61,15 @@ function App() {
     const cursorGradient = document.getElementById("cursor-gradient")!;
 
     const handleMouseMove = (event: MouseEvent) => {
-      const size = 40; //in rem
-      const left = event.screenX - (size * 16) / 2;
-      const top = event.screenY - size * 16 * 0.7 + window.scrollY;
+      const left = event.clientX;
+      const top = event.clientY + window.scrollY;
+      const breakpoint = window.innerHeight * 3;
       const color =
-        event.pageY < 2337
+        event.pageY < breakpoint
           ? "radial-gradient(hsla(from hsl(var(--accent)) h s calc(l * 0.5) / 0.3) 0%, rgba(36, 36, 36, 0) 50%)"
           : "radial-gradient(hsla(from hsl(var(--secondary)) h s calc(l * 0.5) / 0.4) 0%, rgba(36, 36, 36, 0) 50%)";
-      const opacity = event.pageY < 2250 || event.pageY > 2600 ? "1" : "0";
+      const opacity =
+        event.pageY < breakpoint - 150 || event.pageY > breakpoint + 200 ? "1" : "0";
 
       const hoverKeyframes = {
         left: `${left}px`,
@@ -143,7 +144,10 @@ function App() {
         </aside>
         <div
           id="cursor-gradient"
-          className="absolute z-10 bg-[radial-gradient(hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.5)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)] rounded-full pointer-events-none size-[40rem] transition-opacity"
+          className={
+            "absolute z-10 rounded-full pointer-events-none 3xl:size-[56rem] 2xl:size[55rem] xl:size-[40rem] lg:size-[30rem] transition-opacity -translate-x-1/2 -translate-y-1/2 " +
+            "bg-[radial-gradient(hsla(from_hsl(var(--primary))_h_s_calc(l_*_0.5)_/_0.3)_0%,_rgba(36,_36,_36,_0)_50%)]"
+          }
         />
       </div>
       <Toaster />
