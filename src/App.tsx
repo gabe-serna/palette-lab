@@ -91,29 +91,37 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div
         className={
-          "3xl:grid-rows-[6.5rem_calc(100vh-6.5rem)] 3xl:grid-cols-[15rem_calc(100vw-15rem)] " +
-          "2xl:grid-rows-[5.125rem_calc(100vh-5.125rem)] 2xl:grid-cols-[15rem_calc(100vw-15rem)] " +
+          "3xl:grid-rows-[6.5rem_calc(100vh-6.5rem)] 3xl:grid-cols-[21rem_calc(100vw-21rem)] " +
+          "2xl:grid-rows-[5.125rem_calc(100vh-5.125rem)] 2xl:grid-cols-[17rem_calc(100vw-17rem)] " +
           "xl:grid-rows-[4.25rem_calc(100vh-4.25rem)] xl:grid-cols-[15rem_calc(100vw-15rem)] " +
-          "lg:grid-rows-[3.75rem_calc(100vh-3.75rem)] lg:grid-cols-[15rem_calc(100vw-15rem)] " +
+          "lg:grid-rows-[3.75rem_calc(100vh-3.75rem)] lg:grid-cols-[13rem_calc(100vw-13rem)] " +
           "grid-rows-[3.75rem_calc(100vh-3.75rem-3.5rem)_3.5rem] " +
           "grid bg-background"
         }
       >
-        <div className="z-50 fixed items-center lg:h-[3.75rem] lg:w-[15rem] justify-center hidden md:col-span-1 md:col-start-1 md:row-span-1 md:row-start-1 md:flex">
-          <h1 className="text-xl">Palette Lab</h1>
+        <div
+          className={
+            "3xl:h-[6.5rem] 3xl:w-[21rem] 2xl:h-[5.125rem] 2xl:w-[17rem] " +
+            "xl:h-[4.25rem] xl:w-[15rem] lg:h-[3.75rem] lg:w-[13rem] " +
+            "z-50 fixed items-center justify-center hidden md:col-span-1 md:col-start-1 md:row-span-1 md:row-start-1 md:flex"
+          }
+        >
+          <h1 className="3xl:text-3xl 2xl:text-2xl xl:text-xl lg:text-lg">
+            Palette Lab
+          </h1>
         </div>
         <nav
           className={
-            "3xl:h-[6.5rem] 3xl:w-[calc(100vw-15rem-10px)] " +
-            "2xl:h-[5.125rem] 2xl:w-[calc(100vw-15rem-10px)] " +
+            "3xl:h-[6.5rem] 3xl:w-[calc(100vw-21rem-10px)] " +
+            "2xl:h-[5.125rem] 2xl:w-[calc(100vw-17rem-10px)] " +
             "xl:h-[4.25rem] xl:w-[calc(100vw-15rem-10px)] " +
-            "lg:h-[3.75rem] lg:w-[calc(100vw-15rem-10px)] " +
+            "lg:h-[3.75rem] lg:w-[calc(100vw-13rem-10px)] " +
             "fixed z-50 right-0 row-span-1 row-start-1 lg:col-span-1 lg:col-start-2"
           }
         >
           <SubHeader />
         </nav>
-        <main className="relative row-span-2 row-start-1 md:col-start-2">
+        <main className="relative w-[calc(100%-10px)] ml-[14px] row-span-2 row-start-1 md:col-start-2">
           <div
             style={{
               WebkitMaskImage:
@@ -125,7 +133,12 @@ function App() {
           />
           <Main />
         </main>
-        <aside className="z-40 fixed w-[15rem] h-screen bottom-0 row-span-1 row-start-3 md:col-span-1 md:col-start-1 md:row-start-1 md:row-span-2">
+        <aside
+          className={
+            "3xl:w-[21rem] 2xl:w-[17rem] xl:w-[15rem] lg:w-[13rem] " +
+            "z-40 fixed h-screen bottom-0 row-span-1 row-start-3 md:col-span-1 md:col-start-1 md:row-start-1 md:row-span-2"
+          }
+        >
           <Generator />
         </aside>
         <div
