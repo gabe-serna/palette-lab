@@ -205,7 +205,7 @@ const CarouselPrevious = React.forwardRef<
         "3xl:size-14 2xl:size-10 xl:size-8 size-6 " +
           "absolute rounded-full hover:bg-card hover:text-primary",
         orientation === "horizontal"
-          ? "3xl:-left-20 2xl:-left-14 xl:-left-12 -left-8 top-1/2 -translate-y-1/2"
+          ? "3xl:-left-[4.5rem] 2xl:-left-14 xl:-left-12 -left-8 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -235,7 +235,7 @@ const CarouselNext = React.forwardRef<
         "3xl:size-14 2xl:size-10 xl:size-8 size-6 " +
           "absolute rounded-full hover:bg-card hover:text-primary",
         orientation === "horizontal"
-          ? "3xl:-right-20 2xl:-right-14 xl:-right-12 -right-8 top-1/2 -translate-y-1/2"
+          ? "3xl:-right-[4.5rem] 2xl:-right-14 xl:-right-12 -right-8 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
