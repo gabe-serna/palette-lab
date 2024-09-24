@@ -47,7 +47,10 @@ const Export = () => {
         </VisuallyHidden>
         <Tabs
           defaultValue="export"
-          className="grid grid-rows-[2.5rem_calc(100%-2.5rem)] w-full h-[calc(100%)] px-4 pb-4"
+          className={
+            "3xl:px-10 2xl:px-6 px-4 " +
+            "grid 3xl:grid-rows-[5.5rem_calc(100%-5.5rem)] 2xl:grid-rows-[3.5rem_calc(100%-3.5rem)] lg:grid-rows-[2.5rem_calc(100%-2.5rem)] size-full pb-4"
+          }
         >
           <TabsList className="row-start-1">
             <TabsTrigger

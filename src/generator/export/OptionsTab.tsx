@@ -17,42 +17,42 @@ const OptionsTab = ({ value }: Props) => {
         <RadioGroup defaultValue={options.format} className="w-full">
           <div className="flex flex-row justify-start gap-10 mb-4">
             <div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 max-2xl:mb-2 2xl:mb-1">
                 <RadioGroupItem
                   value="hex"
                   id="hex"
-                  className="size-[1.125rem]"
+                  className="3xl:size-[1.625rem] 2xl:size-5 lg:size-[1.125rem]"
                   onClick={() => {
                     setOptions({ ...options, format: "hex" });
                   }}
                 />
-                <Label htmlFor="hex" className="text-md">
+                <Label htmlFor="hex" className="3xl:text-2xl 2xl:text-lg lg:text-md">
                   HEX
                 </Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 max-2xl:mb-2 2xl:mb-1">
                 <RadioGroupItem
                   value="rgb"
                   id="rgb"
-                  className="size-[1.125rem]"
+                  className="3xl:size-[1.625rem] 2xl:size-5 lg:size-[1.125rem]"
                   onClick={() => {
                     setOptions({ ...options, format: "rgb" });
                   }}
                 />
-                <Label htmlFor="rgb" className="text-md">
+                <Label htmlFor="rgb" className="3xl:text-2xl 2xl:text-lg lg:text-md">
                   RGB
                 </Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 max-2xl:mb-2 2xl:mb-1">
                 <RadioGroupItem
                   value="hsl"
                   id="hsl"
-                  className="size-[1.125rem]"
+                  className="3xl:size-[1.625rem] 2xl:size-5 lg:size-[1.125rem]"
                   onClick={() => {
                     setOptions({ ...options, format: "hsl" });
                   }}
                 />
-                <Label htmlFor="hsl" className="text-md">
+                <Label htmlFor="hsl" className="3xl:text-2xl 2xl:text-lg lg:text-md">
                   HSL
                 </Label>
               </div>
