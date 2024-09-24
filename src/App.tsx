@@ -89,11 +89,28 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="grid bg-background md:grid-rows-[3.75rem_calc(100vh-3.75rem)] md:grid-cols-[15rem_calc(100vw-15rem)] grid-rows-[3.75rem_calc(100vh-3.75rem-3.5rem)_3.5rem]">
-        <div className="z-50 fixed items-center h-[3.75rem] w-[15rem] justify-center hidden md:col-span-1 md:col-start-1 md:row-span-1 md:row-start-1 md:flex">
+      <div
+        className={
+          "3xl:grid-rows-[6.5rem_calc(100vh-6.5rem)] 3xl:grid-cols-[15rem_calc(100vw-15rem)] " +
+          "2xl:grid-rows-[5.125rem_calc(100vh-5.125rem)] 2xl:grid-cols-[15rem_calc(100vw-15rem)] " +
+          "xl:grid-rows-[4.25rem_calc(100vh-4.25rem)] xl:grid-cols-[15rem_calc(100vw-15rem)] " +
+          "lg:grid-rows-[3.75rem_calc(100vh-3.75rem)] lg:grid-cols-[15rem_calc(100vw-15rem)] " +
+          "grid-rows-[3.75rem_calc(100vh-3.75rem-3.5rem)_3.5rem] " +
+          "grid bg-background"
+        }
+      >
+        <div className="z-50 fixed items-center lg:h-[3.75rem] lg:w-[15rem] justify-center hidden md:col-span-1 md:col-start-1 md:row-span-1 md:row-start-1 md:flex">
           <h1 className="text-xl">Palette Lab</h1>
         </div>
-        <nav className="fixed z-50 h-[3.75rem] w-[calc(100vw-15rem-10px)] right-0 row-span-1 row-start-1 md:col-span-1 md:col-start-2">
+        <nav
+          className={
+            "3xl:h-[6.5rem] 3xl:w-[calc(100vw-15rem-10px)] " +
+            "2xl:h-[5.125rem] 2xl:w-[calc(100vw-15rem-10px)] " +
+            "xl:h-[4.25rem] xl:w-[calc(100vw-15rem-10px)] " +
+            "lg:h-[3.75rem] lg:w-[calc(100vw-15rem-10px)] " +
+            "fixed z-50 right-0 row-span-1 row-start-1 lg:col-span-1 lg:col-start-2"
+          }
+        >
           <SubHeader />
         </nav>
         <main className="relative row-span-2 row-start-1 md:col-start-2">

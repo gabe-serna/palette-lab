@@ -37,7 +37,7 @@ const Hero = ({ className }: Props) => {
         style={{ opacity: "0" }}
         className={
           "3xl:text-[3.25rem] 2xl:text-[2.5rem] xl:text-4xl lg:text-3xl " +
-          "3xl:mt-20 2xl:mt-6 xl:mt-2 lg:-mt-4 " +
+          "3xl:mt-[4.5rem] 2xl:mt-6 xl:mt-2 lg:-mt-4 " +
           "z-10 animate"
         }
       >
