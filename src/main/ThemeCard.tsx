@@ -25,7 +25,7 @@ const ThemeCard = ({ theme, name }: Props) => {
           return (
             <div
               key={color}
-              className="rounded-full 3xl:size-9 2xl:size-7 xl:size-[1.375rem] size-[1.125rem]"
+              className="rounded-full 3xl:size-9 2xl:size-7 xl:size-[1.375rem] size-[1rem]"
               style={{ backgroundColor: `#${color}` }}
             />
           );

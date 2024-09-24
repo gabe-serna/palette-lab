@@ -55,7 +55,7 @@ const ThemeDisplay = ({ className }: Props) => {
           maskImage:
             "linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)"
         }}
-        className="flex flex-col w-full gap-4"
+        className="flex flex-col w-full 3xl:gap-20 2xl:gap-8 xl:gap-4"
       >
         <ScrollArea
           id="themes-top"
