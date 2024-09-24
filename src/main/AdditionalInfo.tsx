@@ -156,7 +156,7 @@ const AdditionalInfo = ({ className, style }: Props) => {
           className="z-20 flex gap-12 mt-20 animate"
         >
           <CardBase id="choose">
-            <div className="flex flex-col items-center gap-2 my-auto">
+            <div className="flex flex-col items-center gap-2 my-auto mb-4">
               <PaintBucket
                 className={
                   "3xl:size-[4.375rem] 2xl:size-14 xl:size-11 lg:size-8 " +
@@ -165,17 +165,24 @@ const AdditionalInfo = ({ className, style }: Props) => {
               />
               <CardHeading>Choose Your Colors</CardHeading>
             </div>
-            <div className="w-full px-5 bg-card">
-              <CardParagraph className="z-50">
+            <div
+              style={{
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 225% 190% at bottom, black 0%, black 49.5%, black 49.75%, transparent 50%, transparent 80%)",
+                maskImage:
+                  "radial-gradient(ellipse 225% 190% at bottom, black 0%, black 49.5%, black 49.75%, transparent 50%, transparent 80%)"
+              }}
+              className="w-full px-5 bg-card"
+            >
+              <CardParagraph className="z-50 xl:pt-10 lg:pt-8">
                 Use the perfect amount of colors for your needs. You may select
                 between 3-6 colors.
               </CardParagraph>
-              <div className="protrusion-div" />
             </div>
           </CardBase>
           {/*  */}
           <CardBase id="adjust">
-            <div className="flex flex-col items-center gap-2 my-auto">
+            <div className="flex flex-col items-center gap-2 my-auto mb-4">
               <ArrowLeftRight
                 className={
                   "3xl:size-[4.375rem] 2xl:size-14 xl:size-11 lg:size-8 " +
@@ -184,17 +191,24 @@ const AdditionalInfo = ({ className, style }: Props) => {
               />
               <CardHeading>Adjust Manually</CardHeading>
             </div>
-            <div className="w-full px-5 bg-card">
-              <CardParagraph className="z-50">
+            <div
+              style={{
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 225% 190% at bottom, black 0%, black 49.5%, black 49.75%, transparent 50%, transparent 80%)",
+                maskImage:
+                  "radial-gradient(ellipse 225% 190% at bottom, black 0%, black 49.5%, black 49.75%, transparent 50%, transparent 80%)"
+              }}
+              className="w-full px-5 bg-card"
+            >
+              <CardParagraph className="z-50 xl:pt-10 lg:pt-8">
                 Hover between two colors and click to swap their positions. Click on
                 a color to adjust it.
               </CardParagraph>
-              <div className="protrusion-div" />
             </div>
           </CardBase>
           {/*  */}
           <CardBase id="export">
-            <div className="flex flex-col items-center gap-2 my-auto">
+            <div className="flex flex-col items-center gap-2 my-auto mb-4">
               <Download
                 className={
                   "3xl:size-[4.375rem] 2xl:size-14 xl:size-11 lg:size-8 " +
@@ -203,12 +217,19 @@ const AdditionalInfo = ({ className, style }: Props) => {
               />
               <CardHeading>Export When Finished</CardHeading>
             </div>
-            <div className="w-full px-5 bg-card">
-              <CardParagraph className="z-50">
+            <div
+              style={{
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 225% 190% at bottom, black 0%, black 49.5%, black 49.75%, transparent 50%, transparent 80%)",
+                maskImage:
+                  "radial-gradient(ellipse 225% 190% at bottom, black 0%, black 49.5%, black 49.75%, transparent 50%, transparent 80%)"
+              }}
+              className="w-full px-5 bg-card"
+            >
+              <CardParagraph className="z-50 xl:pt-10 lg:pt-8">
                 Once you're satisfied with your creation, export it in a variety of
                 different formats.
               </CardParagraph>
-              <div className="protrusion-div" />
             </div>
           </CardBase>
         </div>

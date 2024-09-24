@@ -109,25 +109,6 @@ body {
   border-radius: 10px;
 }
 
-.protrusion-div {
-  width: 100%;
-  position: relative;
-  z-index: 10;
-}
-
-.protrusion-div::before {
-  content: "";
-  position: absolute;
-  top: 0; /* Half the size of the circle */
-  /* left: 50%; */
-  transform: translateX(-50%) translateY(-200%);
-  width: 18rem; /* Size of the circle */
-  height: 60px;
-  background-color: hsl(var(--card));
-  border-radius: 50%;
-  z-index: 0;
-}
-
 .float-passive {
   animation: floatUpDown 5s ease-in-out infinite;
 }
