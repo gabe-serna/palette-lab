@@ -107,7 +107,13 @@ function App() {
             "z-50 lg:fixed items-center justify-center max-lg:hidden lg:col-span-1 lg:col-start-1 lg:row-span-1 lg:row-start-1 lg:flex"
           }
         >
-          <h1 className="3xl:text-3xl 2xl:text-2xl xl:text-xl lg:text-lg">
+          <h1
+            className="cursor-pointer 3xl:text-3xl 2xl:text-2xl xl:text-xl lg:text-lg"
+            onClick={() => {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }}
+          >
             Palette Lab
           </h1>
         </div>

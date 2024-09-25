@@ -35,7 +35,7 @@ const Generator = () => {
     >
       <div
         className={
-          "3xl:px-6 2xl:px-5 xl:px-4 lg:px-[0.875rem] " +
+          "3xl:px-7 2xl:px-5 xl:px-4 lg:px-[0.875rem] " +
           "flex flex-row items-center w-full gap-2 pt-8 h-min lg:flex-col"
         }
       >
