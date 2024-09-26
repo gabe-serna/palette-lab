@@ -13,7 +13,7 @@ const ColorPicker = ({ index, className }: Props) => {
   const { colors } = context!;
 
   const [color, setColor] = useState(colors[index].color);
-  const textColor = getTextColor(color);
+  const textColor = getTextColor(color, colors[1].color);
   const bgColor = "#" + color.replace(/^#/, "");
 
   useEffect(() => {

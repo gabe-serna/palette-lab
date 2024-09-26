@@ -6,7 +6,8 @@ const GalleryPreview5 = () => {
   const context = useContext(ColorContext);
   const { colors } = context!;
 
-  const textColor = getTextColor(colors[3].color);
+  const behindColor = colors.length >= 4 ? colors[3].color : colors[2].color;
+  const textColor = getTextColor(behindColor, colors[1].color);
 
   return (
     <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">

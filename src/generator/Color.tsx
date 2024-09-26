@@ -17,7 +17,7 @@ const Color = ({ id, label, index }: Props) => {
   const { colors, setColors, setRedoTree } = context!;
 
   const color = colors[index].color;
-  const textColor = getTextColor(color);
+  const textColor = getTextColor(color, colors[1].color);
 
   let isLocked = false;
   if (index === colors.length - 1) {

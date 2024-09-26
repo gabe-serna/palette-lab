@@ -34,7 +34,8 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
     let queryColors: SelectedColorType[] = [];
     if (!colorParams) return queryColors;
 
-    const colorArray = colorParams.split("-");
+    let colorArray = colorParams.split("-");
+    colorArray = colorArray.slice(0, 6);
     queryColors = colorArray.map(color => {
       return { color, locked: false };
     });
@@ -78,7 +79,7 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
     const queryParams = new URLSearchParams(location.search);
     const colorParams = queryParams.get("colors")!;
     let colorArray = colorParams.split("-");
-    colorArray = colorArray.slice(0, 5);
+    colorArray = colorArray.slice(0, 6);
     const isMatching = colors.some((color, index) => {
       if (color.color !== colorArray[index]) return false;
       else return true;

@@ -9,7 +9,7 @@ interface Props {
 const Hero = ({ className }: Props) => {
   const context = useContext(ColorContext);
   const { colors } = context!;
-  const buttonTextColor = getTextColor(colors[2].color);
+  const buttonTextColor = getTextColor(colors[2].color, colors[1].color);
   const mainTextSize =
     "3xl:text-[11rem] 3xl: 2xl:text-[8.5rem] xl:text-[7.5rem] lg:text-8xl ";
   return (

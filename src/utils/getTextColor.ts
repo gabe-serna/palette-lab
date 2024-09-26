@@ -1,17 +1,18 @@
-export function getTextColor(hexColor: string) {
+export function getTextColor(hexColor: string, foreground: string) {
   // Convert hex to RGB
-  const { r, g, b } = hexToRgb(hexColor);
+  const { r: r1, g: g1, b: b1 } = hexToRgb(hexColor);
+  const { r: r2, g: g2, b: b2 } = hexToRgb(foreground);
 
   // Calculate luminance of the given color
-  const colorLuminance = luminance(r, g, b);
+  const colorLuminance = luminance(r1, g1, b1);
 
-  // Luminance of white
-  const whiteLuminance = luminance(255, 255, 255);
+  // Luminance of foreground color
+  const whiteLuminance = luminance(r2, g2, b2);
 
   // Calculate contrast ratio
   const contrast = contrastRatio(whiteLuminance, colorLuminance);
   const textColor =
-    contrast >= 4.5 ? "hsl(var(--foreground))" : "hsl(var(--background))";
+    contrast >= 2 ? "hsl(var(--foreground))" : "hsl(var(--background))";
   return textColor;
 }
 

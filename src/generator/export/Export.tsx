@@ -20,7 +20,7 @@ const Export = () => {
   const context = useContext(ColorContext);
   const { colors } = context!;
 
-  const textColor = getTextColor(colors[2].color);
+  const textColor = getTextColor(colors[2].color, colors[1].color);
   let baseText = "";
   if (textColor.includes("foreground")) baseText = "text-foreground ";
   else baseText = "text-background ";
