@@ -137,7 +137,7 @@ const Color = ({ id, label, index }: Props) => {
             >
               {color.toUpperCase()}
             </h1>
-            <Lock lockColor={color} bg={textColor} />
+            <Lock index={index} bg={textColor} />
           </div>
         )}
         <ColorPicker
@@ -156,7 +156,7 @@ const Color = ({ id, label, index }: Props) => {
       >
         {label}
       </p>
-      {!isLocked && (
+      {!isLocked && !isPickerVisible && (
         <div className="absolute flex justify-center items-center w-full h-8 -bottom-[.8rem] transition-opacity opacity-0 hover:opacity-100">
           <SwitchColors index={index} switchColor={color} />
         </div>

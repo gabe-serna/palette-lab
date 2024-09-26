@@ -2,18 +2,18 @@ import { ColorContext } from "@/ColorProvider";
 import { useContext, useRef } from "react";
 
 interface Props {
-  lockColor: string;
+  index: number;
   bg: string;
 }
 
-const Lock = ({ lockColor, bg }: Props) => {
+const Lock = ({ index, bg }: Props) => {
   const isLocked = useRef(false);
 
   const context = useContext(ColorContext);
   const { colors, setColors, setRedoTree } = context!;
 
-  colors.forEach(color => {
-    if (color.color == lockColor) {
+  colors.forEach((color, i) => {
+    if (i === index) {
       isLocked.current = color.locked;
     }
   });
@@ -34,8 +34,8 @@ const Lock = ({ lockColor, bg }: Props) => {
         const target = event.currentTarget as HTMLButtonElement;
         target.blur();
 
-        const newColors = colors.map(color => {
-          if (color.color === lockColor) {
+        const newColors = colors.map((color, i) => {
+          if (i === index) {
             return { ...color, locked: !color.locked };
           }
           return color;
