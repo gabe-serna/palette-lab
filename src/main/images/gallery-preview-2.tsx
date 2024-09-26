@@ -31,7 +31,7 @@ const GalleryPreview2 = () => {
     .sb11 { fill: hsl(var(--foreground)); stroke: hsl(from hsl(var(--secondary)) h s calc(l * 0.75));stroke-miterlimit:8;stroke-width: 8  }
   `}</style>
         <g id="Layer 1">
-          <g id="&lt;Clip Group&gt;" clip-path="url(#cp1)">
+          <g id="&lt;Clip Group&gt;" clipPath="url(#cp1)">
             <g id="Background">
               <path
                 id="&lt;Path&gt;"
@@ -82,7 +82,7 @@ const GalleryPreview2 = () => {
                   d="m800 800c0-220.9-179.1-400-400-400v400z"
                 />
               </g>
-              <g id="&lt;Clip Group&gt;" clip-path="url(#cp2)">
+              <g id="&lt;Clip Group&gt;" clipPath="url(#cp2)">
                 <g id="&lt;Group&gt;">
                   <g id="&lt;Group&gt;">
                     <path id="&lt;Path&gt;" className="sb5" d="m66 800v-800" />

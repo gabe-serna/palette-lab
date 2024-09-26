@@ -77,7 +77,8 @@ export const ColorProvider: React.FC<ColorProviderProps> = ({ children }) => {
     //Check if the colors in the query params are different from the current colors
     const queryParams = new URLSearchParams(location.search);
     const colorParams = queryParams.get("colors")!;
-    const colorArray = colorParams.split("-");
+    let colorArray = colorParams.split("-");
+    colorArray = colorArray.slice(0, 5);
     const isMatching = colors.some((color, index) => {
       if (color.color !== colorArray[index]) return false;
       else return true;

@@ -10,10 +10,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(-6.06,9.269,-9.269,-6.06,462.659,464.41)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -24,10 +24,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(27.056,45.558,-45.558,27.056,488.343,539.772)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -38,10 +38,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(43.956,74.015,-74.015,43.956,215.531,519.605)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -54,9 +54,9 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset="1" stop-color="hsl(var(--secondary))" />
+          <stop offset="1" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g5"
@@ -66,8 +66,8 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(138.36,0,0,138.36,433.709,319.727)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary-foreground))" />
-          <stop offset=".945" stop-color="hsl(var(--foreground))" />
+          <stop offset="0" stopColor="hsl(var(--primary-foreground))" />
+          <stop offset=".945" stopColor="hsl(var(--foreground))" />
         </radialGradient>
         <radialGradient
           id="g6"
@@ -77,10 +77,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(10.862,13.39,-13.39,10.862,91.845,366.921)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -91,10 +91,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(15.666,10.794,-10.794,15.666,392.785,314.174)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -105,10 +105,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.666,8.147,-8.147,3.666,56.424,320.419)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -119,10 +119,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(1.812,4.978,-4.978,1.812,38.174,333.785)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -133,10 +133,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.63,9.973,-9.973,3.63,452.969,336.164)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -147,10 +147,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.102,4.07,-4.07,3.102,470.508,530.567)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -161,10 +161,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(1.584,4.351,-4.351,1.584,505.863,266.169)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -175,10 +175,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(4.297,11.804,-11.804,4.297,180.737,352.407)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -189,10 +189,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.338,9.169,-9.169,3.338,98.088,432.898)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -203,10 +203,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.113,3.838,-3.838,3.113,193.112,340.686)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -217,10 +217,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(6.55,8.075,-8.075,6.55,196.51,409.313)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -231,8 +231,8 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(64.79,-28.03,28.03,64.79,249.668,546.594)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary-foreground))" />
-          <stop offset="1" stop-color="hsl(var(--foreground))" />
+          <stop offset="0" stopColor="hsl(var(--primary-foreground))" />
+          <stop offset="1" stopColor="hsl(var(--foreground))" />
         </radialGradient>
         <radialGradient
           id="g18"
@@ -242,8 +242,8 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(46.767,-20.232,20.232,46.767,215.177,531.414)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary-foreground))" />
-          <stop offset="1" stop-color="hsl(var(--foreground))" />
+          <stop offset="0" stopColor="hsl(var(--primary-foreground))" />
+          <stop offset="1" stopColor="hsl(var(--foreground))" />
         </radialGradient>
         <radialGradient
           id="g19"
@@ -253,8 +253,8 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(30.015,-12.985,12.985,30.015,230.12,496.701)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary-foreground))" />
-          <stop offset="1" stop-color="hsl(var(--foreground))" />
+          <stop offset="0" stopColor="hsl(var(--primary-foreground))" />
+          <stop offset="1" stopColor="hsl(var(--foreground))" />
         </radialGradient>
         <radialGradient
           id="g20"
@@ -264,10 +264,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(48.861,64.111,-64.111,48.861,399.036,311.392)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -280,9 +280,9 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset="1" stop-color="hsl(var(--secondary))" />
+          <stop offset="1" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g22"
@@ -292,10 +292,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(-14.184,16.65,-16.65,-14.184,383.309,299.905)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -308,10 +308,10 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset=".885" stop-color="hsl(var(--secondary))" />
-          <stop offset=".906" stop-color="hsl(var(--secondary))" />
+          <stop offset=".885" stopColor="hsl(var(--secondary))" />
+          <stop offset=".906" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g24"
@@ -323,9 +323,9 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset="1" stop-color="hsl(var(--secondary))" />
+          <stop offset="1" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g25"
@@ -335,10 +335,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(64.929,109.329,-109.329,64.929,408.267,505.32)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -349,10 +349,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(21.013,35.383,-35.383,21.013,431.68,379.733)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -365,9 +365,9 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset="1" stop-color="hsl(var(--secondary))" />
+          <stop offset="1" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           //blue
@@ -378,10 +378,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(34.634,95.145,-95.145,34.634,322.511,370.448)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -392,10 +392,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(31.69,41.581,-41.581,31.69,262.729,432.787)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -406,10 +406,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(42.115,55.26,-55.26,42.115,172.2,313.439)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -420,10 +420,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(14.65,19.223,-19.223,14.65,113.342,316.834)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -434,10 +434,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(.012,.015,-0.015,.012,403.883,436.617)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -448,10 +448,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(.054,.067,-0.067,.054,403.807,436.525)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -462,10 +462,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(56.996,70.265,-70.265,56.996,395.962,542.446)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -476,10 +476,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(64.203,84.241,-84.241,64.203,403.632,544.891)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -490,10 +490,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(32.164,54.159,-54.159,32.164,255.398,254.556)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -504,10 +504,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(17.687,23.207,-23.207,17.687,333.305,199.058)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -518,10 +518,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(10.555,17.773,-17.773,10.555,327.057,182.425)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -532,10 +532,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(17.169,47.165,-47.165,17.169,156.209,259.471)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -546,10 +546,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(16.971,28.576,-28.576,16.971,137.397,236.255)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -560,10 +560,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(12.393,15.279,-15.279,12.393,158.849,226.18)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -574,10 +574,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.728,4.595,-4.595,3.728,458.791,354.713)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -588,10 +588,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(10.867,7.488,-7.488,10.867,437.309,315.567)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -602,10 +602,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(6.952,10.172,-10.172,6.952,444.236,491.771)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -616,10 +616,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(15.687,19.34,-19.34,15.687,211.553,308.484)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -630,10 +630,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(17.31,21.34,-21.34,17.31,211.609,301.298)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -644,10 +644,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(13.439,9.259,-9.259,13.439,353.187,359.265)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -660,10 +660,10 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset=".885" stop-color="hsl(var(--secondary))" />
-          <stop offset=".906" stop-color="hsl(var(--secondary))" />
+          <stop offset=".885" stopColor="hsl(var(--secondary))" />
+          <stop offset=".906" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g49"
@@ -673,10 +673,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(14.37,17.716,-17.716,14.37,287.656,334.465)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -689,9 +689,9 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset="1" stop-color="hsl(var(--secondary))" />
+          <stop offset="1" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g51"
@@ -701,8 +701,8 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(3.643,7.841,-7.841,3.643,174.359,165.855)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary-foreground))" />
-          <stop offset=".945" stop-color="hsl(var(--foreground))" />
+          <stop offset="0" stopColor="hsl(var(--primary-foreground))" />
+          <stop offset=".945" stopColor="hsl(var(--foreground))" />
         </radialGradient>
         <radialGradient
           id="g52"
@@ -712,10 +712,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(4.958,6.505,-6.505,4.958,190.502,178.868)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.6))"
           />
         </radialGradient>
         <radialGradient
@@ -726,10 +726,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(7.634,12.854,-12.854,7.634,125.488,556.168)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -742,9 +742,9 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset="1" stop-color="hsl(var(--secondary))" />
+          <stop offset="1" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g55"
@@ -754,10 +754,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(5.447,6.715,-6.715,5.447,112.678,470.407)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -768,10 +768,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(2.497,4.204,-4.204,2.497,112.461,451.376)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -782,10 +782,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(57.189,96.296,-96.296,57.189,349.168,509.992)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -796,10 +796,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(80.448,55.429,-55.429,80.448,308.885,571.879)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary))" />
+          <stop offset="0" stopColor="hsl(var(--primary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--primary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -810,8 +810,8 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(-33.381,30.695,-30.695,-33.381,494.427,602.738)"
         >
-          <stop offset="0" stop-color="hsl(var(--primary-foreground))" />
-          <stop offset=".945" stop-color="hsl(var(--foreground))" />
+          <stop offset="0" stopColor="hsl(var(--primary-foreground))" />
+          <stop offset=".945" stopColor="hsl(var(--foreground))" />
         </radialGradient>
         <radialGradient
           id="g60"
@@ -823,10 +823,10 @@ const ColorSwirl = () => {
         >
           <stop
             offset="0"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.6))"
           />
-          <stop offset=".885" stop-color="hsl(var(--secondary))" />
-          <stop offset=".906" stop-color="hsl(var(--secondary))" />
+          <stop offset=".885" stopColor="hsl(var(--secondary))" />
+          <stop offset=".906" stopColor="hsl(var(--secondary))" />
         </radialGradient>
         <radialGradient
           id="g61"
@@ -836,10 +836,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(2.154,5.919,-5.919,2.154,477.999,547.639)"
         >
-          <stop offset="0" stop-color="hsl(var(--secondary))" />
+          <stop offset="0" stopColor="hsl(var(--secondary))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--secondary)) h s calc(l*0.5))"
           />
         </radialGradient>
         <radialGradient
@@ -850,10 +850,10 @@ const ColorSwirl = () => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(9.965,12.285,-12.285,9.965,136.97,315.243)"
         >
-          <stop offset="0" stop-color="hsl(var(--accent))" />
+          <stop offset="0" stopColor="hsl(var(--accent))" />
           <stop
             offset="1"
-            stop-color="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
+            stopColor="hsl(from hsl(var(--accent)) h s calc(l*0.5))"
           />
         </radialGradient>
       </defs>
@@ -1292,7 +1292,7 @@ const ColorSwirl = () => {
           <g id="&lt;Group&gt;">
             <path
               id="&lt;Compound Path&gt;"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               className="s49"
               d="m338.9 373.5c-1.3-1.3-2-3.2-2-5.4 0-2.6 1-5.7 3.4-8.8-2.4-3.2-3.4-6.2-3.4-8.9 0-2.2 0.7-4 2-5.4 1.4-1.3 3.3-2.1 5.5-2.1 2.6 0 5.6 1.1 8.8 3.4 3.2-2.3 6.2-3.4 8.8-3.4 2.2 0 4.1 0.8 5.4 2.1 1.4 1.4 2.1 3.2 2.1 5.4 0 2.7-1 5.7-3.4 8.9 2.4 3.1 3.4 6.2 3.4 8.8 0 2.2-0.7 4.1-2.1 5.4-1.3 1.3-3.2 2.1-5.4 2.1-2.6 0-5.6-1.1-8.8-3.4-3.2 2.3-6.2 3.4-8.8 3.4-2.2 0-4.1-0.8-5.5-2.1zm-0.7-23.1c0 2.4 1 5.3 3.4 8.5l0.3 0.4-0.3 0.4c-2.4 3.1-3.4 6-3.4 8.4 0 3.8 2.4 6.2 6.2 6.2 2.3 0 5.2-1 8.4-3.4l0.4-0.3 0.4 0.3c3.1 2.4 6.1 3.4 8.4 3.4 3.8-0.1 6.2-2.4 6.2-6.2 0-2.4-1-5.3-3.4-8.4l-0.3-0.4 0.3-0.4c2.4-3.2 3.4-6.1 3.4-8.5 0-3.7-2.4-6.1-6.2-6.2-2.3 0-5.3 1-8.4 3.5l-0.4 0.3-0.4-0.3c-3.2-2.5-6.1-3.5-8.4-3.5-3.8 0.1-6.2 2.5-6.2 6.2z"
             />

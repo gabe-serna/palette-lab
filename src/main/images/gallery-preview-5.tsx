@@ -127,25 +127,25 @@ const GalleryPreview5 = () => {
           </g>
           <path
             id="&lt;Compound Path&gt;"
-            fill-rule="evenodd"
+            fillRule="evenodd"
             className="prev5-7"
             d="m102.5 122.6l-10.7-10.7 10.7-10.6 10.6 10.6zm-5.5-10.6l5.5 5.5 5.6-5.5-5.6-5.5z"
           />
           <path
             id="&lt;Compound Path&gt;"
-            fill-rule="evenodd"
+            fillRule="evenodd"
             className="prev5-7"
             d="m284.4 277.1l-10.7-10.7 10.7-10.6 10.6 10.6zm-5.5-10.6l5.5 5.5 5.5-5.5-5.5-5.6z"
           />
           <path
             id="&lt;Compound Path&gt;"
-            fill-rule="evenodd"
+            fillRule="evenodd"
             className="prev5-8"
             d="m124.1 246.9c0 6.3-5.1 11.4-11.4 11.4h-34.3c-6.3 0-11.4-5.1-11.4-11.4v-0.2c0-6.3 5.1-11.4 11.4-11.4h34.3c6.3 0 11.4 5.1 11.4 11.4zm-3.7-0.3c0-4.3-3.4-7.8-7.7-7.8h-34.3c-4.3 0-7.8 3.5-7.8 7.8v0.3c0 4.2 3.5 7.7 7.8 7.7h34.3c4.3 0 7.7-3.5 7.7-7.7z"
           />
           <path
             id="&lt;Compound Path&gt;"
-            fill-rule="evenodd"
+            fillRule="evenodd"
             className="prev5-9"
             d="m257.7 79.8h-24.3c-5.7 0-10.3-4.7-10.3-10.3 0-5.7 4.6-10.4 10.3-10.4h24.3c5.7 0 10.3 4.7 10.3 10.4 0 5.6-4.6 10.3-10.3 10.3zm-24.3-17c-3.7 0-6.7 3-6.7 6.7 0 3.6 3 6.6 6.7 6.6h24.3c3.7 0 6.7-3 6.7-6.6 0-3.7-3-6.7-6.7-6.7z"
           />
@@ -258,7 +258,7 @@ const GalleryPreview5 = () => {
                   />
                   <path
                     id="&lt;Compound Path&gt;"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     className={
                       textColor === "hsl(var(--foreground))" ? "prev5-5" : "prev5-22"
                     }
@@ -277,7 +277,7 @@ const GalleryPreview5 = () => {
                   />
                   <path
                     id="&lt;Compound Path&gt;"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     className={
                       textColor === "hsl(var(--foreground))" ? "prev5-5" : "prev5-22"
                     }
@@ -296,7 +296,7 @@ const GalleryPreview5 = () => {
                   />
                   <path
                     id="&lt;Compound Path&gt;"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     className={
                       textColor === "hsl(var(--foreground))" ? "prev5-5" : "prev5-22"
                     }
@@ -315,7 +315,7 @@ const GalleryPreview5 = () => {
                   />
                   <path
                     id="&lt;Compound Path&gt;"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     className={
                       textColor === "hsl(var(--foreground))" ? "prev5-5" : "prev5-22"
                     }
